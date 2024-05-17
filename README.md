@@ -23,13 +23,13 @@ O projeto consiste em uma aplicação web gameficada que ensina, de maneira inte
 1. Clone o repositório para o seu computador:
 
 
-git clone https://github.com/millaUcci/Trabalho_DAD.git
+- git clone https://github.com/millaUcci/Trabalho_DAD.git
 
 
 2. Navegue até o diretório do projeto:
 
 
-cd Trabalho_DAD
+- cd Trabalho_DAD
 
 
 3. Abra o arquivo index.html em um navegador web.
