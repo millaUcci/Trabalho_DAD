@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Kranky&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Kranky&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+* {
+  user-select: none;
+  font-family: "Inter";
+}
+.botoes-header {
+  filter: invert(100%);
+  width: 2rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  position: absolute;
+}
+.botoes-header:hover {
+  filter: invert(60%);
+}
+.botoes-header:active {
+  filter: invert(30%);
+}
+#capitulos {
+  top: 0.5rem;
+  left: 0.5rem;
+}
+#info {
+  top: 0.5rem;
+  left: 4rem;
+}
+#config {
+  top: 0.5rem;
+  right: 0.5rem;
+}
+button {
+  font-family: "Inter";
+  font-weight: bold;
+  font-size: medium;
+  background-color: rgb(216, 219, 221);
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.3rem 0.5rem;
+  display: block;
+  margin: auto;
+  margin-top: 0.3rem;
+  margin-left: 0.3rem;
+  width: 4rem;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(174, 175, 176);
+}
+button:active {
+  background-color: rgb(53, 47, 58);
+  color: rgb(174, 175, 176);
+}
+body {
+  background-color: rgb(22, 20, 25);
+  color: rgb(216, 219, 221);
+  user-select: none;
+}
+#terminal {
+  width: 35rem;
+  height: 10rem;
+  border-radius: 0.6rem;
+  background-color: rgb(174, 175, 176);
+  border: solid 0.32rem rgb(106, 107, 108);
+}
+#div-blocos {
+  text-align: center;
+  margin: 0.4rem;
+  width: 25rem;
+  height: 10rem;
+  padding: 0.5rem;
+  position: relative;
+  right: 2rem;
+}
+.bloco {
+  color: rgb(22, 20, 25);
+  background-color: rgb(216, 219, 221);
+  width: fit-content;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.2rem;
+  margin: 0.4rem;
+  display: inline-block;
+  font-weight: bold;
+}
+#div-texto {
+  width: 35rem;
+  height: 5rem;
+  border-radius: 0.6rem;
+  margin: 0.4rem;
+  padding: 0.5rem 1.5rem;
+}
+#desc-exercicio {
+  text-align: center;
+  position: relative;
+  right: 2rem;
+  margin: 0rem;
+  padding: 0rem;
+}
+#titulo {
+  position: relative;
+  right: 2.5rem;
+  margin: 0rem;
+  margin-bottom: 1rem;
+}
+#principal {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 27rem;
+  width: 40rem;
+  position: absolute;
+  top: 4rem;
+  right: 3rem;
+  padding: 0.4rem;
+}
+#vampiro {
+  width: 40%;
+  position: absolute;
+  bottom: 0rem;
+  left: 2rem;
+}
+#div-digitar {
+  width: 40rem;
+  height: 13rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#div-botoes {
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+img {
+  width: 50%;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="/assets/livros.png" type="image/x-icon" />
+    <script src="index.js" defer></script>
+    <title>SQL Vampire - Capítulos</title>
+  </head>
+  <body>
+    <header>
+      <img src="/assets/home.png" alt="icone de home" id="home" />
+      <img src="/assets/config.png" alt="" id="config" />
+    </header>
+    <div id="div-principal">
+      <div class="card">
+        <div id="capitulo-um" class="capitulo">
+          <div class="capitulo capitulo-menor">1</div>
+        </div>
+        <div id="linha-um" class="linha"></div>
+      </div>
+      <div class="card">
+        <div id="capitulo-dois" class="capitulo">
+          <div class="capitulo capitulo-menor">2</div>
+        </div>
+        <div id="linha-dois" class="linha"></div>
+      </div>
+      <div class="card">
+        <div id="capitulo-tres" class="capitulo">
+          <div class="capitulo capitulo-menor">3</div>
+        </div>
+        <div id="linha-tres" class="linha"></div>
+      </div>
+      <div class="card">
+        <div id="capitulo-quatro" class="capitulo">
+          <div class="capitulo capitulo-menor">4</div>
+        </div>
+        <div id="linha-quatro" class="linha"></div>
+      </div>
+      <div class="card">
+        <div id="capitulo-cinco" class="capitulo">
+          <div class="capitulo capitulo-menor">5</div>
+        </div>
+        <div id="linha-cinco" class="linha"></div>
+      </div>
+    </div>
+    <dialog id="modal-exercicios" class="modal">
+      <img
+        src="/assets/seta-left.png"
+        alt="seta para fechar o modal"
+        id="fechar-modal"
+      />
+      <h1 id="titulo-modal"></h1>
+      <div id="div-exercicios"></div>
+      <button id="btn-reiniciar" class="btn-modal">Reiniciar</button>
+      <button id="btn-continuar" class="btn-modal">Continuar</button>
+    </dialog>
+    <dialog id="modal-config" class="modal">
+      <h1>Configurações</h1>
+      <div id="div-config">
+        <div id="ultimo-save">Seu ultimo save</div>
+        <div id="div-botoes-modal">
+          <button class="btn-modal config" title="Você perdera o seu progresso e irá começar do primeiro capitulo do primeiro exercício">Recomeçar</button>
+          <button class="btn-modal config" title="Você perdera todo o seu progresso, inclusive o modo de aprendizado(história, livre)">Resetar</button>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>
