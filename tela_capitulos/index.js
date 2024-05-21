@@ -11,10 +11,14 @@ const fecharModal = document.getElementById("fechar-modal");
 const divEx = document.getElementById("div-exercicios");
 
 const modalConfig = document.getElementById("modal-config");
+const btnCreditos = document.getElementById('btn-creditos')
 
 config.addEventListener("click", () => {
   modalConfig.showModal();
 });
+btnCreditos.addEventListener('click',()=>{
+  window.location.href = "../tela_creditos/index.html"
+})
 
 capituloUm.addEventListener("click", () => {
   const titulo = document.getElementById("titulo-modal");

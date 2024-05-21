@@ -1,0 +1,12 @@
+*{
+    user-select: none;
+}
+body{
+    background-color: rgb(22, 20, 25);
+    color: rgb(216, 219, 221);
+    user-select: none;
+    text-align: center;
+}
+.funcoes{
+display: inline-block;
+}

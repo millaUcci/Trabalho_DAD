@@ -8,7 +8,7 @@
 }
 .botoes-header {
   filter: invert(100%);
-  width: 2rem;
+  width: 1.8rem;
   margin: 0.5rem;
   cursor: pointer;
   position: absolute;
@@ -24,8 +24,8 @@
   left: 0.5rem;
 }
 #info {
-  top: 0.5rem;
-  left: 4rem;
+  top:3.5rem;
+  left: 0.5rem;
 }
 #config {
   top: 0.5rem;
@@ -94,13 +94,13 @@ body {
 #desc-exercicio {
   text-align: center;
   position: relative;
-  right: 2rem;
+  right: 1.7rem;
   margin: 0rem;
   padding: 0rem;
 }
 #titulo {
   position: relative;
-  right: 2.5rem;
+  right: 1.7rem;
   margin: 0rem;
   margin-bottom: 1rem;
 }
@@ -136,6 +136,6 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-img {
+.botoes-terminal {
   width: 50%;
 }

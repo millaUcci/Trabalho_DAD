@@ -189,6 +189,9 @@ background-color: rgb(22, 20, 25,.5);
     color: rgb(148, 148, 149);
     background-color: rgb(20, 18, 23);
 }
+.ex-selecionado{
+    background-color: cadetblue;
+}
 .btn-modal{
     margin-top:.5rem;
     width: 6rem;
@@ -239,4 +242,8 @@ background-color: rgb(22, 20, 25,.5);
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+#btn-creditos{
+    width: 10rem;
+    margin-top: 1rem;
 }
