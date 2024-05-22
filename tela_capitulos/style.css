@@ -170,6 +170,9 @@ background-color: rgb(22, 20, 25,.5);
 .modal > h1{
     font-family: 'Kranky';
 }
+.invisivel{
+    display: none;
+}
 .ex{
     padding: .5rem;
     border-radius: .3rem;

@@ -24,7 +24,7 @@
   left: 0.5rem;
 }
 #info {
-  top:3.5rem;
+  top: 3.5rem;
   left: 0.5rem;
 }
 #config {
@@ -43,7 +43,7 @@ button {
   margin: auto;
   margin-top: 0.3rem;
   margin-left: 0.3rem;
-  width: 4rem;
+  width: 5rem;
   cursor: pointer;
 }
 button:hover {
@@ -53,17 +53,43 @@ button:active {
   background-color: rgb(53, 47, 58);
   color: rgb(174, 175, 176);
 }
+.botoes-exercicios{
+  position: absolute;
+  font-size: medium;
+  width: 7rem;
+}
+#btn-sair-exercicio{
+  right: 4rem;
+  bottom:4rem;
+}
+#btn-proximo-ex{
+  right: 4rem;
+  bottom:2rem;
+}
 body {
   background-color: rgb(22, 20, 25);
   color: rgb(216, 219, 221);
   user-select: none;
 }
+.invisivel {
+  display: none;
+}
 #terminal {
   width: 35rem;
   height: 10rem;
   border-radius: 0.6rem;
+}
+.default {
   background-color: rgb(174, 175, 176);
   border: solid 0.32rem rgb(106, 107, 108);
+}
+.certo {
+  background-color: rgb(60, 172, 60);
+  border: solid 0.32rem rgb(18, 87, 33);
+}
+.errado {
+  background-color: rgb(185, 42, 42);
+  border: solid 0.32rem rgb(87, 18, 18);
 }
 #div-blocos {
   text-align: center;
@@ -138,4 +164,19 @@ body {
 }
 .botoes-terminal {
   width: 50%;
+}
+.modal {
+  border-radius: 1rem;
+  background-color: rgb(216, 219, 221);
+  color: rgb(22, 20, 25);
+  text-align: center;
+  width: 18rem;
+  padding: 1rem 3rem 2rem;
+  border: 0.3rem solid rgb(53, 47, 58);
+}
+.modal::backdrop {
+  background-color: rgb(22, 20, 25, 0.5);
+}
+.modal > h1 {
+  font-family: "Kranky";
 }
