@@ -3,6 +3,7 @@ const tituloEx = document.getElementById("titulo");
 const descExercicio = document.getElementById("desc-exercicio");
 const divBlocos = document.getElementById("div-blocos");
 const save = JSON.parse(localStorage.getItem("save"));
+const exercicioAtual = JSON.parse(localStorage.getItem("exAtual"))
 const palavras = document.getElementsByClassName("bloco");
 
 switch (save[0]) {

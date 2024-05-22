@@ -60,37 +60,83 @@ capituloUm.addEventListener("click", () => {
 });
 //capitulo 2
 capituloDois.addEventListener("click", () => {
+  let continuarExercicio = false;
   const titulo = document.getElementById("titulo-modal");
   titulo.textContent = "Capítulo 2";
   //criando exercícios
-  criarExercicio("Alterando a tabela moradores");
+  if (save[0] == "ca2-ex1") {
+    criarExercicio("Alterando a tabela moradores", true);
+  } else {
+    criarExercicio("Alterando a tabela moradores", false);
+  }
+  if (continuarExercicio) {
+    btnContinuar.classList.remove("invisivel");
+  }
 
   modalCapitulo.showModal();
 });
 capituloTres.addEventListener("click", () => {
+  let continuarExercicio = false;
   const titulo = document.getElementById("titulo-modal");
   titulo.textContent = "Capítulo 3";
   //criando exercícios
-  criarExercicio("Inserindo dados na tabela moradores");
-  criarExercicio("Inserindo dados na tabela casas");
+  if (save[0] == "ca3-ex1") {
+    criarExercicio("Inserindo dados na tabela moradores", true);
+  } else {
+    criarExercicio("Inserindo dados na tabela moradores", false);
+  }
+  if (save[0] == "ca3-ex2") {
+    criarExercicio("Inserindo dados na tabela casas", true);
+  } else {
+    criarExercicio("Inserindo dados na tabela casas", false);
+  }
+
+  if (continuarExercicio) {
+    btnContinuar.classList.remove("invisivel");
+  }
 
   modalCapitulo.showModal();
 });
 capituloQuatro.addEventListener("click", () => {
+  let continuarExercicio = false;
   const titulo = document.getElementById("titulo-modal");
   titulo.textContent = "Capítulo 4";
   //criando exercícios
-  criarExercicio("Deletando moradores");
+  if (save[0] == "ca4-ex1") {
+    criarExercicio("Deletando moradores", true);
+  } else {
+    criarExercicio("Deletando moradores", false);
+  }
 
+  if (continuarExercicio) {
+    btnContinuar.classList.remove("invisivel");
+  }
   modalCapitulo.showModal();
 });
 capituloCinco.addEventListener("click", () => {
+  let continuarExercicio = false;
   const titulo = document.getElementById("titulo-modal");
   titulo.textContent = "Capítulo 5";
   //criando exercícios
-  criarExercicio("Aprendendo consultas");
-  criarExercicio("Encontrando moradores");
-  criarExercicio("Encontrando o vampiro");
+  if(save[0]=='ca5-ex1'){
+    criarExercicio("Aprendendo consultas",true);
+  }else{
+    criarExercicio("Aprendendo consultas",false);
+  }
+  if(save[0]=='ca5-ex2'){
+  criarExercicio("Encontrando moradores",true);
+  }else{
+    criarExercicio("Encontrando moradores",false);
+  }
+  if(save[0]=='ca5-ex2'){
+    criarExercicio("Encontrando o vampiro",true);
+  }else{
+    criarExercicio("Encontrando o vampiro",false);
+  }
+
+  if (continuarExercicio) {
+    btnContinuar.classList.remove("invisivel");
+  }
 
   modalCapitulo.showModal();
 });
