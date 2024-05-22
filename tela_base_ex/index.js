@@ -5,6 +5,7 @@ const divBlocos = document.getElementById("div-blocos");
 const save = JSON.parse(localStorage.getItem("save"));
 const exercicioAtual = JSON.parse(localStorage.getItem("exAtual"));
 const palavras = document.getElementsByClassName("bloco");
+selecionadas = [];
 
 switch (save[0]) {
   //Case referente ao primeiro exercício do primeiro capitulo
@@ -123,6 +124,7 @@ function arrastarBloco() {
     const palavraArrastada = document.querySelector(".bloco.dragging"); // Alteração aqui
     if (palavraArrastada) {
       terminal.appendChild(palavraArrastada);
+      selecionadas.push(palavraArrastada) //Alterei aqui ass: duda
     }
   });
 
@@ -143,4 +145,10 @@ function arrastarBloco() {
       divBlocos.appendChild(palavraArrastada);
     }
   });
+}
+
+//Alterei aqui ass: duda
+function apagar(){
+  const ultimaPalavra = selecionadas.pop();
+  terminal.removeChild(ultimaPalavra);
 }
