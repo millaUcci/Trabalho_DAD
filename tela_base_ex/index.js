@@ -7,13 +7,14 @@ const save = JSON.parse(localStorage.getItem("save"));
 const exercicioAtual = JSON.parse(localStorage.getItem("exAtual"));
 const btnSair = document.getElementById("btn-sair-exercicio");
 const palavras = document.getElementsByClassName("bloco");
-selecionadas = [];
 const btVerificar = document.getElementById("btn-verificar");
 const vampiro = document.getElementById("vampiro");
 const fala = document.getElementById("fala-vampiro");
 const divFala = document.getElementById("div-fala");
 const btnSairSalvar = document.getElementById("sair-e-salvar");
 const btnSairSemSalvar = document.getElementById("sair-sem-salvar");
+
+//separação 
 vampiro.addEventListener("click", () => {
   falaVampiro("Não me toque", 1500);
 });
@@ -207,6 +208,7 @@ btVerificar.addEventListener("click", () =>{
 
 //Alterei aqui ass: duda
 function apagar(){
-  const ultimaPalavra = selecionadas.pop();
-  terminal.removeChild(ultimaPalavra);
+  while(terminal.firstChild){
+    terminal.removeChild(terminal.firstChild)
+  }
 }
