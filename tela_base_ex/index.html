@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="/assets/exercício.png" type="image/x-icon">
     <script src="index.js" defer></script>
     <title></title>
   </head>
@@ -35,10 +36,16 @@
     </div>
     <button id="btn-sair-exercicio" class="botoes-exercicios"><img class="botoes-terminal" src="/assets/sair.png" alt="" title="Botão para sair deste exercício"></button>
     <button id="btn-proximo-ex" class="botoes-exercicios invisivel"><img class="botoes-terminal" src="/assets/proximo_ex.png" alt="" title="Botão para ir para o próximo exercício"></button>
-    <img id="vampiro" src="/assets/vampiro.png" alt="Um vampiro" />
+    <img id="vampiro" src="/assets/vampiro.png" alt="Um vampiro" title="Este é o Klaus (é melhor não tocar nele)"/>
+    <div id="div-fala" class="invisivel"><p id="fala-vampiro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, corporis.</p></div>
     <dialog class="modal">
       <h1>Caderno de cunsulta</h1>
       <p></p>
+    </dialog>
+    <dialog id="modal-sair-exercicio" class="modal">
+      <h1></h1>
+      <button id="sair-e-salvar" class="btn-modal">Sair e salvar</button>
+      <button id="sair-sem-salvar" class="btn-modal">Sair sem salvar</button>
     </dialog>
   </body>
 </html>

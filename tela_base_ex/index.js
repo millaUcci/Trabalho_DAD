@@ -2,15 +2,44 @@ const tituloPagina = document.getElementsByTagName("title")[0];
 const tituloEx = document.getElementById("titulo");
 const descExercicio = document.getElementById("desc-exercicio");
 const divBlocos = document.getElementById("div-blocos");
+const modalSair = document.getElementById("modal-sair-exercicio");
 const save = JSON.parse(localStorage.getItem("save"));
 const exercicioAtual = JSON.parse(localStorage.getItem("exAtual"));
+const btnSair = document.getElementById("btn-sair-exercicio");
 const palavras = document.getElementsByClassName("bloco");
 selecionadas = [];
 const btVerificar = document.getElementById("btn-verificar");
-
-switch (save[0]) {
+const vampiro = document.getElementById("vampiro");
+const fala = document.getElementById("fala-vampiro");
+const divFala = document.getElementById("div-fala");
+const btnSairSalvar = document.getElementById("sair-e-salvar");
+const btnSairSemSalvar = document.getElementById("sair-sem-salvar");
+vampiro.addEventListener("click", () => {
+  falaVampiro("Não me toque", 1500);
+});
+function sumirFala() {
+  divFala.classList.add("invisivel");
+}
+function falaVampiro(texto, tempo) {
+  fala.textContent = texto;
+  divFala.classList.remove("invisivel");
+  setTimeout(sumirFala, tempo);
+}
+btnSair.addEventListener("click", () => {
+  modalSair.children[0].textContent =
+    "Deseja sair e salvar o seu progresso? Seu ultimo save é: " + save;
+  modalSair.showModal();
+  btnSairSemSalvar.addEventListener("click", () => {
+    window.location.href = "../tela_capitulos/index.html";
+  });
+  btnSairSalvar.addEventListener("click", () => {
+    localStorage.setItem("save", JSON.stringify(exercicioAtual));
+    window.location.href = "../tela_capitulos/index.html";
+  });
+});
+switch (exercicioAtual) {
   //Case referente ao primeiro exercício do primeiro capitulo
-  case "ca1-ex":
+  case "ca1-ex1":
     personalizarExercicio(
       "Para começarmos é preciso criar a cidade onde os moradores ficaram. Usaremos o comando CREATE juntamente com a indicação de qual objeto do banco de dados será criado, que neste caso será um DATABASE.",
       "Monte abaixo o comando para criar a cidade com o nome “VampCity ",
@@ -28,7 +57,7 @@ switch (save[0]) {
     arrastarBloco();
 
     break;
-  case "ca1-ex":
+  case "ca1-ex2":
     personalizarExercicio(
       "Agora que a cidade foi criada precisamos criar duas tabelas, uma para guardar dados sobre os moradores da cidade e outra para guardar os dados sobre as casas dos moradores.\nAinda utilizaremos o comando CREATE porém agora utilizaremos o objeto do banco de dados TABLE, seguido dos campos da tabela e do tipo de cada campo.\nAlém de indicarmos o tipo dos campos, podemos também colocar verificações sendo algumas obrigatórias e outras não.",
       "Seguindo as instruções no seu caderno, monte o código de criãçao",
@@ -56,7 +85,7 @@ switch (save[0]) {
     criarBloco(");", true, "bloco-k");
     arrastarBloco();
     break;
-  case "ca1-ex1":
+  case "ca1-ex3":
     personalizarExercicio(
       "Ainda usando os conhecimentos adquiridos no exercício anterior, crie a tabela de casas a partir das colunas dadas a você no caderno. Decida você mesmo o tipo e as verificações dos outros três campos. (dica: todos os campos são obrigatórios, mas nem todos são únicos)",
       "Monte o comando abaixo",
@@ -76,7 +105,11 @@ switch (save[0]) {
     criarBloco("boolean,", false, "");
     criarBloco("integer,", true, "bloco-g");
     criarBloco("rua", true, "bloco-h");
-    arrastarBloco()
+    arrastarBloco();
+    break;
+  case "ca2-ex1":
+    personalizarExercicio("teste ca2", "hbvihawb fvhiabwf", "jcaidvniadnvij");
+    criarBloco("ivjwidfnoj", false, "");
     break;
 }
 
