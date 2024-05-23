@@ -1,5 +1,6 @@
 const tituloPagina = document.getElementsByTagName("title")[0];
 const tituloEx = document.getElementById("titulo");
+const ultimoSave = document.getElementById("ultimo-save");
 const descExercicio = document.getElementById("desc-exercicio");
 const divBlocos = document.getElementById("div-blocos");
 const modalSair = document.getElementById("modal-sair-exercicio");
@@ -14,6 +15,8 @@ const fala = document.getElementById("fala-vampiro");
 const divFala = document.getElementById("div-fala");
 const btnSairSalvar = document.getElementById("sair-e-salvar");
 const btnSairSemSalvar = document.getElementById("sair-sem-salvar");
+
+ultimoSave.textContent = "Ultime save: " + save;
 vampiro.addEventListener("click", () => {
   falaVampiro("Não me toque", 1500);
 });
