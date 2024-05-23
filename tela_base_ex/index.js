@@ -4,6 +4,7 @@ const descExercicio = document.getElementById("desc-exercicio");
 const divBlocos = document.getElementById("div-blocos");
 const save = JSON.parse(localStorage.getItem("save"));
 const palavras = document.getElementsByClassName("bloco");
+const btVerificar = document.getElementById("btn-verificar");
 
 switch (save[0]) {
   //Case referente ao primeiro exercício do primeiro capitulo
@@ -82,3 +83,15 @@ function arrastarBloco() {
     }
   });
 }
+
+btVerificar.addEventListener("click", () =>{
+  const resultado = terminal.children;
+  if (resultado.length > 0){
+    let blocoA = resultado[0].id;
+    console.log(blocoA);
+  } else{
+    window.alert("É necessário adicionar ao menos um bloco!")
+  }
+  
+  // window.alert(resultado.textContent);
+});
