@@ -25,11 +25,11 @@
 }
 #info {
   top: 3.5rem;
-  left: 0.5rem;
+  
 }
 #config {
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 6.5rem;
+  left: 0.5rem;
 }
 button {
   font-family: "Inter";
@@ -56,14 +56,17 @@ button:active {
 .botoes-exercicios{
   position: absolute;
   font-size: medium;
-  width: 7rem;
+  width: 4.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #btn-sair-exercicio{
-  right: 4rem;
-  bottom:4rem;
+  right: 2rem;
+  bottom:5rem;
 }
 #btn-proximo-ex{
-  right: 4rem;
+  right: 2rem;
   bottom:2rem;
 }
 body {
@@ -94,7 +97,7 @@ body {
 #div-blocos {
   text-align: center;
   margin: 0.4rem;
-  width: 25rem;
+  width: 37rem;
   height: 10rem;
   padding: 0.5rem;
   position: relative;
@@ -102,13 +105,17 @@ body {
 }
 .bloco {
   color: rgb(22, 20, 25);
+  font-size: medium;
   background-color: rgb(216, 219, 221);
   width: fit-content;
   padding: 0.3rem 0.5rem;
   border-radius: 0.2rem;
-  margin: 0.4rem;
+  margin: 0.2rem;
   display: inline-block;
   font-weight: bold;
+}
+.bloco:hover{
+  background-color: rgb(174, 175, 176);
 }
 #div-texto {
   width: 35rem;
@@ -118,16 +125,21 @@ body {
   padding: 0.5rem 1.5rem;
 }
 #desc-exercicio {
+  font-size: small;
   text-align: center;
   position: relative;
+  top:0rem;
   right: 1.7rem;
   margin: 0rem;
   padding: 0rem;
 }
 #titulo {
+  font-size: x-large;
+  text-align: center;
   position: relative;
   right: 1.7rem;
   margin: 0rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 #principal {
@@ -138,7 +150,7 @@ body {
   height: 27rem;
   width: 40rem;
   position: absolute;
-  top: 4rem;
+  top: 3rem;
   right: 3rem;
   padding: 0.4rem;
 }
@@ -163,7 +175,7 @@ body {
   justify-content: center;
 }
 .botoes-terminal {
-  width: 50%;
+  width: 40%;
 }
 .modal {
   border-radius: 1rem;
