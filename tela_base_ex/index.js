@@ -7,6 +7,8 @@ const save = JSON.parse(localStorage.getItem("save"));
 const exercicioAtual = JSON.parse(localStorage.getItem("exAtual"));
 const btnSair = document.getElementById("btn-sair-exercicio");
 const palavras = document.getElementsByClassName("bloco");
+selecionadas = [];
+const btVerificar = document.getElementById("btn-verificar");
 const vampiro = document.getElementById("vampiro");
 const fala = document.getElementById("fala-vampiro");
 const divFala = document.getElementById("div-fala");
@@ -156,6 +158,7 @@ function arrastarBloco() {
     const palavraArrastada = document.querySelector(".bloco.dragging"); // Alteração aqui
     if (palavraArrastada) {
       terminal.appendChild(palavraArrastada);
+      selecionadas.push(palavraArrastada) //Alterei aqui ass: duda
     }
   });
 
@@ -176,4 +179,34 @@ function arrastarBloco() {
       divBlocos.appendChild(palavraArrastada);
     }
   });
+}
+
+btVerificar.addEventListener("click", () =>{
+  const resultado = terminal.children;
+  if (resultado.length > 0){
+    let blocoA = resultado[0].id;
+    console.log(blocoA);
+  } else{
+    window.alert("É necessário adicionar ao menos um bloco!")
+  }
+  
+  // window.alert(resultado.textContent);
+});
+
+btVerificar.addEventListener("click", () =>{
+  const resultado = terminal.children;
+  if (resultado.length > 0){
+    let blocoA = resultado[0].id;
+    console.log(blocoA);
+  } else{
+    window.alert("É necessário adicionar ao menos um bloco!")
+  }
+  
+  // window.alert(resultado.textContent);
+});
+
+//Alterei aqui ass: duda
+function apagar(){
+  const ultimaPalavra = selecionadas.pop();
+  terminal.removeChild(ultimaPalavra);
 }
