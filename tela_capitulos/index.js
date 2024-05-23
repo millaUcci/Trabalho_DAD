@@ -17,7 +17,7 @@ const divEx = document.getElementById("div-exercicios");
 const modalConfig = document.getElementById("modal-config");
 const btnCreditos = document.getElementById("btn-creditos");
 
-ultimoSave.textContent = "Ultime save: " + save[0];
+ultimoSave.textContent = "Ultime save: " + save;
 
 config.addEventListener("click", () => {
   modalConfig.showModal();
@@ -32,29 +32,42 @@ capituloUm.addEventListener("click", () => {
   const titulo = document.getElementById("titulo-modal");
   titulo.textContent = "Capítulo 1";
   //criando exercícios
-  if (save[0] == "ca1-ex1") {
+  if (save == "ca1-ex1") {
     criarExercicio("Criar database", true);
     continuarExercicio = true;
   } else {
     criarExercicio("Criar database", false);
+    continuarExercicio=false
   }
 
-  if (save[0] == "ca1-ex2") {
+  if (save == "ca1-ex2") {
     criarExercicio("Criar tabela moradores", true);
     continuarExercicio = true;
   } else {
     criarExercicio("Criar tabela moradores", false);
+    continuarExercicio=false
   }
 
-  if (save[0] == "ca1-ex3") {
+  if (save == "ca1-ex3") {
     criarExercicio("Criar tabela casas", true);
     continuarExercicio = true;
   } else {
     criarExercicio("Criar tabela casas", false);
+    continuarExercicio=false
   }
   if (continuarExercicio) {
     btnContinuar.classList.remove("invisivel");
+    btnContinuar.addEventListener("click", () => {
+      localStorage.setItem("exAtual", JSON.stringify(save));
+      window.location.href = "../tela_base_ex/index.html";
+    });
+  }else{
+    btnContinuar.classList.add("invisivel");
   }
+  btnIniciar.addEventListener('click',()=>{
+    localStorage.setItem("exAtual", JSON.stringify("ca1-ex1"));
+      window.location.href = "../tela_base_ex/index.html";
+  })
 
   modalCapitulo.showModal();
 });
@@ -64,14 +77,26 @@ capituloDois.addEventListener("click", () => {
   const titulo = document.getElementById("titulo-modal");
   titulo.textContent = "Capítulo 2";
   //criando exercícios
-  if (save[0] == "ca2-ex1") {
+  if (save == "ca2-ex1") {
     criarExercicio("Alterando a tabela moradores", true);
+    continuarExercicio=true
   } else {
     criarExercicio("Alterando a tabela moradores", false);
+    continuarExercicio=false
   }
   if (continuarExercicio) {
     btnContinuar.classList.remove("invisivel");
+    btnContinuar.addEventListener("click", () => {
+      localStorage.setItem("exAtual", JSON.stringify(save));
+      window.location.href = "../tela_base_ex/index.html";
+    });
+  }else{
+    btnContinuar.classList.add("invisivel");
   }
+  btnIniciar.addEventListener('click',()=>{
+    localStorage.setItem("exAtual", JSON.stringify("ca2-ex1"));
+      window.location.href = "../tela_base_ex/index.html";
+  })
 
   modalCapitulo.showModal();
 });
@@ -80,20 +105,34 @@ capituloTres.addEventListener("click", () => {
   const titulo = document.getElementById("titulo-modal");
   titulo.textContent = "Capítulo 3";
   //criando exercícios
-  if (save[0] == "ca3-ex1") {
+  if (save == "ca3-ex1") {
     criarExercicio("Inserindo dados na tabela moradores", true);
+    continuarExercicio=true
   } else {
     criarExercicio("Inserindo dados na tabela moradores", false);
+    continuarExercicio=false
   }
-  if (save[0] == "ca3-ex2") {
+  if (save == "ca3-ex2") {
     criarExercicio("Inserindo dados na tabela casas", true);
+    continuarExercicio=true
   } else {
     criarExercicio("Inserindo dados na tabela casas", false);
+    continuarExercicio=false
   }
 
   if (continuarExercicio) {
     btnContinuar.classList.remove("invisivel");
+    btnContinuar.addEventListener("click", () => {
+      localStorage.setItem("exAtual", JSON.stringify(save));
+      window.location.href = "../tela_base_ex/index.html";
+    });
+  }else{
+    btnContinuar.classList.add("invisivel");
   }
+  btnIniciar.addEventListener('click',()=>{
+    localStorage.setItem("exAtual", JSON.stringify("ca3-ex1"));
+      window.location.href = "../tela_base_ex/index.html";
+  })
 
   modalCapitulo.showModal();
 });
@@ -102,15 +141,27 @@ capituloQuatro.addEventListener("click", () => {
   const titulo = document.getElementById("titulo-modal");
   titulo.textContent = "Capítulo 4";
   //criando exercícios
-  if (save[0] == "ca4-ex1") {
+  if (save == "ca4-ex1") {
     criarExercicio("Deletando moradores", true);
+    continuarExercicio=true
   } else {
     criarExercicio("Deletando moradores", false);
+    continuarExercicio=false
   }
 
   if (continuarExercicio) {
     btnContinuar.classList.remove("invisivel");
+    btnContinuar.addEventListener("click", () => {
+      localStorage.setItem("exAtual", JSON.stringify(save));
+      window.location.href = "../tela_base_ex/index.html";
+    });
+  }else{
+    btnContinuar.classList.add("invisivel");
   }
+  btnIniciar.addEventListener('click',()=>{
+    localStorage.setItem("exAtual", JSON.stringify("ca4-ex1"));
+      window.location.href = "../tela_base_ex/index.html";
+  })
   modalCapitulo.showModal();
 });
 capituloCinco.addEventListener("click", () => {
@@ -118,25 +169,41 @@ capituloCinco.addEventListener("click", () => {
   const titulo = document.getElementById("titulo-modal");
   titulo.textContent = "Capítulo 5";
   //criando exercícios
-  if(save[0]=='ca5-ex1'){
-    criarExercicio("Aprendendo consultas",true);
-  }else{
-    criarExercicio("Aprendendo consultas",false);
+  if (save == "ca5-ex1") {
+    criarExercicio("Aprendendo consultas", true);
+    continuarExercicio=true
+  } else {
+    criarExercicio("Aprendendo consultas", false);
+    continuarExercicio=false
   }
-  if(save[0]=='ca5-ex2'){
-  criarExercicio("Encontrando moradores",true);
-  }else{
-    criarExercicio("Encontrando moradores",false);
+  if (save == "ca5-ex2") {
+    criarExercicio("Encontrando moradores", true);
+    continuarExercicio=true
+  } else {
+    criarExercicio("Encontrando moradores", false);
+    continuarExercicio=false
   }
-  if(save[0]=='ca5-ex2'){
-    criarExercicio("Encontrando o vampiro",true);
-  }else{
-    criarExercicio("Encontrando o vampiro",false);
+  if (save == "ca5-ex2") {
+    criarExercicio("Encontrando o vampiro", true);
+    continuarExercicio=true
+  } else {
+    criarExercicio("Encontrando o vampiro", false);
+    continuarExercicio=false
   }
 
   if (continuarExercicio) {
     btnContinuar.classList.remove("invisivel");
+    btnContinuar.addEventListener("click", () => {
+      localStorage.setItem("exAtual", JSON.stringify(save));
+      window.location.href = "../tela_base_ex/index.html";
+    });
+  }else{
+    btnContinuar.classList.add("invisivel");
   }
+  btnIniciar.addEventListener('click',()=>{
+    localStorage.setItem("exAtual", JSON.stringify("ca5-ex1"));
+      window.location.href = "../tela_base_ex/index.html";
+  })
 
   modalCapitulo.showModal();
 });

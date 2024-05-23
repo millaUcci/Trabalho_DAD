@@ -13,7 +13,7 @@ body {
   text-align: center;
 }
 #div-livro {
-  margin-top: 4rem;
+  margin-top: .8rem;
   margin-left: auto;
   margin-right: 0rem;
   background-color: rgb(92, 67, 47);
@@ -106,8 +106,8 @@ button:active{
   margin: .5rem;
   cursor: pointer;
   position: absolute;
-  top: .5rem;
-  right: .5rem;
+  top: 3.5rem;
+  left: 0.5rem;
 }
 #config:hover{
   filter:invert(60%)
