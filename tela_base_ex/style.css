@@ -27,6 +27,14 @@
   top: 3.5rem;
   
 }
+#fechar-modal{
+  width: 1.5rem;
+  position: absolute;
+  left:1.5rem;
+  top:1rem;
+  filter: invert(20%);
+  cursor: pointer;
+}
 #config {
   top: 6.5rem;
   left: 0.5rem;
