@@ -210,7 +210,9 @@ btVerificar.addEventListener("click", () =>{
 
 //Alterei aqui ass: duda
 function apagar(){
-  while(terminal.firstChild){
-    terminal.removeChild(terminal.firstChild)
+  if(terminal.lastChild){
+    blocoAntigo = terminal.lastChild
+    terminal.removeChild(blocoAntigo)
+    divBlocos.appendChild(blocoAntigo)
   }
 }
