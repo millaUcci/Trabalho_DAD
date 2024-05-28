@@ -19,13 +19,9 @@
 .botoes-header:active {
   filter: invert(30%);
 }
-#capitulos {
+#info {
   top: 0.5rem;
   left: 0.5rem;
-}
-#info {
-  top: 3.5rem;
-  
 }
 #fechar-modal{
   width: 1.5rem;
@@ -36,7 +32,7 @@
   cursor: pointer;
 }
 #config {
-  top: 6.5rem;
+  top: 3.5rem;
   left: 0.5rem;
 }
 button {
