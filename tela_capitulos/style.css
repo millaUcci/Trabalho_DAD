@@ -239,7 +239,7 @@ background-color: rgb(22, 20, 25,.5);
 }
 #div-config{
     margin: auto;
-    width: 20rem;
+    width: 15rem;
     height: 4rem;
     display: flex;
     flex-direction: row;

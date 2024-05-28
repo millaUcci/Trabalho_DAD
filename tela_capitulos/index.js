@@ -37,7 +37,6 @@ capituloUm.addEventListener("click", () => {
     continuarExercicio = true;
   } else {
     criarExercicio("Criar database", false);
-    continuarExercicio=false
   }
 
   if (save == "ca1-ex2") {
@@ -45,7 +44,6 @@ capituloUm.addEventListener("click", () => {
     continuarExercicio = true;
   } else {
     criarExercicio("Criar tabela moradores", false);
-    continuarExercicio=false
   }
 
   if (save == "ca1-ex3") {
@@ -53,7 +51,6 @@ capituloUm.addEventListener("click", () => {
     continuarExercicio = true;
   } else {
     criarExercicio("Criar tabela casas", false);
-    continuarExercicio=false
   }
   if (continuarExercicio) {
     btnContinuar.classList.remove("invisivel");
@@ -61,13 +58,13 @@ capituloUm.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify(save));
       window.location.href = "../tela_base_ex/index.html";
     });
-  }else{
+  } else {
     btnContinuar.classList.add("invisivel");
   }
-  btnIniciar.addEventListener('click',()=>{
+  btnIniciar.addEventListener("click", () => {
     localStorage.setItem("exAtual", JSON.stringify("ca1-ex1"));
-      window.location.href = "../tela_base_ex/index.html";
-  })
+    window.location.href = "../tela_base_ex/index.html";
+  });
 
   modalCapitulo.showModal();
 });
@@ -79,10 +76,9 @@ capituloDois.addEventListener("click", () => {
   //criando exercícios
   if (save == "ca2-ex1") {
     criarExercicio("Alterando a tabela moradores", true);
-    continuarExercicio=true
+    continuarExercicio = true;
   } else {
     criarExercicio("Alterando a tabela moradores", false);
-    continuarExercicio=false
   }
   if (continuarExercicio) {
     btnContinuar.classList.remove("invisivel");
@@ -90,13 +86,13 @@ capituloDois.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify(save));
       window.location.href = "../tela_base_ex/index.html";
     });
-  }else{
+  } else {
     btnContinuar.classList.add("invisivel");
   }
-  btnIniciar.addEventListener('click',()=>{
+  btnIniciar.addEventListener("click", () => {
     localStorage.setItem("exAtual", JSON.stringify("ca2-ex1"));
-      window.location.href = "../tela_base_ex/index.html";
-  })
+    window.location.href = "../tela_base_ex/index.html";
+  });
 
   modalCapitulo.showModal();
 });
@@ -107,17 +103,15 @@ capituloTres.addEventListener("click", () => {
   //criando exercícios
   if (save == "ca3-ex1") {
     criarExercicio("Inserindo dados na tabela moradores", true);
-    continuarExercicio=true
+    continuarExercicio = true;
   } else {
     criarExercicio("Inserindo dados na tabela moradores", false);
-    continuarExercicio=false
   }
   if (save == "ca3-ex2") {
     criarExercicio("Inserindo dados na tabela casas", true);
-    continuarExercicio=true
+    continuarExercicio = true;
   } else {
     criarExercicio("Inserindo dados na tabela casas", false);
-    continuarExercicio=false
   }
 
   if (continuarExercicio) {
@@ -126,13 +120,13 @@ capituloTres.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify(save));
       window.location.href = "../tela_base_ex/index.html";
     });
-  }else{
+  } else {
     btnContinuar.classList.add("invisivel");
   }
-  btnIniciar.addEventListener('click',()=>{
+  btnIniciar.addEventListener("click", () => {
     localStorage.setItem("exAtual", JSON.stringify("ca3-ex1"));
-      window.location.href = "../tela_base_ex/index.html";
-  })
+    window.location.href = "../tela_base_ex/index.html";
+  });
 
   modalCapitulo.showModal();
 });
@@ -143,10 +137,9 @@ capituloQuatro.addEventListener("click", () => {
   //criando exercícios
   if (save == "ca4-ex1") {
     criarExercicio("Deletando moradores", true);
-    continuarExercicio=true
+    continuarExercicio = true;
   } else {
     criarExercicio("Deletando moradores", false);
-    continuarExercicio=false
   }
 
   if (continuarExercicio) {
@@ -155,13 +148,13 @@ capituloQuatro.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify(save));
       window.location.href = "../tela_base_ex/index.html";
     });
-  }else{
+  } else {
     btnContinuar.classList.add("invisivel");
   }
-  btnIniciar.addEventListener('click',()=>{
+  btnIniciar.addEventListener("click", () => {
     localStorage.setItem("exAtual", JSON.stringify("ca4-ex1"));
-      window.location.href = "../tela_base_ex/index.html";
-  })
+    window.location.href = "../tela_base_ex/index.html";
+  });
   modalCapitulo.showModal();
 });
 capituloCinco.addEventListener("click", () => {
@@ -171,24 +164,21 @@ capituloCinco.addEventListener("click", () => {
   //criando exercícios
   if (save == "ca5-ex1") {
     criarExercicio("Aprendendo consultas", true);
-    continuarExercicio=true
+    continuarExercicio = true;
   } else {
     criarExercicio("Aprendendo consultas", false);
-    continuarExercicio=false
   }
   if (save == "ca5-ex2") {
     criarExercicio("Encontrando moradores", true);
-    continuarExercicio=true
+    continuarExercicio = true;
   } else {
     criarExercicio("Encontrando moradores", false);
-    continuarExercicio=false
   }
   if (save == "ca5-ex2") {
     criarExercicio("Encontrando o vampiro", true);
-    continuarExercicio=true
+    continuarExercicio = true;
   } else {
     criarExercicio("Encontrando o vampiro", false);
-    continuarExercicio=false
   }
 
   if (continuarExercicio) {
@@ -197,13 +187,13 @@ capituloCinco.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify(save));
       window.location.href = "../tela_base_ex/index.html";
     });
-  }else{
+  } else {
     btnContinuar.classList.add("invisivel");
   }
-  btnIniciar.addEventListener('click',()=>{
+  btnIniciar.addEventListener("click", () => {
     localStorage.setItem("exAtual", JSON.stringify("ca5-ex1"));
-      window.location.href = "../tela_base_ex/index.html";
-  })
+    window.location.href = "../tela_base_ex/index.html";
+  });
 
   modalCapitulo.showModal();
 });
