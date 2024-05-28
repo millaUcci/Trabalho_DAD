@@ -187,7 +187,7 @@ body {
   color: rgb(22, 20, 25);
   text-align: center;
   width: 18rem;
-  padding: 1rem 3rem 2rem;
+  padding: 1rem 2.5rem 2rem;
   border: 0.3rem solid rgb(53, 47, 58);
 }
 .modal::backdrop {
@@ -254,4 +254,38 @@ body {
   text-justify: auto;
   font-family: 'Inter;';
   color: rgb(52, 52, 52);
+}
+.titulo {
+  position: relative;
+  font-size: large;
+  font-weight: bold;
+  width: 4rem;
+  height: 2.5rem;
+  padding: 0.3rem;
+  border-top-right-radius: 0.4rem;
+  border-top-left-radius: 0.4rem;
+  cursor: pointer;
+  z-index: 0;
+}
+.conteudo {
+  position: relative;
+  top: -1.5rem;
+  border-radius: 0.4rem;
+  padding: 0.7rem 0.5rem 0.5rem 0.5rem;
+  height: 15rem;
+  z-index: 1;
+}
+.invisivel {
+  display: none;
+}
+#titulos-caderno {
+  display: flex;
+  justify-content: space-between;
+}
+.selecionado{
+  background-color: rgb(177, 177, 177);
+}
+.sem-selecao{
+  border: solid .1rem rgb(90, 89, 89);
+  background-color: rgb(110, 110, 110);
 }

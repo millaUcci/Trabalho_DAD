@@ -4,19 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="/assets/exercício.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="/assets/exercício.png"
+      type="image/x-icon"
+    />
     <script src="index.js" defer></script>
     <title></title>
   </head>
   <body>
     <header>
-      <img src="/assets/capitulos.png" alt="" id="info" class="botoes-header"/>
-      <img src="/assets/config.png" alt="" id="config" class="botoes-header"/>
+      <img src="/assets/capitulos.png" alt="" id="info" class="botoes-header" />
+      <img src="/assets/config.png" alt="" id="config" class="botoes-header" />
     </header>
     <div id="principal">
       <div id="div-texto">
-        <p id="desc-exercicio">
-        </p>
+        <p id="desc-exercicio"></p>
       </div>
       <h1 id="titulo"></h1>
       <div id="div-digitar">
@@ -30,16 +33,53 @@
           </button>
         </div>
       </div>
-      <div id="div-blocos">
-      </div>
+      <div id="div-blocos"></div>
     </div>
-    <button id="btn-sair-exercicio" class="botoes-exercicios"><img class="botoes-terminal" src="/assets/sair.png" alt="" title="Botão para sair deste exercício"></button>
-    <button id="btn-proximo-ex" class="botoes-exercicios invisivel"><img class="botoes-terminal" src="/assets/proximo_ex.png" alt="" title="Botão para ir para o próximo exercício"></button>
-    <img id="vampiro" src="/assets/vampiro.png" alt="Um vampiro" title="Este é o Klaus (é melhor não tocar nele)"/>
-    <div id="div-fala" class="invisivel"><p id="fala-vampiro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, corporis.</p></div>
-    <dialog class="modal">
+    <button id="btn-sair-exercicio" class="botoes-exercicios">
+      <img
+        class="botoes-terminal"
+        src="/assets/sair.png"
+        alt=""
+        title="Botão para sair deste exercício"
+      />
+    </button>
+    <button id="btn-proximo-ex" class="botoes-exercicios invisivel">
+      <img
+        class="botoes-terminal"
+        src="/assets/proximo_ex.png"
+        alt=""
+        title="Botão para ir para o próximo exercício"
+      />
+    </button>
+    <img
+      id="vampiro"
+      src="/assets/vampiro.png"
+      alt="Um vampiro"
+      title="Este é o Klaus (é melhor não tocar nele)"
+    />
+    <div id="div-fala" class="invisivel">
+      <p id="fala-vampiro">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
+        corporis.
+      </p>
+    </div>
+    <dialog id="modal-caderno" class="modal">
       <h1>Caderno de cunsulta</h1>
-      
+      <div id="titulos-caderno">
+        <div id="conteudo-sql" class="titulo">Criação</div>
+        <div id="conteudo-create" class="titulo sem-selecao">Criação</div>
+        <div id="conteudo-alter" class="titulo sem-selecao">Criação</div>
+      </div>
+
+      <div id="conteudo" class="conteudo">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+        soluta nobis ea deserunt ipsam et sunt excepturi repellat veritatis
+        ducimus qui nemo optio tempore praesentium doloribus officiis velit
+        quod, omnis corrupti aspernatur explicabo saepe eveniet. A, earum
+        quibusdam? Ullam aspernatur reprehenderit nisi, illum temporibus
+        consectetur?
+      </div>
+      <button id="fechar-modal-caderno">Fechar</button>
     </dialog>
     <dialog id="modal-sair-exercicio" class="modal">
       <h1></h1>
@@ -56,8 +96,18 @@
       <div id="div-config">
         <div id="ultimo-save"></div>
         <div id="div-botoes-modal">
-          <button class="btn-modal" title="Você perdera o seu progresso e irá começar do primeiro capitulo do primeiro exercício">Recomeçar</button>
-          <button class="btn-modal" title="Você perdera todo o seu progresso, inclusive o modo de aprendizado(história, livre)">Resetar</button>
+          <button
+            class="btn-modal"
+            title="Você perdera o seu progresso e irá começar do primeiro capitulo do primeiro exercício"
+          >
+            Recomeçar
+          </button>
+          <button
+            class="btn-modal"
+            title="Você perdera todo o seu progresso, inclusive o modo de aprendizado(história, livre)"
+          >
+            Resetar
+          </button>
         </div>
       </div>
       <button id="btn-creditos" class="btn-modal">Ver créditos</button>
