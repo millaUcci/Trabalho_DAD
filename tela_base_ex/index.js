@@ -15,8 +15,16 @@ const divFala = document.getElementById("div-fala");
 const btnSairSalvar = document.getElementById("sair-e-salvar");
 const btnSairSemSalvar = document.getElementById("sair-sem-salvar");
 
-//separação 
+//modal caderno
+const conteudo = document.getElementById("conteudo")
+const tituloSql = document.getElementById('conteudo-sql')
+const tituloCreate = document.getElementById('conteudo-create')
+const tituloAlter = document.getElementById('conteudo-alter')
+
+//Pegando ultimo save 
 ultimoSave.textContent = "Ultime save: " + save;
+
+//Fala vampiro
 vampiro.addEventListener("click", () => {
   falaVampiro("Não me toque", 1500);
 });
@@ -28,6 +36,8 @@ function falaVampiro(texto, tempo) {
   divFala.classList.remove("invisivel");
   setTimeout(sumirFala, tempo);
 }
+
+//modal sair exercício
 btnSair.addEventListener("click", () => {
   modalSair.children[0].textContent =
     "Deseja sair e salvar o seu progresso? Seu ultimo save é: " + save;
@@ -40,8 +50,9 @@ btnSair.addEventListener("click", () => {
     window.location.href = "../tela_capitulos/index.html";
   });
 });
+
+//Vendo o exercíco a
 switch (exercicioAtual) {
-  //Case referente ao primeiro exercício do primeiro capitulo
   case "ca1-ex1":
     personalizarExercicio(
       "Para começarmos é preciso criar a cidade onde os moradores ficaram. Usaremos o comando CREATE juntamente com a indicação de qual objeto do banco de dados será criado, que neste caso será um DATABASE.",
@@ -116,6 +127,28 @@ switch (exercicioAtual) {
     break;
 }
 
+conteudo.classList.add("selecionado")
+tituloSql.classList.add("selecionado")
+tituloSql.addEventListener('click',()=>{
+  tituloSql.classList.add("selecionado")
+  tituloSql.classList.remove("sem-selecao")
+
+    tituloCreate.classList.remove("selecionado")
+    tituloAlter.classList.remove("selecionado")
+    tituloUpdate.classList.remove("selecionado")
+    tituloCreate.classList.add("sem-selecao")
+    tituloAlter.classList.add("sem-selecao")
+    tituloUpdate.classList.add("sem-selecao")
+
+
+    conteudo.classList.add("selecionado")
+    // conteudo.classList.remove("verde")
+    // conteudo.classList.remove("rosa")
+    // conteudo.classList.remove("amarelo")
+    conteudo.textContent= "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque assumenda atque esse praesentium voluptatem consequuntur vero amet eaque? Aut animi quibusdam consequuntur nam consequatur sed illo nihil asperiores distinctio? Tempore magnam cumque blanditiis ea voluptate sed fuga natus aspernatur libero, voluptates itaque quas consequatur quasi rem iusto quaerat velit nostrum delectus consequuntur voluptatibus aliquid at perspiciatis facere. Quibusdam, voluptatem doloribus."
+})
+
+//funções
 function personalizarExercicio(desc, titulo, tituloPag) {
   descExercicio.textContent = desc;
   tituloEx.textContent = titulo;
