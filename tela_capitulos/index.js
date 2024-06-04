@@ -1,5 +1,6 @@
 const config = document.getElementById("config");
 const ultimoSave = document.getElementById("ultimo-save");
+const home = document.getElementById("home")
 const save = JSON.parse(localStorage.getItem("save"));
 
 const capituloUm = document.getElementById("capitulo-um");
@@ -25,6 +26,10 @@ config.addEventListener("click", () => {
 btnCreditos.addEventListener("click", () => {
   window.location.href = "../tela_creditos/index.html";
 });
+home.addEventListener("click", () => {
+  window.location.href = "../index.html";
+})
+
 
 //capitulo 1
 capituloUm.addEventListener("click", () => {
