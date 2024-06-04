@@ -16,12 +16,17 @@ const btnSairSalvar = document.getElementById("sair-e-salvar");
 const btnSairSemSalvar = document.getElementById("sair-sem-salvar");
 
 //modal caderno
-const conteudo = document.getElementById("conteudo")
-const tituloSql = document.getElementById('conteudo-sql')
-const tituloCreate = document.getElementById('conteudo-create')
-const tituloAlter = document.getElementById('conteudo-alter')
+const info = document.getElementById('info')
+const modalCaderno = document.getElementById("modal-caderno")
+const fecharModalCaderno = document.getElementById("fechar-modal-caderno")
+const conteudo = document.getElementById("conteudo");
+const tituloSql = document.getElementById("conteudo-sql");
+const tituloCreate = document.getElementById("conteudo-create");
+const tituloAlter = document.getElementById("conteudo-alter");
+const tituloUpdate = document.getElementById("conteudo-update");
+const tituloDelete = document.getElementById("conteudo-delete");
 
-//Pegando ultimo save 
+//Pegando ultimo save
 ultimoSave.textContent = "Ultime save: " + save;
 
 //Fala vampiro
@@ -127,26 +132,107 @@ switch (exercicioAtual) {
     break;
 }
 
-conteudo.classList.add("selecionado")
-tituloSql.classList.add("selecionado")
-tituloSql.addEventListener('click',()=>{
-  tituloSql.classList.add("selecionado")
-  tituloSql.classList.remove("sem-selecao")
-
-    tituloCreate.classList.remove("selecionado")
-    tituloAlter.classList.remove("selecionado")
-    tituloUpdate.classList.remove("selecionado")
-    tituloCreate.classList.add("sem-selecao")
-    tituloAlter.classList.add("sem-selecao")
-    tituloUpdate.classList.add("sem-selecao")
-
-
-    conteudo.classList.add("selecionado")
-    // conteudo.classList.remove("verde")
-    // conteudo.classList.remove("rosa")
-    // conteudo.classList.remove("amarelo")
-    conteudo.textContent= "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque assumenda atque esse praesentium voluptatem consequuntur vero amet eaque? Aut animi quibusdam consequuntur nam consequatur sed illo nihil asperiores distinctio? Tempore magnam cumque blanditiis ea voluptate sed fuga natus aspernatur libero, voluptates itaque quas consequatur quasi rem iusto quaerat velit nostrum delectus consequuntur voluptatibus aliquid at perspiciatis facere. Quibusdam, voluptatem doloribus."
+//fazendo abrir a modal do caderno de exercícios
+info.addEventListener("click",()=>{
+  modalCaderno.showModal()
+  fecharModalCaderno.addEventListener('click',()=>{
+    modalCaderno.closest()
+  })
 })
+
+//Preenchendo o conteudo do caderno de consultas
+conteudo.classList.add("selecionado");
+tituloSql.classList.add("selecionado");
+tituloSql.addEventListener("click", () => {
+  tituloSql.classList.add("selecionado");
+  tituloSql.classList.remove("sem-selecao");
+
+  tituloCreate.classList.remove("selecionado");
+  tituloAlter.classList.remove("selecionado");
+  tituloUpdate.classList.remove("selecionado");
+  tituloDelete.classList.remove("selecionado");
+
+  tituloCreate.classList.add("sem-selecao");
+  tituloAlter.classList.add("sem-selecao");
+  tituloUpdate.classList.add("sem-selecao");
+  tituloDelete.classList.add("sem-selecao");
+
+  conteudo.classList.add("selecionado");
+  conteudo.textContent =
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque assumenda atque esse praesentium voluptatem consequuntur vero amet eaque? Aut animi quibusdam conseq";
+});
+tituloCreate.addEventListener("click", () => {
+  tituloCreate.classList.add("selecionado");
+  tituloCreate.classList.remove("sem-selecao");
+
+  tituloSql.classList.remove("selecionado");
+  tituloAlter.classList.remove("selecionado");
+  tituloUpdate.classList.remove("selecionado");
+  tituloDelete.classList.remove("selecionado");
+
+  tituloSql.classList.add("sem-selecao");
+  tituloAlter.classList.add("sem-selecao");
+  tituloUpdate.classList.add("sem-selecao");
+  tituloDelete.classList.add("sem-selecao");
+
+  conteudo.classList.add("selecionado");
+  conteudo.textContent =
+    "Lorem ipsum dolor sit ";
+});
+tituloAlter.addEventListener("click", () => {
+  tituloAlter.classList.add("selecionado");
+  tituloAlter.classList.remove("sem-selecao");
+
+  tituloSql.classList.remove("selecionado");
+  tituloCreate.classList.remove("selecionado");
+  tituloUpdate.classList.remove("selecionado");
+  tituloDelete.classList.remove("selecionado");
+
+  tituloSql.classList.add("sem-selecao");
+  tituloCreate.classList.add("sem-selecao");
+  tituloUpdate.classList.add("sem-selecao");
+  tituloDelete.classList.add("sem-selecao");
+
+  conteudo.classList.add("selecionado");
+  conteudo.textContent =
+    "Doloremque assumenda atque esse praesentium voluptatem conse";
+});
+tituloUpdate.addEventListener("click", () => {
+  tituloUpdate.classList.add("selecionado");
+  tituloUpdate.classList.remove("sem-selecao");
+
+  tituloSql.classList.remove("selecionado");
+  tituloCreate.classList.remove("selecionado");
+  tituloAlter.classList.remove("selecionado");
+  tituloDelete.classList.remove("selecionado");
+
+  tituloSql.classList.add("sem-selecao");
+  tituloCreate.classList.add("sem-selecao");
+  tituloAlter.classList.add("sem-selecao");
+  tituloDelete.classList.add("sem-selecao");
+
+  conteudo.classList.add("selecionado");
+  conteudo.textContent =
+    "consectetur adipisicing elit.";
+});
+tituloDelete.addEventListener("click", () => {
+  tituloDelete.classList.add("selecionado");
+  tituloDelete.classList.remove("sem-selecao");
+
+  tituloSql.classList.remove("selecionado");
+  tituloCreate.classList.remove("selecionado");
+  tituloAlter.classList.remove("selecionado");
+  tituloUpdate.classList.remove("selecionado");
+
+  tituloSql.classList.add("sem-selecao");
+  tituloCreate.classList.add("sem-selecao");
+  tituloAlter.classList.add("sem-selecao");
+  tituloUpdate.classList.add("sem-selecao");
+
+  conteudo.classList.add("selecionado");
+  conteudo.textContent =
+    "met eaque? Aut animi quibusdam conseq";
+});
 
 //funções
 function personalizarExercicio(desc, titulo, tituloPag) {
@@ -194,7 +280,7 @@ function arrastarBloco() {
     const palavraArrastada = document.querySelector(".bloco.dragging"); // Alteração aqui
     if (palavraArrastada) {
       terminal.appendChild(palavraArrastada);
-      selecionadas.push(palavraArrastada) //Alterei aqui ass: duda
+      selecionadas.push(palavraArrastada); //Alterei aqui ass: duda
     }
   });
 
@@ -217,35 +303,35 @@ function arrastarBloco() {
   });
 }
 
-btVerificar.addEventListener("click", () =>{
+btVerificar.addEventListener("click", () => {
   const resultado = terminal.children;
-  if (resultado.length > 0){
+  if (resultado.length > 0) {
     let blocoA = resultado[0].id;
     console.log(blocoA);
-  } else{
-    window.alert("É necessário adicionar ao menos um bloco!")
+  } else {
+    window.alert("É necessário adicionar ao menos um bloco!");
   }
-  
+
   // window.alert(resultado.textContent);
 });
 
-btVerificar.addEventListener("click", () =>{
+btVerificar.addEventListener("click", () => {
   const resultado = terminal.children;
-  if (resultado.length > 0){
+  if (resultado.length > 0) {
     let blocoA = resultado[0].id;
     console.log(blocoA);
-  } else{
-    window.alert("É necessário adicionar ao menos um bloco!")
+  } else {
+    window.alert("É necessário adicionar ao menos um bloco!");
   }
-  
+
   // window.alert(resultado.textContent);
 });
 
 //Alterei aqui ass: duda
-function apagar(){
-  if(terminal.lastChild){
-    blocoAntigo = terminal.lastChild
-    terminal.removeChild(blocoAntigo)
-    divBlocos.appendChild(blocoAntigo)
+function apagar() {
+  if (terminal.lastChild) {
+    blocoAntigo = terminal.lastChild;
+    terminal.removeChild(blocoAntigo);
+    divBlocos.appendChild(blocoAntigo);
   }
 }
