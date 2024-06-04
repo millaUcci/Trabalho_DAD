@@ -7,6 +7,7 @@ const modalSair = document.getElementById("modal-sair-exercicio");
 const save = JSON.parse(localStorage.getItem("save"));
 const exercicioAtual = JSON.parse(localStorage.getItem("exAtual"));
 const btnSair = document.getElementById("btn-sair-exercicio");
+const btnProx = document.getElementById("btn-proximo-ex");
 const palavras = document.getElementsByClassName("bloco");
 const btVerificar = document.getElementById("btn-verificar");
 const vampiro = document.getElementById("vampiro");
@@ -14,6 +15,7 @@ const fala = document.getElementById("fala-vampiro");
 const divFala = document.getElementById("div-fala");
 const btnSairSalvar = document.getElementById("sair-e-salvar");
 const btnSairSemSalvar = document.getElementById("sair-sem-salvar");
+let qtBlocos = 0;
 
 //modal caderno
 const conteudo = document.getElementById("conteudo")
@@ -54,6 +56,7 @@ btnSair.addEventListener("click", () => {
 //Vendo o exercíco a
 switch (exercicioAtual) {
   case "ca1-ex1":
+    qtBlocos = 3;
     personalizarExercicio(
       "Para começarmos é preciso criar a cidade onde os moradores ficaram. Usaremos o comando CREATE juntamente com a indicação de qual objeto do banco de dados será criado, que neste caso será um DATABASE.",
       "Monte abaixo o comando para criar a cidade com o nome “VampCity ",
@@ -72,6 +75,7 @@ switch (exercicioAtual) {
 
     break;
   case "ca1-ex2":
+    qtBlocos = 11;
     personalizarExercicio(
       "Agora que a cidade foi criada precisamos criar duas tabelas, uma para guardar dados sobre os moradores da cidade e outra para guardar os dados sobre as casas dos moradores.\nAinda utilizaremos o comando CREATE porém agora utilizaremos o objeto do banco de dados TABLE, seguido dos campos da tabela e do tipo de cada campo.\nAlém de indicarmos o tipo dos campos, podemos também colocar verificações sendo algumas obrigatórias e outras não.",
       "Seguindo as instruções no seu caderno, monte o código de criãçao",
@@ -100,6 +104,7 @@ switch (exercicioAtual) {
     arrastarBloco();
     break;
   case "ca1-ex3":
+    qtBlocos = 10;
     personalizarExercicio(
       "Ainda usando os conhecimentos adquiridos no exercício anterior, crie a tabela de casas a partir das colunas dadas a você no caderno. Decida você mesmo o tipo e as verificações dos outros três campos. (dica: todos os campos são obrigatórios, mas nem todos são únicos)",
       "Monte o comando abaixo",
@@ -217,17 +222,50 @@ function arrastarBloco() {
   });
 }
 
-btVerificar.addEventListener("click", () =>{
-  const resultado = terminal.children;
-  if (resultado.length > 0){
-    let blocoA = resultado[0].id;
-    console.log(blocoA);
-  } else{
-    window.alert("É necessário adicionar ao menos um bloco!")
+function verificarAtividade() {
+  const blocos = terminal.children;
+  const blocosCorretos = [];
+
+  if(qtBlocos != blocos.length){
+    return false;
   }
-  
-  // window.alert(resultado.textContent);
-});
+
+  for (let i = 0; i < blocos.length; i++) {
+    if (blocos[i].id) {
+      blocosCorretos.push(blocos[i].id);
+    } else {
+      return false; // Se algum bloco não tem ID, a atividade está incorreta
+    }
+  }
+
+  // Verificando se os blocos estão em ordem alfabética
+  for (let i = 0; i < blocosCorretos.length - 1; i++) {
+    if (blocosCorretos[i].localeCompare(blocosCorretos[i + 1]) > 0) {
+      return false; 
+    }
+  }
+
+  return true;
+}
+
+function adicionarEventoVerificar() {
+  btVerificar.addEventListener("click", () => {
+    const resultado = terminal.children;
+    if (resultado.length > 0) {
+      if (verificarAtividade()) {
+        terminal.classList.remove("errado");
+        terminal.classList.add("certo");
+        btnProx.classList.remove("invisivel");
+      } else {
+        terminal.classList.remove("certo");
+        terminal.classList.add("errado");
+        btnProx.classList.add("invisivel");
+      }
+    } else {
+      window.alert("É necessário adicionar ao menos um bloco!")
+    }
+  });
+}
 
 btVerificar.addEventListener("click", () =>{
   const resultado = terminal.children;
@@ -240,6 +278,8 @@ btVerificar.addEventListener("click", () =>{
   
   // window.alert(resultado.textContent);
 });
+
+adicionarEventoVerificar();
 
 //Alterei aqui ass: duda
 function apagar(){
