@@ -32,17 +32,17 @@ const tituloDelete = document.getElementById("conteudo-delete");
 ultimoSave.textContent = "Ultime save: " + save;
 
 //Fala vampiro
-vampiro.addEventListener("click", () => {
-  falaVampiro("Não me toque", 1500);
-});
-function sumirFala() {
-  divFala.classList.add("invisivel");
-}
-function falaVampiro(texto, tempo) {
-  fala.textContent = texto;
-  divFala.classList.remove("invisivel");
-  setTimeout(sumirFala, tempo);
-}
+// vampiro.addEventListener("click", () => {
+//   falaVampiro("Não me toque", 1500);
+// });
+// function sumirFala() {
+//   divFala.classList.add("invisivel");
+// }
+// function falaVampiro(texto, tempo) {
+//   fala.textContent = texto;
+//   divFala.classList.remove("invisivel");
+//   setTimeout(sumirFala, tempo);
+// }
 
 //modal sair exercício
 btnSair.addEventListener("click", () => {
@@ -141,7 +141,7 @@ switch (exercicioAtual) {
 info.addEventListener("click",()=>{
   modalCaderno.showModal()
   fecharModalCaderno.addEventListener('click',()=>{
-    modalCaderno.closest()
+    modalCaderno.close()
   })
 })
 
