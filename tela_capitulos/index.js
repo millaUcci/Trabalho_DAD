@@ -174,18 +174,24 @@ capituloCinco.addEventListener("click", () => {
     criarExercicio("Aprendendo consultas", false);
   }
   if (save == "ca5-ex2") {
-    criarExercicio("Encontrando moradores", true);
+    criarExercicio("Ordenando moradores", true);
     continuarExercicio = true;
   } else {
-    criarExercicio("Encontrando moradores", false);
+    criarExercicio("Ordenando moradores", false);
   }
-  if (save == "ca5-ex2") {
-    criarExercicio("Encontrando o vampiro", true);
+  if (save == "ca5-ex3") {
+    criarExercicio("Pesquisas filtradas", true);
     continuarExercicio = true;
   } else {
-    criarExercicio("Encontrando o vampiro", false);
+    criarExercicio("Pesquisas filtradas", false);
   }
 
+  if (save == "ca5-ex4") {
+    criarExercicio("Mais pesquisas", true);
+    continuarExercicio = true;
+  } else {
+    criarExercicio("Mais pesquisas", false);
+  }
   if (continuarExercicio) {
     btnContinuar.classList.remove("invisivel");
     btnContinuar.addEventListener("click", () => {
@@ -212,6 +218,7 @@ function criarExercicio(titulo, exSalvo) {
   ex.classList.add("ex");
   if (exSalvo) {
     ex.classList.add("ex-salvo");
+    ex.setAttribute("title","Exercício onde você parou anteriormente")
   }
   ex.textContent = titulo;
   divEx.appendChild(ex);

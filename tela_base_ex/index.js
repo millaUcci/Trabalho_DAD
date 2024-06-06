@@ -18,9 +18,9 @@ const btnSairSemSalvar = document.getElementById("sair-sem-salvar");
 let qtBlocos = 0;
 
 //modal caderno
-const info = document.getElementById('info')
-const modalCaderno = document.getElementById("modal-caderno")
-const fecharModalCaderno = document.getElementById("fechar-modal-caderno")
+const info = document.getElementById("info");
+const modalCaderno = document.getElementById("modal-caderno");
+const fecharModalCaderno = document.getElementById("fechar-modal-caderno");
 const conteudo = document.getElementById("conteudo");
 const tituloSql = document.getElementById("conteudo-sql");
 const tituloCreate = document.getElementById("conteudo-create");
@@ -35,14 +35,14 @@ ultimoSave.textContent = "Ultime save: " + save;
 // vampiro.addEventListener("click", () => {
 //   falaVampiro("Não me toque", 1500);
 // });
-// function sumirFala() {
-//   divFala.classList.add("invisivel");
-// }
-// function falaVampiro(texto, tempo) {
-//   fala.textContent = texto;
-//   divFala.classList.remove("invisivel");
-//   setTimeout(sumirFala, tempo);
-// }
+function sumirFala() {
+  divFala.classList.add("invisivel");
+}
+function falaVampiro(texto, tempo) {
+  fala.textContent = texto;
+  divFala.classList.remove("invisivel");
+  setTimeout(sumirFala, tempo);
+}
 
 //modal sair exercício
 btnSair.addEventListener("click", () => {
@@ -82,8 +82,8 @@ switch (exercicioAtual) {
   case "ca1-ex2":
     qtBlocos = 11;
     personalizarExercicio(
-      "Agora que a cidade foi criada precisamos criar duas tabelas, uma para guardar dados sobre os moradores da cidade e outra para guardar os dados sobre as casas dos moradores.\nAinda utilizaremos o comando CREATE porém agora utilizaremos o objeto do banco de dados TABLE, seguido dos campos da tabela e do tipo de cada campo.\nAlém de indicarmos o tipo dos campos, podemos também colocar verificações sendo algumas obrigatórias e outras não.",
-      "Seguindo as instruções no seu caderno, monte o código de criãçao",
+      "Agora que a cidade foi criada precisamos criar duas tabelas, uma para guardar dados sobre os moradores da cidade e outra para guardar os dados sobre as casas dos moradores.\nAinda utilizaremos o comando CREATE porém agora utilizaremos o objeto do banco de dados TABLE, seguido dos campos da tabela e do tipo de cada campo.",
+      "Sabendo que a tabela de moradores terá os campos: id_morador, nome, sobrenome,  filhos, tipo_sanguineo e idade",
       "Capítulo1 - ex2"
     );
     criarBloco("alter", false, "");
@@ -101,8 +101,8 @@ switch (exercicioAtual) {
     criarBloco("data", false, "");
     criarBloco("data base,", false, "");
     criarBloco("(", true, "bloco-d");
-    criarBloco("id_morador integer", true, "bloco-e");
-    criarBloco("nome varchar(15)", true, "blocof");
+    criarBloco("id_morador integer,", true, "bloco-e");
+    criarBloco("nome varchar(15),", true, "blocof");
     criarBloco("vampcity,", false, "");
     criarBloco("[", false, "");
     criarBloco(");", true, "bloco-k");
@@ -138,12 +138,12 @@ switch (exercicioAtual) {
 }
 
 //fazendo abrir a modal do caderno de exercícios
-info.addEventListener("click",()=>{
-  modalCaderno.showModal()
-  fecharModalCaderno.addEventListener('click',()=>{
-    modalCaderno.close()
-  })
-})
+info.addEventListener("click", () => {
+  modalCaderno.showModal();
+  fecharModalCaderno.addEventListener("click", () => {
+    modalCaderno.close();
+  });
+});
 
 //Preenchendo o conteudo do caderno de consultas
 conteudo.classList.add("selecionado");
@@ -181,8 +181,7 @@ tituloCreate.addEventListener("click", () => {
   tituloDelete.classList.add("sem-selecao");
 
   conteudo.classList.add("selecionado");
-  conteudo.textContent =
-    "Lorem ipsum dolor sit ";
+  conteudo.textContent = "Lorem ipsum dolor sit ";
 });
 tituloAlter.addEventListener("click", () => {
   tituloAlter.classList.add("selecionado");
@@ -217,8 +216,7 @@ tituloUpdate.addEventListener("click", () => {
   tituloDelete.classList.add("sem-selecao");
 
   conteudo.classList.add("selecionado");
-  conteudo.textContent =
-    "consectetur adipisicing elit.";
+  conteudo.textContent = "consectetur adipisicing elit.";
 });
 tituloDelete.addEventListener("click", () => {
   tituloDelete.classList.add("selecionado");
@@ -235,8 +233,7 @@ tituloDelete.addEventListener("click", () => {
   tituloUpdate.classList.add("sem-selecao");
 
   conteudo.classList.add("selecionado");
-  conteudo.textContent =
-    "met eaque? Aut animi quibusdam conseq";
+  conteudo.textContent = "met eaque? Aut animi quibusdam conseq";
 });
 
 //funções
@@ -307,12 +304,46 @@ function arrastarBloco() {
     }
   });
 }
-
+btnProx.addEventListener("click", () => {
+  switch (exercicioAtual) {
+    case "ca1-ex1":
+      localStorage.setItem("exAtual", JSON.stringify("ca1-ex2"));
+      break;
+    case "ca1-ex2":
+      localStorage.setItem("exAtual", JSON.stringify("ca1-ex3"));
+      break;
+    case "ca1-ex3":
+      localStorage.setItem("exAtual", JSON.stringify("ca2-ex1"));
+      break;
+    case "ca2-ex1":
+      localStorage.setItem("exAtual", JSON.stringify("ca1-ex3"));
+      break;
+    case "ca3-ex1":
+      localStorage.setItem("exAtual", JSON.stringify("ca3-ex2"));
+      break;
+    case "ca3-ex2":
+      localStorage.setItem("exAtual", JSON.stringify("ca4-ex1"));
+      break;
+    case "ca4-ex1":
+      localStorage.setItem("exAtual", JSON.stringify("ca5-ex1"));
+      break;
+    case "ca5-ex1":
+      localStorage.setItem("exAtual", JSON.stringify("ca5-ex2"));
+      break;
+    case "ca5-ex2":
+      localStorage.setItem("exAtual", JSON.stringify("ca5-ex3"));
+      break;
+    case "ca5-ex3":
+      localStorage.setItem("exAtual", JSON.stringify("ca5-ex4"));
+      break;
+  }
+  window.location.reload();
+});
 function verificarAtividade() {
   const blocos = terminal.children;
   const blocosCorretos = [];
 
-  if(qtBlocos != blocos.length){
+  if (qtBlocos != blocos.length) {
     return false;
   }
 
@@ -327,7 +358,7 @@ function verificarAtividade() {
   // Verificando se os blocos estão em ordem alfabética
   for (let i = 0; i < blocosCorretos.length - 1; i++) {
     if (blocosCorretos[i].localeCompare(blocosCorretos[i + 1]) > 0) {
-      return false; 
+      return false;
     }
   }
 
@@ -342,15 +373,21 @@ function adicionarEventoVerificar() {
         terminal.classList.remove("errado");
         terminal.classList.add("certo");
         btnProx.classList.remove("invisivel");
+        falaVampiro("Parabéns você acertou", 2000);
       } else {
         terminal.classList.remove("certo");
         terminal.classList.add("errado");
         btnProx.classList.add("invisivel");
+        falaVampiro("Acho que você errou alguma coisa", 2000);
+        setTimeout(mudarClasse, 2500);
       }
     } else {
-      window.alert("É necessário adicionar ao menos um bloco!")
+      window.alert("É necessário adicionar ao menos um bloco!");
     }
   });
+}
+function mudarClasse() {
+  terminal.classList.remove("errado");
 }
 
 btVerificar.addEventListener("click", () => {
