@@ -23,11 +23,11 @@
   top: 0.5rem;
   left: 0.5rem;
 }
-#fechar-modal{
+.fechar-modal {
   width: 1.5rem;
   position: absolute;
-  left:1.5rem;
-  top:1rem;
+  left: 1.5rem;
+  top: 1rem;
   filter: invert(20%);
   cursor: pointer;
 }
@@ -57,7 +57,8 @@ button:active {
   background-color: rgb(53, 47, 58);
   color: rgb(174, 175, 176);
 }
-.botoes-exercicios{
+
+.botoes-exercicios {
   position: absolute;
   font-size: medium;
   width: 4.8rem;
@@ -65,13 +66,13 @@ button:active {
   justify-content: center;
   align-items: center;
 }
-#btn-sair-exercicio{
+#btn-sair-exercicio {
   right: 2rem;
-  bottom:5rem;
+  bottom: 5rem;
 }
-#btn-proximo-ex{
+#btn-proximo-ex {
   right: 2rem;
-  bottom:2rem;
+  bottom: 2rem;
 }
 body {
   background-color: rgb(22, 20, 25);
@@ -118,7 +119,7 @@ body {
   display: inline-block;
   font-weight: bold;
 }
-.bloco:hover{
+.bloco:hover {
   background-color: rgb(174, 175, 176);
 }
 #div-texto {
@@ -132,7 +133,7 @@ body {
   font-size: small;
   text-align: center;
   position: relative;
-  top:0rem;
+  top: 0rem;
   right: 1.7rem;
   margin: 0rem;
   padding: 0rem;
@@ -195,42 +196,45 @@ body {
 }
 .modal > h1 {
   font-family: "Kranky";
-  font-size:x-large;
+  font-size: x-large;
 }
-.btn-modal{
-  margin:auto;
-  margin-top:.5rem;
+#modal-caderno {
+  width: 40%;
+  background-color: rgb(216, 219, 221);
+}
+.btn-modal {
+  margin: auto;
+  margin-top: 0.5rem;
   width: 10rem;
   height: 1.5rem;
   background-color: rgb(216, 219, 221);
   color: rgb(53, 47, 58);
-  border-radius: .3rem;
-  border: solid .1rem  rgb(22, 20, 25);
+  border-radius: 0.3rem;
+  border: solid 0.1rem rgb(22, 20, 25);
   font-family: "Inter";
   padding-bottom: 1.5rem;
   font-weight: bolder;
   cursor: pointer;
 }
-.btn-modal:hover{
- background-color:  rgb(174, 175, 176);
+.btn-modal:hover {
+  background-color: rgb(174, 175, 176);
 }
-.btn-modal:active{
+.btn-modal:active {
   background-color: rgb(53, 47, 58);
   color: rgb(174, 175, 176);
 }
-#div-fala{
-  background:rgb(198, 200, 201);
+#div-fala {
+  background: rgb(198, 200, 201);
   border-radius: 50%;
   width: 16rem;
   height: 6rem;
 
   position: absolute;
-  top:4rem;
-  left:20rem;
+  top: 4rem;
+  left: 20rem;
   text-align: center;
 }
-#div-fala:after{
-
+#div-fala:after {
   content: "";
 
   width: 0;
@@ -245,19 +249,21 @@ body {
   bottom: -10px;
   left: 20%;
 }
-#fala-vampiro{
+#fala-vampiro {
   position: relative;
-  top: .5rem;
-  left: .3rem;
+  top: 0.5rem;
+  left: 0.3rem;
   width: 15rem;
   height: 2rem;
   text-justify: auto;
-  font-family: 'Inter;';
+  font-family: "Inter;";
   color: rgb(52, 52, 52);
 }
 .titulo {
+  display: flex;
+  justify-content: center;
   position: relative;
-  font-size: large;
+  font-size: medium;
   font-weight: bold;
   width: 4rem;
   height: 2.5rem;
@@ -272,7 +278,7 @@ body {
   top: -1.5rem;
   border-radius: 0.4rem;
   padding: 0.7rem 0.5rem 0.5rem 0.5rem;
-  height: 15rem;
+  height: 18rem;
   z-index: 1;
 }
 .invisivel {
@@ -282,10 +288,10 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.selecionado{
+.selecionado {
   background-color: rgb(177, 177, 177);
 }
-.sem-selecao{
-  border: solid .1rem rgb(90, 89, 89);
+.sem-selecao {
+  border: solid 0.1rem rgb(90, 89, 89);
   background-color: rgb(110, 110, 110);
 }

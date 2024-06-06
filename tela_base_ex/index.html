@@ -55,7 +55,7 @@
       id="vampiro"
       src="/assets/vampiro.png"
       alt="Um vampiro"
-      title="Este é o Klaus (é melhor não tocar nele)"
+      title="Este é o Klaus"
     />
     <div id="div-fala" class="invisivel">
       <p id="fala-vampiro">
@@ -64,22 +64,24 @@
       </p>
     </div>
     <dialog id="modal-caderno" class="modal">
-      <h1>Caderno de cunsulta</h1>
+      <img
+        src="/assets/seta-left.png"
+        alt="seta para fechar o modal"
+        id="fechar-modal-caderno"
+        class="fechar-modal"
+      />
+      <h1>Caderno de consulta</h1>
       <div id="titulos-caderno">
-        <div id="conteudo-sql" class="titulo">Criação</div>
-        <div id="conteudo-create" class="titulo sem-selecao">Criação</div>
-        <div id="conteudo-alter" class="titulo sem-selecao">Criação</div>
+        <div id="conteudo-sql" class="titulo">SQL</div>
+        <div id="conteudo-create" class="titulo sem-selecao">CREATE</div>
+        <div id="conteudo-alter" class="titulo sem-selecao">ALTER</div>
+        <div id="conteudo-update" class="titulo sem-selecao">UPDATE</div>
+        <div id="conteudo-delete" class="titulo sem-selecao">DELETE</div>
       </div>
 
       <div id="conteudo" class="conteudo">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-        soluta nobis ea deserunt ipsam et sunt excepturi repellat veritatis
-        ducimus qui nemo optio tempore praesentium doloribus officiis velit
-        quod, omnis corrupti aspernatur explicabo saepe eveniet. A, earum
-        quibusdam? Ullam aspernatur reprehenderit nisi, illum temporibus
-        consectetur?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque assumenda atque esse praesentium voluptatem consequuntur vero amet eaque? Aut animi quibusdam conseq
       </div>
-      <button id="fechar-modal-caderno">Fechar</button>
     </dialog>
     <dialog id="modal-sair-exercicio" class="modal">
       <h1></h1>
@@ -91,6 +93,7 @@
         src="/assets/seta-left.png"
         alt="seta para fechar o modal"
         id="fechar-modal"
+        class="fechar-modal"
       />
       <h1>Configurações</h1>
       <div id="div-config">
