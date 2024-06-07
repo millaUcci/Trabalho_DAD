@@ -25,17 +25,17 @@
       <div id="div-digitar">
         <div id="terminal" class="default"></div>
         <div id="div-botoes">
-          <button id="btn-limpar" onclick="apagar()">
+          <button id="btn-limpar" class="button" onclick="apagar()">
             <img class="botoes-terminal" src="/assets/apagar.png" alt="" />
           </button>
-          <button id="btn-verificar">
+          <button id="btn-verificar" class="button">
             <img class="botoes-terminal" src="/assets/check.png" alt="" />
           </button>
         </div>
       </div>
       <div id="div-blocos"></div>
     </div>
-    <button id="btn-sair-exercicio" class="botoes-exercicios">
+    <button id="btn-sair-exercicio" class="button botoes-exercicios">
       <img
         class="botoes-terminal"
         src="/assets/sair.png"
@@ -43,7 +43,7 @@
         title="Botão para sair deste exercício"
       />
     </button>
-    <button id="btn-proximo-ex" class="botoes-exercicios invisivel">
+    <button id="btn-proximo-ex" class="button botoes-exercicios invisivel">
       <img
         class="botoes-terminal"
         src="/assets/proximo_ex.png"
@@ -80,24 +80,45 @@
       </div>
 
       <div id="conteudo" class="conteudo">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque assumenda atque esse praesentium voluptatem consequuntur vero amet eaque? Aut animi quibusdam conseq
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque
+        assumenda atque esse praesentium voluptatem consequuntur vero amet
+        eaque? Aut animi quibusdam conseq
       </div>
     </dialog>
     <dialog id="modal-sair-exercicio" class="modal">
-      <h1></h1>
-      <button id="sair-e-salvar" class="btn-modal">Sair e salvar</button>
-      <button id="sair-sem-salvar" class="btn-modal">Sair sem salvar</button>
+      <img
+        src="/assets/seta-left.png"
+        alt="seta para fechar o modal"
+        id="fechar-modal-saida"
+        class="fechar-modal"
+      />
+      <h1>Deseja sair do exercício?</h1>
+      <div class="ultimo-save"></div>
+      <button
+        id="sair-e-salvar"
+        class="btn-modal"
+        title="Sair e salvar o progresso atual"
+      >
+        Sair e salvar
+      </button>
+      <button
+        id="sair-sem-salvar"
+        class="btn-modal"
+        title="Sair e não salvar o progresso atual (seu save sera o mostrado na tela)"
+      >
+        Sair sem salvar
+      </button>
     </dialog>
     <dialog id="modal-config" class="modal">
       <img
         src="/assets/seta-left.png"
         alt="seta para fechar o modal"
-        id="fechar-modal"
+        id="fechar-modal-config"
         class="fechar-modal"
       />
       <h1>Configurações</h1>
       <div id="div-config">
-        <div id="ultimo-save"></div>
+        <div class="ultimo-save"></div>
         <div id="div-botoes-modal">
           <button
             class="btn-modal"
@@ -115,5 +136,6 @@
       </div>
       <button id="btn-creditos" class="btn-modal">Ver créditos</button>
     </dialog>
+    <img id="fundo" src="" alt="" />
   </body>
 </html>

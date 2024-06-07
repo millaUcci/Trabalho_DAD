@@ -1,6 +1,6 @@
 const tituloPagina = document.getElementsByTagName("title")[0];
 const tituloEx = document.getElementById("titulo");
-const ultimoSave = document.getElementById("ultimo-save");
+const ultimoSave = document.getElementsByClassName("ultimo-save");
 const descExercicio = document.getElementById("desc-exercicio");
 const divBlocos = document.getElementById("div-blocos");
 const modalSair = document.getElementById("modal-sair-exercicio");
@@ -15,6 +15,8 @@ const fala = document.getElementById("fala-vampiro");
 const divFala = document.getElementById("div-fala");
 const btnSairSalvar = document.getElementById("sair-e-salvar");
 const btnSairSemSalvar = document.getElementById("sair-sem-salvar");
+const btnSairModalSaida = document.getElementById("fechar-modal-saida");
+const fundo = document.getElementById("fundo");
 let qtBlocos = 0;
 
 //modal caderno
@@ -28,8 +30,24 @@ const tituloAlter = document.getElementById("conteudo-alter");
 const tituloUpdate = document.getElementById("conteudo-update");
 const tituloDelete = document.getElementById("conteudo-delete");
 
+const modalConfig = document.getElementById("modal-config");
+const fecharModalConfig = document.getElementById("fechar-modal-config");
+const config = document.getElementById("config");
+const btnCreditos = document.getElementById("btn-creditos");
+
+// const exerciciosConcluidos =JSON.parse(localStorage.getItem("exConcluidos"))
+
+config.addEventListener("click", () => {
+  modalConfig.showModal();
+});
+
+fecharModalConfig.addEventListener("click", () => {
+  modalConfig.close();
+});
+
 //Pegando ultimo save
-ultimoSave.textContent = "Ultime save: " + save;
+ultimoSave[0].textContent = "Ultimo save: " + save;
+ultimoSave[1].textContent = "Ultimo save: " + save;
 
 //Fala vampiro
 // vampiro.addEventListener("click", () => {
@@ -46,8 +64,6 @@ function falaVampiro(texto, tempo) {
 
 //modal sair exercício
 btnSair.addEventListener("click", () => {
-  modalSair.children[0].textContent =
-    "Deseja sair e salvar o seu progresso? Seu ultimo save é: " + save;
   modalSair.showModal();
   btnSairSemSalvar.addEventListener("click", () => {
     window.location.href = "../tela_capitulos/index.html";
@@ -55,6 +71,9 @@ btnSair.addEventListener("click", () => {
   btnSairSalvar.addEventListener("click", () => {
     localStorage.setItem("save", JSON.stringify(exercicioAtual));
     window.location.href = "../tela_capitulos/index.html";
+  });
+  btnSairModalSaida.addEventListener("click", () => {
+    modalSair.close();
   });
 });
 
@@ -65,7 +84,8 @@ switch (exercicioAtual) {
     personalizarExercicio(
       "Para começarmos é preciso criar a cidade onde os moradores ficaram. Usaremos o comando CREATE juntamente com a indicação de qual objeto do banco de dados será criado, que neste caso será um DATABASE.",
       "Monte abaixo o comando para criar a cidade com o nome “VampCity ",
-      "Capítulo1 - ex1"
+      "Capítulo1 - ex1",
+      "../assets/final/1.png"
     );
 
     criarBloco("alter", false, "");
@@ -84,7 +104,8 @@ switch (exercicioAtual) {
     personalizarExercicio(
       "Agora que a cidade foi criada precisamos criar duas tabelas, uma para guardar dados sobre os moradores da cidade e outra para guardar os dados sobre as casas dos moradores.\nAinda utilizaremos o comando CREATE porém agora utilizaremos o objeto do banco de dados TABLE, seguido dos campos da tabela e do tipo de cada campo.",
       "Sabendo que a tabela de moradores terá os campos: id_morador, nome, sobrenome,  filhos, tipo_sanguineo e idade",
-      "Capítulo1 - ex2"
+      "Capítulo1 - ex2",
+      "../assets/final/2.png"
     );
     criarBloco("alter", false, "");
     criarBloco("create", true, "bloco-a");
@@ -102,7 +123,7 @@ switch (exercicioAtual) {
     criarBloco("data base,", false, "");
     criarBloco("(", true, "bloco-d");
     criarBloco("id_morador integer,", true, "bloco-e");
-    criarBloco("nome varchar(15),", true, "blocof");
+    criarBloco("nome varchar(15),", true, "bloco-f");
     criarBloco("vampcity,", false, "");
     criarBloco("[", false, "");
     criarBloco(");", true, "bloco-k");
@@ -113,7 +134,8 @@ switch (exercicioAtual) {
     personalizarExercicio(
       "Ainda usando os conhecimentos adquiridos no exercício anterior, crie a tabela de casas a partir das colunas dadas a você no caderno. Decida você mesmo o tipo e as verificações dos outros três campos. (dica: todos os campos são obrigatórios, mas nem todos são únicos)",
       "Monte o comando abaixo",
-      "Capítulo1 - ex3"
+      "Capítulo1 - ex3",
+      "../assets/final/3.png"
     );
     criarBloco("create table", true, "bloco-a");
     criarBloco("id integer,", false, "");
@@ -132,8 +154,81 @@ switch (exercicioAtual) {
     arrastarBloco();
     break;
   case "ca2-ex1":
-    personalizarExercicio("teste ca2", "hbvihawb fvhiabwf", "jcaidvniadnvij");
-    criarBloco("ivjwidfnoj", false, "");
+    qtBlocos = 1;
+    personalizarExercicio(
+      "teste ca2",
+      "hbvihawb fvhiabwf",
+      "jcaidvniadnvij",
+      "../assets/final/4.png"
+    );
+    criarBloco("ivjwidfnoj", true, "bloco-a");
+    arrastarBloco();
+    break;
+  case "ca3-ex1":
+    qtBlocos = 1;
+    personalizarExercicio(
+      "teste ca3 ex1",
+      "bjdbDWVCBDLKVKBD",
+      "IAOFNVÇOAEFNBVOANFVO",
+      "../assets/final/5.png"
+    );
+    criarBloco("IOEFNVAEFN", true, "bloco-a");
+    arrastarBloco();
+    break;
+  case "ca3-ex2":
+    qtBlocos = 1;
+    personalizarExercicio(
+      "teste ca3 ex2",
+      "bjdbDWVCBDLKVKBD",
+      "IAOFNVÇOAEFNBVOANFVO",
+      "../assets/final/6.png"
+    );
+    criarBloco("IOEFNVAEFN", true, "bloco-a");
+    arrastarBloco();
+    break;
+  case "ca4-ex1":
+    qtBlocos = 1;
+    personalizarExercicio(
+      "teste ca4 ex1",
+      "bjdbDWVCBDLKVKBD",
+      "IAOFNVÇOAEFNBVOANFVO",
+      "../assets/final/7.png"
+    );
+    criarBloco("IOEFNVAEFN", true, "bloco-a");
+    arrastarBloco();
+    break;
+  case "ca5-ex1":
+    qtBlocos = 1;
+    personalizarExercicio(
+      "teste ca5 ex1",
+      "bjdbDWVCBDLKVKBD",
+      "IAOFNVÇOAEFNBVOANFVO",
+      "../assets/final/8.png"
+    );
+    criarBloco("IOEFNVAEFN", true, "bloco-a");
+    arrastarBloco();
+    break;
+  case "ca5-ex2":
+    qtBlocos = 1;
+    personalizarExercicio(
+      "teste ca5 ex2",
+      "bjdbDWVCBDLKVKBD",
+      "IAOFNVÇOAEFNBVOANFVO",
+      "../assets/final/9.png"
+    );
+    criarBloco("IOEFNVAEFN", true, "bloco-a");
+    arrastarBloco();
+    break;
+  case "ca5-ex3":
+    qtBlocos = 1;
+    personalizarExercicio(
+      "teste ca5 ex3",
+      "bjdbDWVCBDLKVKBD",
+      "IAOFNVÇOAEFNBVOANFVO",
+      "../assets/final/10.png"
+    );
+    criarBloco("IOEFNVAEFN", true, "bloco-a");
+    arrastarBloco();
     break;
 }
 
@@ -237,10 +332,11 @@ tituloDelete.addEventListener("click", () => {
 });
 
 //funções
-function personalizarExercicio(desc, titulo, tituloPag) {
+function personalizarExercicio(desc, titulo, tituloPag, caminhoFundo) {
   descExercicio.textContent = desc;
   tituloEx.textContent = titulo;
   tituloPagina.textContent = tituloPag;
+  fundo.setAttribute("src", caminhoFundo);
 }
 
 function criarBloco(desc, blocoSolucao, id) {
@@ -305,6 +401,8 @@ function arrastarBloco() {
   });
 }
 btnProx.addEventListener("click", () => {
+  // exerciciosConcluidos.push(exercicioAtual)
+  // localStorage.setItem("exConcluidos",JSON.stringify(exerciciosConcluidos))
   switch (exercicioAtual) {
     case "ca1-ex1":
       localStorage.setItem("exAtual", JSON.stringify("ca1-ex2"));
@@ -316,7 +414,7 @@ btnProx.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify("ca2-ex1"));
       break;
     case "ca2-ex1":
-      localStorage.setItem("exAtual", JSON.stringify("ca1-ex3"));
+      localStorage.setItem("exAtual", JSON.stringify("ca3-ex1"));
       break;
     case "ca3-ex1":
       localStorage.setItem("exAtual", JSON.stringify("ca3-ex2"));
