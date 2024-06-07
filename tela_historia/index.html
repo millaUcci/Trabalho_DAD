@@ -16,14 +16,40 @@
     <div id="div-sombra-livro">
         <div id="div-livro">
             <div class="pagina">
-                <h1>Prólogo</h1>
+                <h1 class="titulo">Prólogo</h1>
                 <p>Em 1905 você se tornou um vampiro em uma pequena cidade de São Paulo, e começou a trabalhar em uma grande empresa clandestina de sangue fresco, inteiramente coordenada por vampiros. No século atual, você se tornou um gerente e recebeu a missão de organizar os dados dos moradores da cidade – a fonte do sangue - em um banco de dados SQL . </p></div>
             <div class="pagina">
-                <h1>Lorem, ipsum.</h1>
+                <h1 class="titulo">Lorem, ipsum.</h1>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime officiis deserunt id eligendi laborum rem dicta voluptatum repellat dolores veritatis quis doloremque ratione necessitatibus, placeat nihil eaque quae architecto, veniam tempora temporibus. Quas itaque quidem necessitatibus asperiores facilis earum ullam magni maiores. Ex at deserunt soluta exercitationem omnis autem eius!</p></div>
         </div>
     </div>
-    <button id="btn-comecar">COMEÇAR</button>
-    
+    <button id="btn-comecar" class="button">COMEÇAR</button>
+    <dialog id="modal-config" class="modal">
+        <img
+          src="/assets/seta-left.png"
+          alt="seta para fechar o modal"
+          id="fechar-modal-config"
+          class="fechar-modal"
+        />
+        <h1>Configurações</h1>
+        <div id="div-config">
+          <div id="ultimo-save"></div>
+          <div id="div-botoes-modal">
+            <button
+              class="btn-modal"
+              title="Você perdera o seu progresso e irá começar do primeiro capitulo do primeiro exercício"
+            >
+              Recomeçar
+            </button>
+            <button
+              class="btn-modal"
+              title="Você perdera todo o seu progresso, inclusive o modo de aprendizado(história, livre)"
+            >
+              Resetar
+            </button>
+          </div>
+        </div>
+        <button id="btn-creditos" class="btn-modal">Ver créditos</button>
+      </dialog>
 </body>
 </html>

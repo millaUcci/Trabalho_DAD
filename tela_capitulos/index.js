@@ -2,6 +2,7 @@ const config = document.getElementById("config");
 const ultimoSave = document.getElementById("ultimo-save");
 const home = document.getElementById("home")
 const save = JSON.parse(localStorage.getItem("save"));
+const exerciciosConcluidos = JSON.parse(localStorage.getItem("exerciciosConcluidos"))
 
 const capituloUm = document.getElementById("capitulo-um");
 const capituloDois = document.getElementById("capitulo-dois");
@@ -16,6 +17,7 @@ const fecharModal = document.getElementById("fechar-modal");
 const divEx = document.getElementById("div-exercicios");
 
 const modalConfig = document.getElementById("modal-config");
+const fecharModalConfig = document.getElementById("fechar-modal-config")
 const btnCreditos = document.getElementById("btn-creditos");
 
 ultimoSave.textContent = "Ultime save: " + save;
@@ -23,6 +25,9 @@ ultimoSave.textContent = "Ultime save: " + save;
 config.addEventListener("click", () => {
   modalConfig.showModal();
 });
+fecharModalConfig.addEventListener("click",()=>{
+  modalConfig.close()
+})
 btnCreditos.addEventListener("click", () => {
   window.location.href = "../tela_creditos/index.html";
 });
@@ -220,6 +225,9 @@ function criarExercicio(titulo, exSalvo) {
     ex.classList.add("ex-salvo");
     ex.setAttribute("title","Exercício onde você parou anteriormente")
   }
+  // if(exerciciosConcluidos.includes(save)){
+  //   ex.classList.add("ex-feito")
+  // }
   ex.textContent = titulo;
   divEx.appendChild(ex);
 }
