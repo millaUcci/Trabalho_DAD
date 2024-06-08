@@ -32,13 +32,43 @@ const tituloDelete = document.getElementById("conteudo-delete");
 
 const modalConfig = document.getElementById("modal-config");
 const fecharModalConfig = document.getElementById("fechar-modal-config");
-const config = document.getElementById("config");
 const btnCreditos = document.getElementById("btn-creditos");
+const btnRecomecar = document.getElementById("btn-recomecar");
+const btnResetar = document.getElementById("btn-resetar");
+const config = document.getElementById("config");
+const todosOsExercicios = [
+  "ca1-ex1",
+  "ca1-ex2",
+  "ca1-ex3",
+  "ca2-ex1",
+  "ca3-ex1",
+  "ca3-ex2",
+  "ca4-ex1",
+  "ca5-ex1",
+  "ca5-ex2",
+  "ca5-ex3",
+];
 
 // const exerciciosConcluidos =JSON.parse(localStorage.getItem("exConcluidos"))
 
 config.addEventListener("click", () => {
   modalConfig.showModal();
+  btnCreditos.addEventListener("click", () => {
+    window.location.href = "../tela_creditos/index.html";
+  });
+  btnRecomecar.addEventListener("click", () => {
+    localStorage.setItem("save", JSON.stringify("ca1-ex1"));
+    window.alert("Save reiniciado para o Capítulo 1 exercício 1");
+    window.location.reload();
+  });
+  btnResetar.addEventListener("click", () => {
+    let continuar = window.confirm(
+      "Deseja realmente resetar? Isso apagará: seu histórico de exercícios concluidos, seu save e o modo do jogo "
+    );
+    if (continuar) {
+      window.location.href = "../index.html";
+    }
+  });
 });
 
 fecharModalConfig.addEventListener("click", () => {
@@ -85,7 +115,7 @@ switch (exercicioAtual) {
       "Para começarmos é preciso criar a cidade onde os moradores ficaram. Usaremos o comando CREATE juntamente com a indicação de qual objeto do banco de dados será criado, que neste caso será um DATABASE.",
       "Monte abaixo o comando para criar a cidade com o nome “VampCity ",
       "Capítulo1 - ex1",
-      "../assets/final/1.png"
+      "../assets/fundos/1.png"
     );
 
     criarBloco("alter", false, "");
@@ -105,7 +135,7 @@ switch (exercicioAtual) {
       "Agora que a cidade foi criada precisamos criar duas tabelas, uma para guardar dados sobre os moradores da cidade e outra para guardar os dados sobre as casas dos moradores.\nAinda utilizaremos o comando CREATE porém agora utilizaremos o objeto do banco de dados TABLE, seguido dos campos da tabela e do tipo de cada campo.",
       "Sabendo que a tabela de moradores terá os campos: id_morador, nome, sobrenome,  filhos, tipo_sanguineo e idade",
       "Capítulo1 - ex2",
-      "../assets/final/2.png"
+      "../assets/fundos/2.png"
     );
     criarBloco("alter", false, "");
     criarBloco("create", true, "bloco-a");
@@ -135,7 +165,7 @@ switch (exercicioAtual) {
       "Ainda usando os conhecimentos adquiridos no exercício anterior, crie a tabela de casas a partir das colunas dadas a você no caderno. Decida você mesmo o tipo e as verificações dos outros três campos. (dica: todos os campos são obrigatórios, mas nem todos são únicos)",
       "Monte o comando abaixo",
       "Capítulo1 - ex3",
-      "../assets/final/3.png"
+      "../assets/fundos/3.png"
     );
     criarBloco("create table", true, "bloco-a");
     criarBloco("id integer,", false, "");
@@ -158,8 +188,8 @@ switch (exercicioAtual) {
     personalizarExercicio(
       "teste ca2",
       "hbvihawb fvhiabwf",
-      "jcaidvniadnvij",
-      "../assets/final/4.png"
+      "Capítulo2 - ex1",
+      "../assets/fundos/4.png"
     );
     criarBloco("ivjwidfnoj", true, "bloco-a");
     arrastarBloco();
@@ -169,8 +199,8 @@ switch (exercicioAtual) {
     personalizarExercicio(
       "teste ca3 ex1",
       "bjdbDWVCBDLKVKBD",
-      "IAOFNVÇOAEFNBVOANFVO",
-      "../assets/final/5.png"
+      "Capítulo3 - ex1",
+      "../assets/fundos/5.png"
     );
     criarBloco("IOEFNVAEFN", true, "bloco-a");
     arrastarBloco();
@@ -180,8 +210,8 @@ switch (exercicioAtual) {
     personalizarExercicio(
       "teste ca3 ex2",
       "bjdbDWVCBDLKVKBD",
-      "IAOFNVÇOAEFNBVOANFVO",
-      "../assets/final/6.png"
+      "Capítulo3 - ex2",
+      "../assets/fundos/6.png"
     );
     criarBloco("IOEFNVAEFN", true, "bloco-a");
     arrastarBloco();
@@ -191,8 +221,8 @@ switch (exercicioAtual) {
     personalizarExercicio(
       "teste ca4 ex1",
       "bjdbDWVCBDLKVKBD",
-      "IAOFNVÇOAEFNBVOANFVO",
-      "../assets/final/7.png"
+      "Capítulo4 - ex1",
+      "../assets/fundos/7.png"
     );
     criarBloco("IOEFNVAEFN", true, "bloco-a");
     arrastarBloco();
@@ -202,8 +232,8 @@ switch (exercicioAtual) {
     personalizarExercicio(
       "teste ca5 ex1",
       "bjdbDWVCBDLKVKBD",
-      "IAOFNVÇOAEFNBVOANFVO",
-      "../assets/final/8.png"
+      "Capítulo5 - ex1",
+      "../assets/fundos/8.png"
     );
     criarBloco("IOEFNVAEFN", true, "bloco-a");
     arrastarBloco();
@@ -213,8 +243,8 @@ switch (exercicioAtual) {
     personalizarExercicio(
       "teste ca5 ex2",
       "bjdbDWVCBDLKVKBD",
-      "IAOFNVÇOAEFNBVOANFVO",
-      "../assets/final/9.png"
+      "Capítulo5 - ex2",
+      "../assets/fundos/9.png"
     );
     criarBloco("IOEFNVAEFN", true, "bloco-a");
     arrastarBloco();
@@ -224,8 +254,8 @@ switch (exercicioAtual) {
     personalizarExercicio(
       "teste ca5 ex3",
       "bjdbDWVCBDLKVKBD",
-      "IAOFNVÇOAEFNBVOANFVO",
-      "../assets/final/10.png"
+      "Capítulo5 - ex3",
+      "../assets/fundos/10.png"
     );
     criarBloco("IOEFNVAEFN", true, "bloco-a");
     arrastarBloco();
@@ -401,8 +431,6 @@ function arrastarBloco() {
   });
 }
 btnProx.addEventListener("click", () => {
-  // exerciciosConcluidos.push(exercicioAtual)
-  // localStorage.setItem("exConcluidos",JSON.stringify(exerciciosConcluidos))
   switch (exercicioAtual) {
     case "ca1-ex1":
       localStorage.setItem("exAtual", JSON.stringify("ca1-ex2"));
@@ -435,7 +463,20 @@ btnProx.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify("ca5-ex4"));
       break;
   }
-  window.location.reload();
+  const exerciciosConcluidos = JSON.parse(localStorage.getItem("exConcluidos"));
+  const qntCapitulos = todosOsExercicios.length;
+  let concluiuTodos = true;
+  for (let i = 0; i < qntCapitulos; i++) {
+    if (!exerciciosConcluidos.includes(todosOsExercicios[i])) {
+      concluiuTodos = false;
+    }
+  }
+  if (concluiuTodos) {
+    // window.alert("você terminou todos os exercícios");
+    window.location.href="../tela_final/index.html"
+  } else {
+    window.location.reload();
+  }
 });
 function verificarAtividade() {
   const blocos = terminal.children;
@@ -464,6 +505,7 @@ function verificarAtividade() {
 }
 
 function adicionarEventoVerificar() {
+  const exerciciosConcluidos = JSON.parse(localStorage.getItem("exConcluidos"));
   btVerificar.addEventListener("click", () => {
     const resultado = terminal.children;
     if (resultado.length > 0) {
@@ -472,6 +514,13 @@ function adicionarEventoVerificar() {
         terminal.classList.add("certo");
         btnProx.classList.remove("invisivel");
         falaVampiro("Parabéns você acertou", 2000);
+        if (!exerciciosConcluidos.includes(exercicioAtual)) {
+          exerciciosConcluidos.push(exercicioAtual);
+          localStorage.setItem(
+            "exConcluidos",
+            JSON.stringify(exerciciosConcluidos)
+          );
+        }
       } else {
         terminal.classList.remove("certo");
         terminal.classList.add("errado");

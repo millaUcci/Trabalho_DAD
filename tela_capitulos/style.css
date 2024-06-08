@@ -13,7 +13,7 @@ body{
 header{
     margin-bottom: 3rem;
 }
-#home{
+/* #home{
     filter: invert(100%);
     width: 2rem;
     margin: .5rem;
@@ -27,7 +27,7 @@ header{
 }
 #home:active{
     filter: invert(30%);
-}
+} */
 #config{
     filter: invert(100%);
     width: 2rem;
@@ -35,7 +35,7 @@ header{
     cursor: pointer;
     position: absolute;
     top: .5rem;
-    right: .5rem;
+    left: .5rem;
 }
  #config:hover{
     filter:invert(60%)
@@ -185,7 +185,7 @@ background-color: rgb(22, 20, 25,.5);
     background-color: rgb(81, 53, 108);
 }
 .ex-feito{
-    background-color: cadetblue;
+    background-color: rgb(47, 83, 84);
 }
 .btn-modal{
     margin-top:.5rem;

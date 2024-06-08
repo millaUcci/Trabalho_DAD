@@ -10,3 +10,18 @@ body{
 .funcoes{
 display: inline-block;
 }
+#voltar-para-capitulos {
+    filter: invert(100%);
+    width: 1.8rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+  }
+#voltar-para-capitulos:hover {
+    filter: invert(60%);
+  }
+#voltar-para-capitulos:active {
+    filter: invert(30%);
+  }
