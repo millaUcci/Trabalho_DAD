@@ -111,7 +111,7 @@ btnSair.addEventListener("click", () => {
 
 //Vendo o exercíco a
 switch (exercicioAtual) {
-  case "ca1-ex3":
+  case "ca1-ex1":
     qtBlocos = 3;
     personalizarExercicio(
       "Para começarmos é preciso criar a cidade onde os moradores ficaram. Usaremos o comando CREATE juntamente com a indicação de qual objeto do banco de dados será criado, que neste caso será um DATABASE.",
@@ -135,17 +135,18 @@ switch (exercicioAtual) {
     qtBlocos = 11;
     personalizarExercicio(
       "Agora que a cidade foi criada precisamos criar duas tabelas, uma para guardar dados sobre os moradores da cidade e outra para guardar os dados sobre as casas dos moradores.\nAinda utilizaremos o comando CREATE porém agora utilizaremos o objeto do banco de dados TABLE, seguido dos campos da tabela e do tipo de cada campo.",
-      "Crie a tabela 'Moradores' sabendo que ela terá os campos: id_morador, nome, sobrenome,  filhos, tipo_sanguineo e idade, nessa ordem. PS: O comando NOT NULL será substituído por NN.",
-      "Capítulo1 - ex2"
+      "Sabendo que a tabela de moradores terá os campos: id_morador, nome, sobrenome,  filhos, tipo_sanguineo e idade",
+      "Capítulo1 - ex2",
+      "../assets/fundos/2.png"
     );
     criarBloco("alter", false, "");
     criarBloco("create", true, "bloco-a");
     criarBloco("];", false, "");
     criarBloco(";", false, "");
-    criarBloco("sobrenome varchar(15) NN,", true, "bloco-g");
-    criarBloco("filhos integer NN,", true, "bloco-h");
-    criarBloco("tipo_sanguineo varchar(5)", true, "bloco-i");
-    criarBloco("idade integer NN", true, "bloco-k");
+    criarBloco("sobrenome varchar(15),", true, "bloco-g");
+    criarBloco("filhos integer,", true, "bloco-h");
+    criarBloco("tipo_sanguineo varchar(5),", true, "bloco-i");
+    criarBloco("idade integer", true, "bloco-j");
     criarBloco("objeto", false, "");
     criarBloco("criar", false, "");
     criarBloco("table", true, "bloco-b");
@@ -153,16 +154,14 @@ switch (exercicioAtual) {
     criarBloco("data", false, "");
     criarBloco("data base,", false, "");
     criarBloco("(", true, "bloco-d");
-    criarBloco("id_morador integer NN,", true, "bloco-e");
-    criarBloco("nome varchar(15) NN,", true, "bloco-f");
+    criarBloco("id_morador integer,", true, "bloco-e");
+    criarBloco("nome varchar(15),", true, "bloco-f");
     criarBloco("vampcity,", false, "");
     criarBloco("[", false, "");
-    criarBloco(");", true, "bloco-l");
-    criarBloco("PRIMARY KEY", true, "bloco-k");
-    criarBloco("NN,", true, "bloco-j");
+    criarBloco(");", true, "bloco-k");
     arrastarBloco();
     break;
-  case "ca1-ex1":
+  case "ca1-ex3":
     qtBlocos = 10;
     personalizarExercicio(
       "Ainda usando os conhecimentos adquiridos no exercício anterior, crie a tabela de casas a partir das colunas dadas a você no caderno. Decida você mesmo o tipo e as verificações dos outros três campos. (dica: todos os campos são obrigatórios, mas nem todos são únicos)",
