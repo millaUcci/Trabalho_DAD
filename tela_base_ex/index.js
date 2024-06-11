@@ -30,6 +30,7 @@ const tituloAlter = document.getElementById("conteudo-alter");
 const tituloInsert = document.getElementById("conteudo-insert");
 const tituloUpdate = document.getElementById("conteudo-update");
 const tituloDelete = document.getElementById("conteudo-delete");
+const tituloSelect = document.getElementById("conteudo-select")
 
 const modalConfig = document.getElementById("modal-config");
 const fecharModalConfig = document.getElementById("fechar-modal-config");
@@ -219,17 +220,17 @@ switch (exercicioAtual) {
     criarBloco("IOEFNVAEFN", true, "bloco-a");
     arrastarBloco();
     break;
-    case "ca3-ex3":
-      qtBlocos = 1;
-      personalizarExercicio(
-        "teste ca3 ex3",
-        "bjdbDWVCBDLKVKBD",
-        "Capítulo3 - ex3",
-        "../assets/fundos/6.png"
-      );
-      criarBloco("IOEFNVAEFN", true, "bloco-a");
-      arrastarBloco();
-      break;
+  case "ca3-ex3":
+    qtBlocos = 1;
+    personalizarExercicio(
+      "teste ca3 ex3",
+      "bjdbDWVCBDLKVKBD",
+      "Capítulo3 - ex3",
+      "../assets/fundos/6.png"
+    );
+    criarBloco("IOEFNVAEFN", true, "bloco-a");
+    arrastarBloco();
+    break;
   case "ca4-ex1":
     qtBlocos = 1;
     personalizarExercicio(
@@ -308,12 +309,14 @@ tituloSql.addEventListener("click", () => {
   tituloUpdate.classList.remove("selecionado");
   tituloDelete.classList.remove("selecionado");
   tituloInsert.classList.remove("selecionado");
+  tituloSelect.classList.remove("selecionado");
 
   tituloCreate.classList.add("sem-selecao");
   tituloAlter.classList.add("sem-selecao");
   tituloUpdate.classList.add("sem-selecao");
   tituloDelete.classList.add("sem-selecao");
   tituloInsert.classList.add("sem-selecao");
+  tituloSelect.classList.add("sem-selecao");
 
   conteudo.classList.add("selecionado");
   conteudo.innerHTML = `<p class="destaque">Algumas definições</p>
@@ -338,12 +341,14 @@ tituloCreate.addEventListener("click", () => {
   tituloUpdate.classList.remove("selecionado");
   tituloDelete.classList.remove("selecionado");
   tituloInsert.classList.remove("selecionado");
+  tituloSelect.classList.remove("selecionado")
 
   tituloSql.classList.add("sem-selecao");
   tituloAlter.classList.add("sem-selecao");
   tituloUpdate.classList.add("sem-selecao");
   tituloDelete.classList.add("sem-selecao");
   tituloInsert.classList.add("sem-selecao");
+  tituloSelect.classList.add("sem-selecao");
 
   conteudo.classList.add("selecionado");
   conteudo.innerHTML = `<p class="destaque">Sintaxes dos comandos de criação:</p>
@@ -366,12 +371,14 @@ tituloAlter.addEventListener("click", () => {
   tituloUpdate.classList.remove("selecionado");
   tituloDelete.classList.remove("selecionado");
   tituloInsert.classList.remove("selecionado");
+  tituloSelect.classList.remove("selecionado")
 
   tituloSql.classList.add("sem-selecao");
   tituloCreate.classList.add("sem-selecao");
   tituloUpdate.classList.add("sem-selecao");
   tituloDelete.classList.add("sem-selecao");
   tituloInsert.classList.add("sem-selecao");
+  tituloSelect.classList.add("sem-selecao");
 
   conteudo.classList.add("selecionado");
   conteudo.innerHTML = `<p class="destaque">Sintaxe dos comandos de alteração:</p>
@@ -390,12 +397,14 @@ tituloInsert.addEventListener("click", () => {
   tituloAlter.classList.remove("selecionado");
   tituloDelete.classList.remove("selecionado");
   tituloUpdate.classList.remove("selecionado");
+  tituloSelect.classList.remove("selecionado")
 
   tituloSql.classList.add("sem-selecao");
   tituloCreate.classList.add("sem-selecao");
   tituloAlter.classList.add("sem-selecao");
   tituloDelete.classList.add("sem-selecao");
   tituloUpdate.classList.add("sem-selecao");
+  tituloSelect.classList.add("sem-selecao");
 
   conteudo.classList.add("selecionado");
   conteudo.innerHTML = `<p class="destaque">Sintaxes dos comandos de inserção</p>
@@ -416,15 +425,29 @@ tituloUpdate.addEventListener("click", () => {
   tituloAlter.classList.remove("selecionado");
   tituloDelete.classList.remove("selecionado");
   tituloInsert.classList.remove("selecionado");
+  tituloSelect.classList.remove("selecionado");
 
   tituloSql.classList.add("sem-selecao");
   tituloCreate.classList.add("sem-selecao");
   tituloAlter.classList.add("sem-selecao");
   tituloDelete.classList.add("sem-selecao");
   tituloInsert.classList.add("sem-selecao");
+  tituloSelect.classList.add("sem-selecao");
 
   conteudo.classList.add("selecionado");
-  conteudo.innerHTML = `<p class="destaque">Sintaxes dos comandos de atualização</p>`;
+  conteudo.innerHTML = `<p class="destaque">Sintaxe do comando de atualização</p>
+  UPDATE &lt;nomeDaTabela><br/>
+  SET &lt;nomeDoCampo> = &lt;novoValor>...<br/>
+  WHERE &lt;nomeDoCampo> = &lt;valorDoCampo><br/>
+  <p class="destaque3">Where:</p>
+  O where (onde) serve para localizar um dado em específico a partir do valor da sua chave primária<br/>
+  <p class="destaque3">Set:</p>
+  Indica que o valor do campo será atualizado
+  <p class="destaque2">Exemplo:</p>
+  Quero alterar o nome de "Maria" para "Duda" e na tabela o id (chave primária) da "Maria" é 4, logo para alterar o nome de "Maria" em específico devo usar o comando </br>
+  UPDATE pessoa SET nome = "Duda" WHERE id = 4 <br/>
+  <p class="importante">Caso você não use o where para fazer uma atualização ou uma deleção, TODOS os registros da tabela seram alterados/apagados</p>
+`;
 });
 tituloDelete.addEventListener("click", () => {
   tituloDelete.classList.add("selecionado");
@@ -435,15 +458,52 @@ tituloDelete.addEventListener("click", () => {
   tituloAlter.classList.remove("selecionado");
   tituloUpdate.classList.remove("selecionado");
   tituloInsert.classList.remove("selecionado");
+  tituloSelect.classList.remove("selecionado");
 
   tituloSql.classList.add("sem-selecao");
   tituloCreate.classList.add("sem-selecao");
   tituloAlter.classList.add("sem-selecao");
   tituloUpdate.classList.add("sem-selecao");
   tituloInsert.classList.add("sem-selecao");
+  tituloSelect.classList.add("sem-selecao");
 
   conteudo.classList.add("selecionado");
-  conteudo.textContent = "met eaque? Aut animi quibusdam conseq";
+  conteudo.innerHTML = `<p class="destaque">Sintaxe do comando de deleção</p>
+  DELETE &lt;nomeDaTabela><br/>
+  WHERE &lt;nomeDoCampo> = &lt;valorDoCampo>...
+  <p class="importante">Não se esqueça do where, se não você irá deletar tudo da tabela</p>
+`;
+});
+tituloSelect.addEventListener("click", () => {
+  tituloSelect.classList.add("selecionado");
+  tituloSelect.classList.remove("sem-selecao");
+
+  tituloSql.classList.remove("selecionado");
+  tituloCreate.classList.remove("selecionado");
+  tituloAlter.classList.remove("selecionado");
+  tituloUpdate.classList.remove("selecionado");
+  tituloInsert.classList.remove("selecionado");
+  tituloDelete.classList.remove("selecionado");
+
+  tituloSql.classList.add("sem-selecao");
+  tituloCreate.classList.add("sem-selecao");
+  tituloAlter.classList.add("sem-selecao");
+  tituloUpdate.classList.add("sem-selecao");
+  tituloInsert.classList.add("sem-selecao");
+  tituloDelete.classList.add("sem-selecao");
+
+  conteudo.classList.add("selecionado");
+  conteudo.innerHTML = `<p class="destaque">Sintaxe do comando de seleção (consulta)</p>
+  SELECT &lt;nomeDosCamposQueIraoAparecerNaConsulta><br/>
+  FROM &lt;nomeDaTabela>
+  WHERE &lt;nomeDoCampo> = &lt;valorDoCampo>...<br/>
+  <p class="destaque3">Select:</p>
+  O select (selecione) serve para fazer consultas no banco, nele você indica os campos que você deseja consultar, caso você deseje trazer todos os campos apenas coloque * (asterísco)<br/>
+  <p class="destaque3">From:</p>
+  O from (de) indica de qual tabela virá os campos que você quer consultar<br/>
+  <p class="destaque3">Obs:</p>
+  Neste caso o where é opcional, se você deseja consultar dados que tenham um valor específico em um campo você pode usá-lo, caso você so deseje mostrar todos os dados da tabela, não use o where;
+`;
 });
 
 //funções
@@ -552,7 +612,7 @@ btnProx.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify("ca5-ex4"));
       break;
     case "ca5-ex4":
-     localStorage.setItem("save", JSON.stringify("ca5-ex4"));
+      localStorage.setItem("save", JSON.stringify("ca5-ex4"));
       ultimoExercicio = true;
       break;
   }

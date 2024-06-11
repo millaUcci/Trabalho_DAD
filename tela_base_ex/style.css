@@ -319,6 +319,19 @@ body {
   margin-bottom: .1rem;
   font-weight: bold;
 }
+.destaque3{
+  display: inline-block;
+  margin-top: .1rem;
+  margin-bottom: .1rem;
+  font-weight: bold;
+}
+.importante{
+  color: rgb(164, 17, 17);
+  margin-top: .1rem;
+  margin-bottom: .1rem;
+  font-weight: bold;
+  font-size: .9rem;
+}
 .conteudo {
   text-align: left;
   position: relative;
