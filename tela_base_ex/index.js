@@ -27,6 +27,7 @@ const conteudo = document.getElementById("conteudo");
 const tituloSql = document.getElementById("conteudo-sql");
 const tituloCreate = document.getElementById("conteudo-create");
 const tituloAlter = document.getElementById("conteudo-alter");
+const tituloInsert = document.getElementById("conteudo-insert");
 const tituloUpdate = document.getElementById("conteudo-update");
 const tituloDelete = document.getElementById("conteudo-delete");
 
@@ -43,13 +44,13 @@ const todosOsExercicios = [
   "ca2-ex1",
   "ca3-ex1",
   "ca3-ex2",
+  "ca3-ex3",
   "ca4-ex1",
   "ca5-ex1",
   "ca5-ex2",
   "ca5-ex3",
+  "ca5-ex4",
 ];
-
-// const exerciciosConcluidos =JSON.parse(localStorage.getItem("exConcluidos"))
 
 config.addEventListener("click", () => {
   modalConfig.showModal();
@@ -183,6 +184,7 @@ switch (exercicioAtual) {
     criarBloco("rua", true, "bloco-h");
     arrastarBloco();
     break;
+  //responsavel pelo cap2 ex1: samira
   case "ca2-ex1":
     qtBlocos = 1;
     personalizarExercicio(
@@ -194,6 +196,7 @@ switch (exercicioAtual) {
     criarBloco("ivjwidfnoj", true, "bloco-a");
     arrastarBloco();
     break;
+  //responsavel pelo cap3 ex1: samira
   case "ca3-ex1":
     qtBlocos = 1;
     personalizarExercicio(
@@ -216,6 +219,17 @@ switch (exercicioAtual) {
     criarBloco("IOEFNVAEFN", true, "bloco-a");
     arrastarBloco();
     break;
+    case "ca3-ex3":
+      qtBlocos = 1;
+      personalizarExercicio(
+        "teste ca3 ex3",
+        "bjdbDWVCBDLKVKBD",
+        "Capítulo3 - ex3",
+        "../assets/fundos/6.png"
+      );
+      criarBloco("IOEFNVAEFN", true, "bloco-a");
+      arrastarBloco();
+      break;
   case "ca4-ex1":
     qtBlocos = 1;
     personalizarExercicio(
@@ -260,6 +274,18 @@ switch (exercicioAtual) {
     criarBloco("IOEFNVAEFN", true, "bloco-a");
     arrastarBloco();
     break;
+  //responsavel pelo cap5 ex4: samira
+  case "ca5-ex4":
+    qtBlocos = 1;
+    personalizarExercicio(
+      "teste ca5 ex4",
+      "bjdbDWVCBDLKVKBD",
+      "Capítulo5 - ex4",
+      "../assets/fundos/10.png"
+    );
+    criarBloco("IOEFNVAEFN", true, "bloco-a");
+    arrastarBloco();
+    break;
 }
 
 //fazendo abrir a modal do caderno de exercícios
@@ -281,15 +307,27 @@ tituloSql.addEventListener("click", () => {
   tituloAlter.classList.remove("selecionado");
   tituloUpdate.classList.remove("selecionado");
   tituloDelete.classList.remove("selecionado");
+  tituloInsert.classList.remove("selecionado");
 
   tituloCreate.classList.add("sem-selecao");
   tituloAlter.classList.add("sem-selecao");
   tituloUpdate.classList.add("sem-selecao");
   tituloDelete.classList.add("sem-selecao");
+  tituloInsert.classList.add("sem-selecao");
 
   conteudo.classList.add("selecionado");
-  conteudo.textContent =
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque assumenda atque esse praesentium voluptatem consequuntur vero amet eaque? Aut animi quibusdam conseq";
+  conteudo.innerHTML = `<p class="destaque">Algumas definições</p>
+  primary key: é um valor unico que identifica cada dado em uma tabela
+     <p class="destaque2">Tipos de campos</p>
+  integer: campo numérico <br/>
+  varchar(tamanho): campo de texto com tamanho definido <br/>
+  boolean: campo com valor true ou false
+  <p class="destaque2">Verificações: </p>
+  notnull: campo não pode ser nullo (vazio) <br/>
+  unique: o valor do campo será unico <br/>
+  primary key: o campo receberá o valor da chave primária da tabela
+  <br/>
+ `;
 });
 tituloCreate.addEventListener("click", () => {
   tituloCreate.classList.add("selecionado");
@@ -299,14 +337,25 @@ tituloCreate.addEventListener("click", () => {
   tituloAlter.classList.remove("selecionado");
   tituloUpdate.classList.remove("selecionado");
   tituloDelete.classList.remove("selecionado");
+  tituloInsert.classList.remove("selecionado");
 
   tituloSql.classList.add("sem-selecao");
   tituloAlter.classList.add("sem-selecao");
   tituloUpdate.classList.add("sem-selecao");
   tituloDelete.classList.add("sem-selecao");
+  tituloInsert.classList.add("sem-selecao");
 
   conteudo.classList.add("selecionado");
-  conteudo.textContent = "Lorem ipsum dolor sit ";
+  conteudo.innerHTML = `<p class="destaque">Sintaxes dos comandos de criação:</p>
+  <p class="destaque2">Database: </p>
+  CREATE DATABASE &lt;nome do dataBase> <br/>
+
+  <p class="destaque2">Tabela: </p>
+  CREATE TABLE &lt;nome da tabela>(<br/>
+	Campo1 &lt;tipoDoCampo> &lt;verificação>, <br/>
+	Campo2 &lt;tipoDoCampo> &lt;verificação>, <br/>
+	...
+);`;
 });
 tituloAlter.addEventListener("click", () => {
   tituloAlter.classList.add("selecionado");
@@ -316,15 +365,47 @@ tituloAlter.addEventListener("click", () => {
   tituloCreate.classList.remove("selecionado");
   tituloUpdate.classList.remove("selecionado");
   tituloDelete.classList.remove("selecionado");
+  tituloInsert.classList.remove("selecionado");
 
   tituloSql.classList.add("sem-selecao");
   tituloCreate.classList.add("sem-selecao");
   tituloUpdate.classList.add("sem-selecao");
   tituloDelete.classList.add("sem-selecao");
+  tituloInsert.classList.add("sem-selecao");
 
   conteudo.classList.add("selecionado");
-  conteudo.textContent =
-    "Doloremque assumenda atque esse praesentium voluptatem conse";
+  conteudo.innerHTML = `<p class="destaque">Sintaxe dos comandos de alteração:</p>
+    <p class="destaque2">Adicionar coluna</p>
+    ALTER TABLE &lt;nomeDaTabela> ADD &lt;nomeDoCampoQueVaiSerCriado> &lt;tipoDoCampo>
+
+    <p class="destaque2">Deletar coluna</p>
+    ALTER TABLE &lt;nomeDaTabela> DROP COLUMN &lt;nomeDoCampoQueVaiSerExcluido>`;
+});
+tituloInsert.addEventListener("click", () => {
+  tituloInsert.classList.add("selecionado");
+  tituloInsert.classList.remove("sem-selecao");
+
+  tituloSql.classList.remove("selecionado");
+  tituloCreate.classList.remove("selecionado");
+  tituloAlter.classList.remove("selecionado");
+  tituloDelete.classList.remove("selecionado");
+  tituloUpdate.classList.remove("selecionado");
+
+  tituloSql.classList.add("sem-selecao");
+  tituloCreate.classList.add("sem-selecao");
+  tituloAlter.classList.add("sem-selecao");
+  tituloDelete.classList.add("sem-selecao");
+  tituloUpdate.classList.add("sem-selecao");
+
+  conteudo.classList.add("selecionado");
+  conteudo.innerHTML = `<p class="destaque">Sintaxes dos comandos de inserção</p>
+  INSERT INTO &lt;nome da tabela> (&lt;colunas a qual os dados serão inseridos>)<br/>
+VALUES (&lt;valor, valor, valor...>); <br/>
+<p class="destaque2">Exemplo:</p>
+INSERT INTO pessoa (nome, sobrenome, idade)  <br/>
+VALUES (‘Maria’,’Fernandez’,25);  <br/>
+
+`;
 });
 tituloUpdate.addEventListener("click", () => {
   tituloUpdate.classList.add("selecionado");
@@ -334,14 +415,16 @@ tituloUpdate.addEventListener("click", () => {
   tituloCreate.classList.remove("selecionado");
   tituloAlter.classList.remove("selecionado");
   tituloDelete.classList.remove("selecionado");
+  tituloInsert.classList.remove("selecionado");
 
   tituloSql.classList.add("sem-selecao");
   tituloCreate.classList.add("sem-selecao");
   tituloAlter.classList.add("sem-selecao");
   tituloDelete.classList.add("sem-selecao");
+  tituloInsert.classList.add("sem-selecao");
 
   conteudo.classList.add("selecionado");
-  conteudo.textContent = "consectetur adipisicing elit.";
+  conteudo.innerHTML = `<p class="destaque">Sintaxes dos comandos de atualização</p>`;
 });
 tituloDelete.addEventListener("click", () => {
   tituloDelete.classList.add("selecionado");
@@ -351,11 +434,13 @@ tituloDelete.addEventListener("click", () => {
   tituloCreate.classList.remove("selecionado");
   tituloAlter.classList.remove("selecionado");
   tituloUpdate.classList.remove("selecionado");
+  tituloInsert.classList.remove("selecionado");
 
   tituloSql.classList.add("sem-selecao");
   tituloCreate.classList.add("sem-selecao");
   tituloAlter.classList.add("sem-selecao");
   tituloUpdate.classList.add("sem-selecao");
+  tituloInsert.classList.add("sem-selecao");
 
   conteudo.classList.add("selecionado");
   conteudo.textContent = "met eaque? Aut animi quibusdam conseq";
@@ -431,6 +516,7 @@ function arrastarBloco() {
   });
 }
 btnProx.addEventListener("click", () => {
+  let ultimoExercicio = false;
   switch (exercicioAtual) {
     case "ca1-ex1":
       localStorage.setItem("exAtual", JSON.stringify("ca1-ex2"));
@@ -448,6 +534,9 @@ btnProx.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify("ca3-ex2"));
       break;
     case "ca3-ex2":
+      localStorage.setItem("exAtual", JSON.stringify("ca3-ex3"));
+      break;
+    case "ca3-ex3":
       localStorage.setItem("exAtual", JSON.stringify("ca4-ex1"));
       break;
     case "ca4-ex1":
@@ -462,6 +551,10 @@ btnProx.addEventListener("click", () => {
     case "ca5-ex3":
       localStorage.setItem("exAtual", JSON.stringify("ca5-ex4"));
       break;
+    case "ca5-ex4":
+     localStorage.setItem("save", JSON.stringify("ca5-ex4"));
+      ultimoExercicio = true;
+      break;
   }
   const exerciciosConcluidos = JSON.parse(localStorage.getItem("exConcluidos"));
   const qntCapitulos = todosOsExercicios.length;
@@ -472,12 +565,20 @@ btnProx.addEventListener("click", () => {
     }
   }
   if (concluiuTodos) {
-    // window.alert("você terminou todos os exercícios");
-    window.location.href="../tela_final/index.html"
+    window.alert("você terminou todos os exercícios");
+    window.location.href = "../tela_final/index.html";
   } else {
-    window.location.reload();
+    if (ultimoExercicio) {
+      window.alert(
+        "Você terminou o último capítulo, complete os outros capítulos para finalizar o curso"
+      );
+      window.location.href = "../tela_capitulos/index.html";
+    } else {
+      window.location.reload();
+    }
   }
 });
+
 function verificarAtividade() {
   const blocos = terminal.children;
   const blocosCorretos = [];

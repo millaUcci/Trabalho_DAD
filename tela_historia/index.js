@@ -14,10 +14,3 @@ comecar.addEventListener('click',()=>{
     window.location.href = "../tela_capitulos/index.html"
 })
 
-// config.addEventListener("click",()=>{
-//     modalConfig.showModal()
-// })
-
-// fecharModalConfig.addEventListener("click", () =>{
-//   modalConfig.close();
-// })
