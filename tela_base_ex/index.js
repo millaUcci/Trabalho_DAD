@@ -60,7 +60,7 @@ btnSair.addEventListener("click", () => {
 
 //Vendo o exercíco a
 switch (exercicioAtual) {
-  case "ca1-ex1":
+  case "ca1-ex2":
     qtBlocos = 3;
     personalizarExercicio(
       "Para começarmos é preciso criar a cidade onde os moradores ficaram. Usaremos o comando CREATE juntamente com a indicação de qual objeto do banco de dados será criado, que neste caso será um DATABASE.",
@@ -79,11 +79,11 @@ switch (exercicioAtual) {
     arrastarBloco();
 
     break;
-  case "ca1-ex2":
+  case "ca1-ex1":
     qtBlocos = 11;
     personalizarExercicio(
       "Agora que a cidade foi criada precisamos criar duas tabelas, uma para guardar dados sobre os moradores da cidade e outra para guardar os dados sobre as casas dos moradores.\nAinda utilizaremos o comando CREATE porém agora utilizaremos o objeto do banco de dados TABLE, seguido dos campos da tabela e do tipo de cada campo.",
-      "Sabendo que a tabela de moradores terá os campos: id_morador, nome, sobrenome,  filhos, tipo_sanguineo e idade",
+      "Crie a tabela 'Moradores' sabendo que ela terá os campos: id_morador, nome, sobrenome,  filhos, tipo_sanguineo e idade",
       "Capítulo1 - ex2"
     );
     criarBloco("alter", false, "");
@@ -106,6 +106,13 @@ switch (exercicioAtual) {
     criarBloco("vampcity,", false, "");
     criarBloco("[", false, "");
     criarBloco(");", true, "bloco-k");
+    criarBloco("PRIMARY KEY", true, "bloco-k");
+    criarBloco("NOT NULL,", true, "bloco-k");
+    criarBloco("NOT NULL,", true, "bloco-k");
+    criarBloco("NOT NULL,", true, "bloco-k");
+    criarBloco("NOT NULL,", true, "bloco-k");
+    criarBloco("NOT NULL,", true, "bloco-k");
+    criarBloco("NOT NULL,", true, "bloco-k");
     arrastarBloco();
     break;
   case "ca1-ex3":
