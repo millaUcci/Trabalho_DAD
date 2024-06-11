@@ -308,7 +308,19 @@ body {
   cursor: pointer;
   z-index: 0;
 }
+.destaque{
+  margin-top: .1rem;
+  margin-bottom: .1rem;
+  font-weight: bold;
+  font-size: medium;
+}
+.destaque2{
+  margin-top: .1rem;
+  margin-bottom: .1rem;
+  font-weight: bold;
+}
 .conteudo {
+  text-align: left;
   position: relative;
   top: -1.5rem;
   border-radius: 0.4rem;
