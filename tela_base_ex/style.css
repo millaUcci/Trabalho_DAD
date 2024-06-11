@@ -6,6 +6,10 @@
   user-select: none;
   font-family: "Inter";
 }
+body{
+  margin: 0rem;
+  padding: 0rem;
+}
 .botoes-header {
   filter: invert(100%);
   width: 1.8rem;
@@ -35,7 +39,7 @@
   top: 3.5rem;
   left: 0.5rem;
 }
-button {
+.button {
   font-family: "Inter";
   font-weight: bold;
   font-size: medium;
@@ -100,6 +104,8 @@ body {
   border: solid 0.32rem rgb(87, 18, 18);
 }
 #div-blocos {
+  background-color:  rgb(22, 20, 25,.8);
+  border-radius: .3rem;
   text-align: center;
   margin: 0.4rem;
   width: 37rem;
@@ -182,46 +188,73 @@ body {
 .botoes-terminal {
   width: 40%;
 }
-.modal {
+.modal{
   border-radius: 1rem;
   background-color: rgb(216, 219, 221);
   color: rgb(22, 20, 25);
   text-align: center;
   width: 18rem;
-  padding: 1rem 2.5rem 2rem;
-  border: 0.3rem solid rgb(53, 47, 58);
+  padding: 1rem 3rem 2rem;
+  border: .3rem solid  rgb(53, 47, 58);
 }
 .modal::backdrop {
   background-color: rgb(22, 20, 25, 0.5);
 }
 .modal > h1 {
   font-family: "Kranky";
-  font-size: x-large;
 }
 #modal-caderno {
   width: 40%;
-  background-color: rgb(216, 219, 221);
 }
-.btn-modal {
+.ultimo-save{
+  font-family: 'Inter';
+  font-weight: bold;
+  font-size: large;
+}
+#div-config{
   margin: auto;
-  margin-top: 0.5rem;
+  width: 15rem;
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#div-botoes-modal{
+  position: relative;
+  left: .5rem;
+  width: 7rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#btn-creditos{
   width: 10rem;
+  margin-top: 1rem;
+}
+.btn-modal{
+  margin-top:.5rem;
+  width: 6rem;
   height: 1.5rem;
   background-color: rgb(216, 219, 221);
   color: rgb(53, 47, 58);
-  border-radius: 0.3rem;
-  border: solid 0.1rem rgb(22, 20, 25);
+  border-radius: .3rem;
+  border: solid .1rem  rgb(22, 20, 25);
   font-family: "Inter";
-  padding-bottom: 1.5rem;
   font-weight: bolder;
   cursor: pointer;
 }
-.btn-modal:hover {
-  background-color: rgb(174, 175, 176);
+.btn-modal:hover{
+ background-color:  rgb(174, 175, 176);
 }
-.btn-modal:active {
+.btn-modal:active{
   background-color: rgb(53, 47, 58);
   color: rgb(174, 175, 176);
+}
+#sair-sem-salvar{
+  width: fit-content;
 }
 #div-fala {
   background: rgb(198, 200, 201);
@@ -252,12 +285,14 @@ body {
 #fala-vampiro {
   position: relative;
   top: 0.5rem;
-  left: 0.3rem;
-  width: 15rem;
+  left: 0.5rem;
+  width: 14.5rem;
   height: 2rem;
   text-justify: auto;
   font-family: "Inter;";
-  color: rgb(52, 52, 52);
+  font-weight: bold;
+  font-size: large;
+  color: rgb(36, 36, 36);
 }
 .titulo {
   display: flex;
@@ -273,7 +308,19 @@ body {
   cursor: pointer;
   z-index: 0;
 }
+.destaque{
+  margin-top: .1rem;
+  margin-bottom: .1rem;
+  font-weight: bold;
+  font-size: medium;
+}
+.destaque2{
+  margin-top: .1rem;
+  margin-bottom: .1rem;
+  font-weight: bold;
+}
 .conteudo {
+  text-align: left;
   position: relative;
   top: -1.5rem;
   border-radius: 0.4rem;
@@ -294,4 +341,7 @@ body {
 .sem-selecao {
   border: solid 0.1rem rgb(90, 89, 89);
   background-color: rgb(110, 110, 110);
+}
+#fundo{
+  width:100%;
 }

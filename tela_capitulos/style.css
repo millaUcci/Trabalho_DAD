@@ -13,7 +13,7 @@ body{
 header{
     margin-bottom: 3rem;
 }
-#home{
+/* #home{
     filter: invert(100%);
     width: 2rem;
     margin: .5rem;
@@ -27,7 +27,7 @@ header{
 }
 #home:active{
     filter: invert(30%);
-}
+} */
 #config{
     filter: invert(100%);
     width: 2rem;
@@ -35,11 +35,11 @@ header{
     cursor: pointer;
     position: absolute;
     top: .5rem;
-    right: .5rem;
-  }
-  #config:hover{
+    left: .5rem;
+}
+ #config:hover{
     filter:invert(60%)
-  }
+}
   #config:active{
     filter: invert(30%);
   }
@@ -184,8 +184,8 @@ background-color: rgb(22, 20, 25,.5);
 .ex-salvo{
     background-color: rgb(81, 53, 108);
 }
-.ex-selecionado{
-    background-color: cadetblue;
+.ex-feito{
+    background-color: rgb(47, 83, 84);
 }
 .btn-modal{
     margin-top:.5rem;
@@ -213,17 +213,8 @@ background-color: rgb(22, 20, 25,.5);
     top: 1rem;
     filter: invert(20%);
     cursor: pointer;
-  }
-#div-botoes-modal{
-    position: relative;
-    left: .5rem;
-    width: 7rem;
-    height: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
+
 #ultimo-save{
     font-family: 'Inter';
     font-weight: bold;
@@ -237,6 +228,16 @@ background-color: rgb(22, 20, 25,.5);
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+#div-botoes-modal{
+  position: relative;
+  left: .5rem;
+  width: 7rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 #btn-creditos{
     width: 10rem;

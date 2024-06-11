@@ -42,7 +42,7 @@ body {
   background-color: rgb(216, 219, 221);
   display: inline-block;
 }
-h1{
+.titulo{
   font-family: 'Ephesis';
   font-weight:bold;
   margin-top: .5rem;
@@ -64,7 +64,7 @@ p::first-letter{
 font-weight: bold;
 font-size: 2rem;
 }
-button{
+.button{
   position: absolute;
   bottom: 2rem;
   right: 5rem;
@@ -85,7 +85,7 @@ button:active{
   background-color: rgb(53, 47, 58);
   color: rgb(174, 175, 176);
 }
-#home{
+/* #home{
   filter: invert(100%);
   width: 2rem;
   margin: .5rem;
@@ -99,19 +99,93 @@ button:active{
 }
 #home:active{
   filter: invert(30%);
-}
-#config{
+} */
+ #config{
   filter: invert(100%);
   width: 2rem;
   margin: .5rem;
   cursor: pointer;
   position: absolute;
-  top: 3.5rem;
-  left: 0.5rem;
+  top: .5rem;
+  left: .5rem;
 }
 #config:hover{
   filter:invert(60%)
 }
 #config:active{
   filter: invert(30%);
+} 
+.fechar-modal {
+  width: 1.5rem;
+  position: absolute;
+  left: 1.5rem;
+  top: 1rem;
+  filter: invert(20%);
+  cursor: pointer;
+}
+#btn-creditos{
+  width: 10rem;
+  margin-top: 1rem;
+}
+.btn-modal{
+  margin-top:.5rem;
+  width: 6rem;
+  height: 1.5rem;
+  background-color: rgb(216, 219, 221);
+  color: rgb(53, 47, 58);
+  border-radius: .3rem;
+  border: solid .1rem  rgb(22, 20, 25);
+  font-family: "Inter";
+  font-weight: bolder;
+  cursor: pointer;
+}
+.btn-modal:hover{
+ background-color:  rgb(174, 175, 176);
+}
+.btn-modal:active{
+  background-color: rgb(53, 47, 58);
+  color: rgb(174, 175, 176);
+}
+.modal{
+  border-radius: 1rem;
+  background-color: rgb(216, 219, 221);
+  color: rgb(22, 20, 25);
+  text-align: center;
+  width: 18rem;
+  padding: 1rem 3rem 2rem;
+  border: .3rem solid  rgb(53, 47, 58);
+}
+.modal::backdrop{
+background-color: rgb(22, 20, 25,.5);
+}
+.modal > h1{
+  font-family: 'Kranky';
+}
+#ultimo-save{
+  font-family: 'Inter';
+  font-weight: bold;
+  font-size: large;
+}
+#div-config{
+  margin: auto;
+  width: 15rem;
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#div-botoes-modal{
+    position: relative;
+    left: .5rem;
+    width: 7rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#btn-creditos{
+  width: 10rem;
+  margin-top: 1rem;
 }
