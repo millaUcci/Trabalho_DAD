@@ -161,52 +161,86 @@ switch (exercicioAtual) {
     criarBloco(");", true, "bloco-k");
     arrastarBloco();
     break;
-  case "ca1-ex3":
-    qtBlocos = 10;
-    personalizarExercicio(
-      "Ainda usando os conhecimentos adquiridos no exercício anterior, crie a tabela de casas a partir das colunas dadas a você no caderno. Decida você mesmo o tipo e as verificações dos outros três campos. (dica: todos os campos são obrigatórios, mas nem todos são únicos)",
-      "Monte o comando abaixo",
-      "Capítulo1 - ex3",
-      "../assets/fundos/3.png"
-    );
-    criarBloco("create table", true, "bloco-a");
-    criarBloco("id integer,", false, "");
-    criarBloco("id integer primary key,", true, "bloco-d");
-    criarBloco("num_casa integer,", true, "bloco-e");
-    criarBloco("num_casa varchar(10),", false, "");
-    criarBloco("casas", true, "bloco-b");
-    criarBloco("(", true, "bloco-c");
-    criarBloco(");", true, "bloco-j");
-    criarBloco("varchar(5),", false, "");
-    criarBloco("varchar(100)", true, "bloco-i");
-    criarBloco("id_morador", true, "bloco-f");
-    criarBloco("boolean,", false, "");
-    criarBloco("integer,", true, "bloco-g");
-    criarBloco("rua", true, "bloco-h");
-    arrastarBloco();
-    break;
+    case "ca1-ex3":
+      qtBlocos = 10;
+      personalizarExercicio(
+        "Ainda usando os conhecimentos adquiridos no exercício anterior, crie a tabela de casas a partir das colunas dadas abaixo. Decida você mesmo o tipo e as verificações dos campos. (dica: todos os campos são obrigatórios, mas nem todos são únicos)",
+        "Para montar a tabela utilize essa ordem de campos (id, num_casa, id_morador, rua)",
+        "Capítulo1 - ex3",
+        "../assets/fundos/3.png"
+      );
+      criarBloco("create table", true, "bloco-a");
+      criarBloco("id integer,", false, "");
+      criarBloco("id integer primary key,", true, "bloco-d");
+      criarBloco("num_casa integer,", false, "");
+      criarBloco("num_casa integer notnull,", true, "bloco-e");
+      criarBloco("num_casa varchar(10),", false, "");
+      criarBloco("casas", true, "bloco-b");
+      criarBloco("(", true, "bloco-c");
+      criarBloco(");", true, "bloco-j");
+      criarBloco("varchar(5),", false, "");
+      criarBloco("varchar(100)", true, "bloco-i");
+      criarBloco("id_morador", true, "bloco-f");
+      criarBloco("boolean,", false, "");
+      criarBloco("integer,", true, "bloco-g");
+      criarBloco("rua", true, "bloco-h");
+      arrastarBloco();
+      break;
   //responsavel pelo cap2 ex1: samira
   case "ca2-ex1":
-    qtBlocos = 1;
+    qtBlocos = 11;
     personalizarExercicio(
-      "teste ca2",
-      "hbvihawb fvhiabwf",
+      "Pelo visto vamos precisar alterar a estrutura da tabela de moradores, precisamos acrescentar um campo chamado “conjuge” que receberá o id do morador com quem ele é casado. Para alterar dados iremos utilizar o comando ALTER. Agora, adicione o campo “cônjuge” e exclua o campo “filhos”. (Dica: conjuge estara relacionado com id_morador, logo terá o mesmo tipo)(Dica2: para poder executar mais de um comando por vez, basta acrescentar um ponto e virgula ao final do primeiro comando, para indicar que ele foi finalizado e que o que vier depois é outro comando.)",
+      "Monte os comandos para fazer as duas alterações",
       "Capítulo2 - ex1",
       "../assets/fundos/4.png"
     );
-    criarBloco("ivjwidfnoj", true, "bloco-a");
+    criarBloco("varchar(5)",false,"")
+    criarBloco("deletar filhos",false,"")
+    criarBloco("criar conjuge",false,"")
+    criarBloco("moradores",true,"bloco-h")
+    criarBloco("integer",true,"bloco-d")
+    criarBloco("inserir",false,"")
+    criarBloco(";",true,"bloco-f")
+    criarBloco("alter table",true,"bloco-g")
+    criarBloco("alter",true,"bloco-a")
+    criarBloco("drop",true,"bloco-i")
+    criarBloco("remover",false,"")
+    criarBloco("column",true,"bloco-j")
+    criarBloco("table moradores add",true,"bloco-b")
+    criarBloco("conjuge",true,"bloco-c")
+    criarBloco("alteração",false,"")
+    criarBloco("filhos;",true,"bloco-k")
+    criarBloco("deletar",false,"")
+    criarBloco("notnull",true,"bloco-e")
+ 
     arrastarBloco();
     break;
   //responsavel pelo cap3 ex1: samira
   case "ca3-ex1":
-    qtBlocos = 1;
+    qtBlocos = 10;
     personalizarExercicio(
-      "teste ca3 ex1",
-      "bjdbDWVCBDLKVKBD",
+      "Agora que as estruturas das tabelas estão prontas, você precisa inserir alguns moradores na cidade e suas casas. Nós usaremos o comando INSERT. Usando o conteúdo do caderno insira o seguinte morador: "+`
+      id_morador: 1, nome: Dorian, sobrenome: Lestrad, tipo_sanguineo: A+, idade:34, conjuge: 2`,
+      "Monte o comando para inserir o morador",
       "Capítulo3 - ex1",
       "../assets/fundos/5.png"
     );
-    criarBloco("IOEFNVAEFN", true, "bloco-a");
+    criarBloco("into", true, "bloco-b");
+    criarBloco("1,'Dorian','Lestrad','A+',34,2", true, "bloco-i");
+    criarBloco("'A-',33",false,"")
+    criarBloco("moradores", true, "bloco-c");
+    criarBloco("Dorian Lestrad",false,"")
+    criarBloco("id_morador, nome, sobrenome,", true, "bloco-e");
+    criarBloco("insert", true, "bloco-a");
+    criarBloco("idade, id_morador",false,"")
+    criarBloco(")", true, "bloco-g");
+    criarBloco("inserir",false,"")
+    criarBloco("tipo_sanguineo, idade, conjuge", true, "bloco-f");
+    criarBloco("(", true, "bloco-d");
+    criarBloco(");", true, "bloco-j");
+    criarBloco("values(", true, "bloco-h");
+    criarBloco("inserção morador",false,"")
     arrastarBloco();
     break;
   case "ca3-ex2":
@@ -326,7 +360,7 @@ tituloSql.addEventListener("click", () => {
   varchar(tamanho): campo de texto com tamanho definido <br/>
   boolean: campo com valor true ou false
   <p class="destaque2">Verificações: </p>
-  notnull: campo não pode ser nullo (vazio) <br/>
+  notnull(NN): campo não pode ser nullo (vazio) <br/>
   unique: o valor do campo será unico <br/>
   primary key: o campo receberá o valor da chave primária da tabela
   <br/>
@@ -410,10 +444,13 @@ tituloInsert.addEventListener("click", () => {
   conteudo.innerHTML = `<p class="destaque">Sintaxes dos comandos de inserção</p>
   INSERT INTO &lt;nome da tabela> (&lt;colunas a qual os dados serão inseridos>)<br/>
 VALUES (&lt;valor, valor, valor...>); <br/>
+<p class="destaque2">Into:</p>
+Into serve para indicar quais campos receberam os valores do Values
+<p class="destaque2">Values:</p>
+Serve para indicar quais valores serão inseridos
 <p class="destaque2">Exemplo:</p>
 INSERT INTO pessoa (nome, sobrenome, idade)  <br/>
 VALUES (‘Maria’,’Fernandez’,25);  <br/>
-
 `;
 });
 tituloUpdate.addEventListener("click", () => {
