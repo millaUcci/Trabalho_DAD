@@ -30,6 +30,7 @@ const tituloAlter = document.getElementById("conteudo-alter");
 const tituloInsert = document.getElementById("conteudo-insert");
 const tituloUpdate = document.getElementById("conteudo-update");
 const tituloDelete = document.getElementById("conteudo-delete");
+const tituloSelect = document.getElementById("conteudo-select")
 
 const modalConfig = document.getElementById("modal-config");
 const fecharModalConfig = document.getElementById("fechar-modal-config");
@@ -131,81 +132,115 @@ switch (exercicioAtual) {
 
     break;
   case "ca1-ex2":
-    qtBlocos = 11;
+    qtBlocos = 13;
     personalizarExercicio(
-      "Agora que a cidade foi criada precisamos criar duas tabelas, uma para guardar dados sobre os moradores da cidade e outra para guardar os dados sobre as casas dos moradores.\nAinda utilizaremos o comando CREATE porém agora utilizaremos o objeto do banco de dados TABLE, seguido dos campos da tabela e do tipo de cada campo.",
-      "Sabendo que a tabela de moradores terá os campos: id_morador, nome, sobrenome,  filhos, tipo_sanguineo e idade",
+      "Agora que a cidade foi criada precisamos criar duas tabelas, uma para guardar dados sobre os moradores da cidade e outra para guardar os dados das casas dos moradores. Utilizaremos o comando CREATE com o objeto do banco de dados TABLE, seguido dos campos da tabela e do tipo de cada campo. (Dica: Veja no caderno os tipos mais adequado para cada campo)(dica: todos os campos são obrigatórios) Obs: NN = notnull, PK = primary key",
+      "Crie a tabela Moradores com os campos: id_morador, nome, sobrenome,  filhos, tipo_sanguineo e idade",
       "Capítulo1 - ex2",
       "../assets/fundos/2.png"
     );
     criarBloco("alter", false, "");
     criarBloco("create", true, "bloco-a");
-    criarBloco("];", false, "");
     criarBloco(";", false, "");
-    criarBloco("sobrenome varchar(15),", true, "bloco-g");
-    criarBloco("filhos integer,", true, "bloco-h");
-    criarBloco("tipo_sanguineo varchar(5),", true, "bloco-i");
-    criarBloco("idade integer", true, "bloco-j");
+    criarBloco("sobrenome varchar(15) NN,", true, "bloco-h");
+    criarBloco("NN,", true, "bloco-k");
+    criarBloco("filhos integer NN,", true, "bloco-i");
+    criarBloco("tipo_sanguineo varchar(5)", true, "bloco-j");
+    criarBloco("idade integer NN", true, "bloco-l");
     criarBloco("objeto", false, "");
     criarBloco("criar", false, "");
     criarBloco("table", true, "bloco-b");
     criarBloco("moradores", true, "bloco-c");
-    criarBloco("data", false, "");
     criarBloco("data base,", false, "");
     criarBloco("(", true, "bloco-d");
-    criarBloco("id_morador integer,", true, "bloco-e");
-    criarBloco("nome varchar(15),", true, "bloco-f");
-    criarBloco("vampcity,", false, "");
-    criarBloco("[", false, "");
-    criarBloco(");", true, "bloco-k");
+    criarBloco("id_morador integer NN", true, "bloco-e");
+    criarBloco(");", true, "bloco-m");
+    criarBloco("PK,", true, "bloco-f");
     arrastarBloco();
+    criarBloco("nome varchar(15) NN,", true, "bloco-g");
     break;
-  case "ca1-ex3":
-    qtBlocos = 10;
-    personalizarExercicio(
-      "Ainda usando os conhecimentos adquiridos no exercício anterior, crie a tabela de casas a partir das colunas dadas a você no caderno. Decida você mesmo o tipo e as verificações dos outros três campos. (dica: todos os campos são obrigatórios, mas nem todos são únicos)",
-      "Monte o comando abaixo",
-      "Capítulo1 - ex3",
-      "../assets/fundos/3.png"
-    );
-    criarBloco("create table", true, "bloco-a");
-    criarBloco("id integer,", false, "");
-    criarBloco("id integer primary key,", true, "bloco-d");
-    criarBloco("num_casa integer,", true, "bloco-e");
-    criarBloco("num_casa varchar(10),", false, "");
-    criarBloco("casas", true, "bloco-b");
-    criarBloco("(", true, "bloco-c");
-    criarBloco(");", true, "bloco-j");
-    criarBloco("varchar(5),", false, "");
-    criarBloco("varchar(100)", true, "bloco-i");
-    criarBloco("id_morador", true, "bloco-f");
-    criarBloco("boolean,", false, "");
-    criarBloco("integer,", true, "bloco-g");
-    criarBloco("rua", true, "bloco-h");
-    arrastarBloco();
-    break;
+    case "ca1-ex3":
+      qtBlocos = 12;
+      personalizarExercicio(
+        "Ainda usando os conhecimentos adquiridos no exercício anterior, crie a tabela de casas a partir das colunas dadas abaixo. Decida você mesmo o tipo e as verificações dos campos. (dica: todos os campos são obrigatórios) Obs: NN = notnull, PK = primary key",
+        "Para montar a tabela utilize essa ordem de campos: id, num_casa, id_morador, rua",
+        "Capítulo1 - ex3",
+        "../assets/fundos/3.png"
+      );
+      criarBloco("create table", true, "bloco-a");
+      criarBloco("id integer,", false, "");
+      criarBloco("id integer nn,", true, "bloco-d");
+      criarBloco("pk,",true,"bloco-e")
+      criarBloco("num_casa integer,", false, "");
+      criarBloco("num_casa integer nn,", true, "bloco-f");
+      criarBloco("num_casa varchar(10),", false, "");
+      criarBloco("casas", true, "bloco-b");
+      criarBloco("(", true, "bloco-c");
+      criarBloco(");",true,"bloco-l")
+      criarBloco("nn", true, "bloco-k");
+      criarBloco("varchar(5),", false, "");
+      criarBloco("varchar(100)", true, "bloco-j");
+      criarBloco("id_morador", true, "bloco-g");
+      criarBloco("boolean,", false, "");
+      criarBloco("integer nn,", true, "bloco-h");
+      criarBloco("rua", true, "bloco-i");
+      arrastarBloco();
+      break;
   //responsavel pelo cap2 ex1: samira
   case "ca2-ex1":
-    qtBlocos = 1;
+    qtBlocos = 11;
     personalizarExercicio(
-      "teste ca2",
-      "hbvihawb fvhiabwf",
+      "Pelo visto vamos precisar alterar a estrutura da tabela de moradores, precisamos acrescentar um campo chamado “conjuge” que receberá o id do morador com quem ele é casado. Para alterar dados iremos utilizar o comando ALTER. Agora, adicione o campo “cônjuge” e exclua o campo “filhos”. (Dica: conjuge estara relacionado com id_morador, logo terá o mesmo tipo)(Dica2: para poder executar mais de um comando por vez, basta acrescentar um ponto e virgula ao final do primeiro comando, para indicar que ele foi finalizado e que o que vier depois é outro comando.)",
+      "Monte os comandos para fazer as duas alterações",
       "Capítulo2 - ex1",
       "../assets/fundos/4.png"
     );
-    criarBloco("ivjwidfnoj", true, "bloco-a");
+    criarBloco("varchar(5)",false,"")
+    criarBloco("deletar filhos",false,"")
+    criarBloco("criar conjuge",false,"")
+    criarBloco("moradores",true,"bloco-h")
+    criarBloco("integer",true,"bloco-d")
+    criarBloco("inserir",false,"")
+    criarBloco(";",true,"bloco-f")
+    criarBloco("alter table",true,"bloco-g")
+    criarBloco("alter",true,"bloco-a")
+    criarBloco("drop",true,"bloco-i")
+    criarBloco("remover",false,"")
+    criarBloco("column",true,"bloco-j")
+    criarBloco("table moradores add",true,"bloco-b")
+    criarBloco("conjuge",true,"bloco-c")
+    criarBloco("alteração",false,"")
+    criarBloco("filhos;",true,"bloco-k")
+    criarBloco("deletar",false,"")
+    criarBloco("NN",true,"bloco-e")
+ 
     arrastarBloco();
     break;
   //responsavel pelo cap3 ex1: samira
   case "ca3-ex1":
-    qtBlocos = 1;
+    qtBlocos = 10;
     personalizarExercicio(
-      "teste ca3 ex1",
-      "bjdbDWVCBDLKVKBD",
+      "Agora que as estruturas das tabelas estão prontas, você precisa inserir alguns moradores na cidade e suas casas. Nós usaremos o comando INSERT. Usando o conteúdo do caderno insira o seguinte morador: "+`
+      id_morador: 1, nome: Dorian, sobrenome: Lestrad, tipo_sanguineo: A+, idade:34, conjuge: 2`,
+      "Monte o comando para inserir o morador",
       "Capítulo3 - ex1",
       "../assets/fundos/5.png"
     );
-    criarBloco("IOEFNVAEFN", true, "bloco-a");
+    criarBloco("into", true, "bloco-b");
+    criarBloco("1,'Dorian','Lestrad','A+',34,2", true, "bloco-i");
+    criarBloco("'A-',33",false,"")
+    criarBloco("moradores", true, "bloco-c");
+    criarBloco("Dorian Lestrad",false,"")
+    criarBloco("id_morador, nome, sobrenome,", true, "bloco-e");
+    criarBloco("insert", true, "bloco-a");
+    criarBloco("idade, id_morador",false,"")
+    criarBloco(")", true, "bloco-g");
+    criarBloco("inserir",false,"")
+    criarBloco("tipo_sanguineo, idade, conjuge", true, "bloco-f");
+    criarBloco("(", true, "bloco-d");
+    criarBloco(");", true, "bloco-j");
+    criarBloco("values(", true, "bloco-h");
+    criarBloco("inserção morador",false,"")
     arrastarBloco();
     break;
   case "ca3-ex2":
@@ -219,17 +254,17 @@ switch (exercicioAtual) {
     criarBloco("IOEFNVAEFN", true, "bloco-a");
     arrastarBloco();
     break;
-    case "ca3-ex3":
-      qtBlocos = 1;
-      personalizarExercicio(
-        "teste ca3 ex3",
-        "bjdbDWVCBDLKVKBD",
-        "Capítulo3 - ex3",
-        "../assets/fundos/6.png"
-      );
-      criarBloco("IOEFNVAEFN", true, "bloco-a");
-      arrastarBloco();
-      break;
+  case "ca3-ex3":
+    qtBlocos = 1;
+    personalizarExercicio(
+      "teste ca3 ex3",
+      "bjdbDWVCBDLKVKBD",
+      "Capítulo3 - ex3",
+      "../assets/fundos/6.png"
+    );
+    criarBloco("IOEFNVAEFN", true, "bloco-a");
+    arrastarBloco();
+    break;
   case "ca4-ex1":
     qtBlocos = 1;
     personalizarExercicio(
@@ -253,25 +288,60 @@ switch (exercicioAtual) {
     arrastarBloco();
     break;
   case "ca5-ex2":
-    qtBlocos = 1;
+    qtBlocos = 15;
     personalizarExercicio(
-      "teste ca5 ex2",
-      "bjdbDWVCBDLKVKBD",
+      "Ordene as informações da tabela casas pela ordem alfabética das ruas, além disso, ordene os moradores pela sua idade, do mais velho ao mais novo.",
+      "Monte o comando abaixo",
       "Capítulo5 - ex2",
       "../assets/fundos/9.png"
     );
-    criarBloco("IOEFNVAEFN", true, "bloco-a");
+    criarBloco("SELECT", true, "bloco-a");
+    criarBloco("*", true, "bloco-b");
+    criarBloco("FROM", true, "bloco-c");
+    criarBloco("casas", true, "bloco-d");
+    criarBloco("ORDER BY", true, "bloco-e");
+    criarBloco("rua", true, "bloco-f");
+    criarBloco(";", true, "bloco-g");
+    criarBloco("SELECT", true, "bloco-h");
+    criarBloco("*", true, "bloco-i");
+    criarBloco("FROM", true, "bloco-j");
+    criarBloco("casas", true, "bloco-k");
+    criarBloco("ORDER BY", true, "bloco-l");
+    criarBloco("idade", true, "bloco-m");
+    criarBloco("DESC", true, "bloco-n");
+    criarBloco(";", true, "bloco-o");
     arrastarBloco();
     break;
   case "ca5-ex3":
     qtBlocos = 1;
     personalizarExercicio(
-      "teste ca5 ex3",
-      "bjdbDWVCBDLKVKBD",
+      "Os vampiros querem reabastecer o tanque de sangue B-, porém, os tanques são separados por faixa etária, hoje eles querem apenas o sangue de pessoas com menos de 30 anos, utilize uma query para retornar id_morador, nome, sobrenome, tipo_sanguineo e idade de alguém com essas características. ",
+      "Monte o comando abaixo",
       "Capítulo5 - ex3",
       "../assets/fundos/10.png"
     );
-    criarBloco("IOEFNVAEFN", true, "bloco-a");
+    
+    criarBloco("(SELECT", true, "bloco-a");
+    criarBloco("id_morador, nome, sobrenome, tipo_sanguineo, idade", true, "bloco-a");
+    criarBloco("FROM", true, "bloco-a");
+    criarBloco("moradores", true, "bloco-a");
+    criarBloco("WHERE", true, "bloco-a");
+    criarBloco("idade < 30", true, "bloco-a");
+    criarBloco("AND", true, "bloco-a");
+    criarBloco("tipo_sanguineo = 'B-')", true, "bloco-a");
+    criarBloco("(", true, "bloco-a");
+    criarBloco("SELECT", true, "bloco-a");
+    criarBloco("*", true, "bloco-a");
+    criarBloco("FROM", true, "bloco-a");
+    criarBloco("casas", true, "bloco-a");
+    criarBloco("", true, "bloco-a");
+    criarBloco("(", true, "bloco-a");
+    criarBloco("WHERE", true, "bloco-a");
+    criarBloco("WHERE", true, "bloco-a");
+    criarBloco("WHERE", true, "bloco-a");
+    criarBloco("WHERE", true, "bloco-a");
+    criarBloco("WHERE", true, "bloco-a");
+    criarBloco("(select * from casas where id_morador = 2")
     arrastarBloco();
     break;
   //responsavel pelo cap5 ex4: samira
@@ -308,12 +378,14 @@ tituloSql.addEventListener("click", () => {
   tituloUpdate.classList.remove("selecionado");
   tituloDelete.classList.remove("selecionado");
   tituloInsert.classList.remove("selecionado");
+  tituloSelect.classList.remove("selecionado");
 
   tituloCreate.classList.add("sem-selecao");
   tituloAlter.classList.add("sem-selecao");
   tituloUpdate.classList.add("sem-selecao");
   tituloDelete.classList.add("sem-selecao");
   tituloInsert.classList.add("sem-selecao");
+  tituloSelect.classList.add("sem-selecao");
 
   conteudo.classList.add("selecionado");
   conteudo.innerHTML = `<p class="destaque">Algumas definições</p>
@@ -323,7 +395,7 @@ tituloSql.addEventListener("click", () => {
   varchar(tamanho): campo de texto com tamanho definido <br/>
   boolean: campo com valor true ou false
   <p class="destaque2">Verificações: </p>
-  notnull: campo não pode ser nullo (vazio) <br/>
+  notnull(NN): campo não pode ser nullo (vazio) <br/>
   unique: o valor do campo será unico <br/>
   primary key: o campo receberá o valor da chave primária da tabela
   <br/>
@@ -338,12 +410,14 @@ tituloCreate.addEventListener("click", () => {
   tituloUpdate.classList.remove("selecionado");
   tituloDelete.classList.remove("selecionado");
   tituloInsert.classList.remove("selecionado");
+  tituloSelect.classList.remove("selecionado")
 
   tituloSql.classList.add("sem-selecao");
   tituloAlter.classList.add("sem-selecao");
   tituloUpdate.classList.add("sem-selecao");
   tituloDelete.classList.add("sem-selecao");
   tituloInsert.classList.add("sem-selecao");
+  tituloSelect.classList.add("sem-selecao");
 
   conteudo.classList.add("selecionado");
   conteudo.innerHTML = `<p class="destaque">Sintaxes dos comandos de criação:</p>
@@ -366,12 +440,14 @@ tituloAlter.addEventListener("click", () => {
   tituloUpdate.classList.remove("selecionado");
   tituloDelete.classList.remove("selecionado");
   tituloInsert.classList.remove("selecionado");
+  tituloSelect.classList.remove("selecionado")
 
   tituloSql.classList.add("sem-selecao");
   tituloCreate.classList.add("sem-selecao");
   tituloUpdate.classList.add("sem-selecao");
   tituloDelete.classList.add("sem-selecao");
   tituloInsert.classList.add("sem-selecao");
+  tituloSelect.classList.add("sem-selecao");
 
   conteudo.classList.add("selecionado");
   conteudo.innerHTML = `<p class="destaque">Sintaxe dos comandos de alteração:</p>
@@ -390,21 +466,26 @@ tituloInsert.addEventListener("click", () => {
   tituloAlter.classList.remove("selecionado");
   tituloDelete.classList.remove("selecionado");
   tituloUpdate.classList.remove("selecionado");
+  tituloSelect.classList.remove("selecionado")
 
   tituloSql.classList.add("sem-selecao");
   tituloCreate.classList.add("sem-selecao");
   tituloAlter.classList.add("sem-selecao");
   tituloDelete.classList.add("sem-selecao");
   tituloUpdate.classList.add("sem-selecao");
+  tituloSelect.classList.add("sem-selecao");
 
   conteudo.classList.add("selecionado");
   conteudo.innerHTML = `<p class="destaque">Sintaxes dos comandos de inserção</p>
   INSERT INTO &lt;nome da tabela> (&lt;colunas a qual os dados serão inseridos>)<br/>
 VALUES (&lt;valor, valor, valor...>); <br/>
+<p class="destaque2">Into:</p>
+Into serve para indicar quais campos receberam os valores do Values
+<p class="destaque2">Values:</p>
+Serve para indicar quais valores serão inseridos
 <p class="destaque2">Exemplo:</p>
 INSERT INTO pessoa (nome, sobrenome, idade)  <br/>
 VALUES (‘Maria’,’Fernandez’,25);  <br/>
-
 `;
 });
 tituloUpdate.addEventListener("click", () => {
@@ -416,15 +497,29 @@ tituloUpdate.addEventListener("click", () => {
   tituloAlter.classList.remove("selecionado");
   tituloDelete.classList.remove("selecionado");
   tituloInsert.classList.remove("selecionado");
+  tituloSelect.classList.remove("selecionado");
 
   tituloSql.classList.add("sem-selecao");
   tituloCreate.classList.add("sem-selecao");
   tituloAlter.classList.add("sem-selecao");
   tituloDelete.classList.add("sem-selecao");
   tituloInsert.classList.add("sem-selecao");
+  tituloSelect.classList.add("sem-selecao");
 
   conteudo.classList.add("selecionado");
-  conteudo.innerHTML = `<p class="destaque">Sintaxes dos comandos de atualização</p>`;
+  conteudo.innerHTML = `<p class="destaque">Sintaxe do comando de atualização</p>
+  UPDATE &lt;nomeDaTabela><br/>
+  SET &lt;nomeDoCampo> = &lt;novoValor>...<br/>
+  WHERE &lt;nomeDoCampo> = &lt;valorDoCampo><br/>
+  <p class="destaque3">Where:</p>
+  O where (onde) serve para localizar um dado em específico a partir do valor da sua chave primária<br/>
+  <p class="destaque3">Set:</p>
+  Indica que o valor do campo será atualizado
+  <p class="destaque2">Exemplo:</p>
+  Quero alterar o nome de "Maria" para "Duda" e na tabela o id (chave primária) da "Maria" é 4, logo para alterar o nome de "Maria" em específico devo usar o comando </br>
+  UPDATE pessoa SET nome = "Duda" WHERE id = 4 <br/>
+  <p class="importante">Caso você não use o where para fazer uma atualização ou uma deleção, TODOS os registros da tabela seram alterados/apagados</p>
+`;
 });
 tituloDelete.addEventListener("click", () => {
   tituloDelete.classList.add("selecionado");
@@ -435,15 +530,52 @@ tituloDelete.addEventListener("click", () => {
   tituloAlter.classList.remove("selecionado");
   tituloUpdate.classList.remove("selecionado");
   tituloInsert.classList.remove("selecionado");
+  tituloSelect.classList.remove("selecionado");
 
   tituloSql.classList.add("sem-selecao");
   tituloCreate.classList.add("sem-selecao");
   tituloAlter.classList.add("sem-selecao");
   tituloUpdate.classList.add("sem-selecao");
   tituloInsert.classList.add("sem-selecao");
+  tituloSelect.classList.add("sem-selecao");
 
   conteudo.classList.add("selecionado");
-  conteudo.textContent = "met eaque? Aut animi quibusdam conseq";
+  conteudo.innerHTML = `<p class="destaque">Sintaxe do comando de deleção</p>
+  DELETE &lt;nomeDaTabela><br/>
+  WHERE &lt;nomeDoCampo> = &lt;valorDoCampo>...
+  <p class="importante">Não se esqueça do where, se não você irá deletar tudo da tabela</p>
+`;
+});
+tituloSelect.addEventListener("click", () => {
+  tituloSelect.classList.add("selecionado");
+  tituloSelect.classList.remove("sem-selecao");
+
+  tituloSql.classList.remove("selecionado");
+  tituloCreate.classList.remove("selecionado");
+  tituloAlter.classList.remove("selecionado");
+  tituloUpdate.classList.remove("selecionado");
+  tituloInsert.classList.remove("selecionado");
+  tituloDelete.classList.remove("selecionado");
+
+  tituloSql.classList.add("sem-selecao");
+  tituloCreate.classList.add("sem-selecao");
+  tituloAlter.classList.add("sem-selecao");
+  tituloUpdate.classList.add("sem-selecao");
+  tituloInsert.classList.add("sem-selecao");
+  tituloDelete.classList.add("sem-selecao");
+
+  conteudo.classList.add("selecionado");
+  conteudo.innerHTML = `<p class="destaque">Sintaxe do comando de seleção (consulta)</p>
+  SELECT &lt;nomeDosCamposQueIraoAparecerNaConsulta><br/>
+  FROM &lt;nomeDaTabela>
+  WHERE &lt;nomeDoCampo> = &lt;valorDoCampo>...<br/>
+  <p class="destaque3">Select:</p>
+  O select (selecione) serve para fazer consultas no banco, nele você indica os campos que você deseja consultar, caso você deseje trazer todos os campos apenas coloque * (asterísco)<br/>
+  <p class="destaque3">From:</p>
+  O from (de) indica de qual tabela virá os campos que você quer consultar<br/>
+  <p class="destaque3">Obs:</p>
+  Neste caso o where é opcional, se você deseja consultar dados que tenham um valor específico em um campo você pode usá-lo, caso você so deseje mostrar todos os dados da tabela, não use o where;
+`;
 });
 
 //funções
@@ -552,7 +684,7 @@ btnProx.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify("ca5-ex4"));
       break;
     case "ca5-ex4":
-     localStorage.setItem("save", JSON.stringify("ca5-ex4"));
+      localStorage.setItem("save", JSON.stringify("ca5-ex4"));
       ultimoExercicio = true;
       break;
   }
