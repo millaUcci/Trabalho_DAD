@@ -6,6 +6,10 @@
   user-select: none;
   font-family: "Inter";
 }
+body{
+  margin: 0rem;
+  padding: 0rem;
+}
 .botoes-header {
   filter: invert(100%);
   width: 1.8rem;
@@ -23,11 +27,11 @@
   top: 0.5rem;
   left: 0.5rem;
 }
-#fechar-modal{
+.fechar-modal {
   width: 1.5rem;
   position: absolute;
-  left:1.5rem;
-  top:1rem;
+  left: 1.5rem;
+  top: 1rem;
   filter: invert(20%);
   cursor: pointer;
 }
@@ -35,7 +39,7 @@
   top: 3.5rem;
   left: 0.5rem;
 }
-button {
+.button {
   font-family: "Inter";
   font-weight: bold;
   font-size: medium;
@@ -57,7 +61,8 @@ button:active {
   background-color: rgb(53, 47, 58);
   color: rgb(174, 175, 176);
 }
-.botoes-exercicios{
+
+.botoes-exercicios {
   position: absolute;
   font-size: medium;
   width: 4.8rem;
@@ -65,13 +70,13 @@ button:active {
   justify-content: center;
   align-items: center;
 }
-#btn-sair-exercicio{
+#btn-sair-exercicio {
   right: 2rem;
-  bottom:5rem;
+  bottom: 5rem;
 }
-#btn-proximo-ex{
+#btn-proximo-ex {
   right: 2rem;
-  bottom:2rem;
+  bottom: 2rem;
 }
 body {
   background-color: rgb(22, 20, 25);
@@ -99,6 +104,8 @@ body {
   border: solid 0.32rem rgb(87, 18, 18);
 }
 #div-blocos {
+  background-color:  rgb(22, 20, 25,.8);
+  border-radius: .3rem;
   text-align: center;
   margin: 0.4rem;
   width: 37rem;
@@ -118,7 +125,7 @@ body {
   display: inline-block;
   font-weight: bold;
 }
-.bloco:hover{
+.bloco:hover {
   background-color: rgb(174, 175, 176);
 }
 #div-texto {
@@ -132,7 +139,7 @@ body {
   font-size: small;
   text-align: center;
   position: relative;
-  top:0rem;
+  top: 0rem;
   right: 1.7rem;
   margin: 0rem;
   padding: 0rem;
@@ -181,33 +188,61 @@ body {
 .botoes-terminal {
   width: 40%;
 }
-.modal {
+.modal{
   border-radius: 1rem;
   background-color: rgb(216, 219, 221);
   color: rgb(22, 20, 25);
   text-align: center;
   width: 18rem;
   padding: 1rem 3rem 2rem;
-  border: 0.3rem solid rgb(53, 47, 58);
+  border: .3rem solid  rgb(53, 47, 58);
 }
 .modal::backdrop {
   background-color: rgb(22, 20, 25, 0.5);
 }
 .modal > h1 {
   font-family: "Kranky";
-  font-size:x-large;
+}
+#modal-caderno {
+  width: 40%;
+}
+.ultimo-save{
+  font-family: 'Inter';
+  font-weight: bold;
+  font-size: large;
+}
+#div-config{
+  margin: auto;
+  width: 15rem;
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#div-botoes-modal{
+  position: relative;
+  left: .5rem;
+  width: 7rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#btn-creditos{
+  width: 10rem;
+  margin-top: 1rem;
 }
 .btn-modal{
-  margin:auto;
   margin-top:.5rem;
-  width: 10rem;
+  width: 6rem;
   height: 1.5rem;
   background-color: rgb(216, 219, 221);
   color: rgb(53, 47, 58);
   border-radius: .3rem;
   border: solid .1rem  rgb(22, 20, 25);
   font-family: "Inter";
-  padding-bottom: 1.5rem;
   font-weight: bolder;
   cursor: pointer;
 }
@@ -218,19 +253,21 @@ body {
   background-color: rgb(53, 47, 58);
   color: rgb(174, 175, 176);
 }
-#div-fala{
-  background:rgb(198, 200, 201);
+#sair-sem-salvar{
+  width: fit-content;
+}
+#div-fala {
+  background: rgb(198, 200, 201);
   border-radius: 50%;
   width: 16rem;
   height: 6rem;
 
   position: absolute;
-  top:4rem;
-  left:20rem;
+  top: 4rem;
+  left: 20rem;
   text-align: center;
 }
-#div-fala:after{
-
+#div-fala:after {
   content: "";
 
   width: 0;
@@ -245,13 +282,66 @@ body {
   bottom: -10px;
   left: 20%;
 }
-#fala-vampiro{
+#fala-vampiro {
   position: relative;
-  top: .5rem;
-  left: .3rem;
-  width: 15rem;
+  top: 0.5rem;
+  left: 0.5rem;
+  width: 14.5rem;
   height: 2rem;
   text-justify: auto;
-  font-family: 'Inter;';
-  color: rgb(52, 52, 52);
+  font-family: "Inter;";
+  font-weight: bold;
+  font-size: large;
+  color: rgb(36, 36, 36);
+}
+.titulo {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  font-size: medium;
+  font-weight: bold;
+  width: 4rem;
+  height: 2.5rem;
+  padding: 0.3rem;
+  border-top-right-radius: 0.4rem;
+  border-top-left-radius: 0.4rem;
+  cursor: pointer;
+  z-index: 0;
+}
+.destaque{
+  margin-top: .1rem;
+  margin-bottom: .1rem;
+  font-weight: bold;
+  font-size: medium;
+}
+.destaque2{
+  margin-top: .1rem;
+  margin-bottom: .1rem;
+  font-weight: bold;
+}
+.conteudo {
+  text-align: left;
+  position: relative;
+  top: -1.5rem;
+  border-radius: 0.4rem;
+  padding: 0.7rem 0.5rem 0.5rem 0.5rem;
+  height: 18rem;
+  z-index: 1;
+}
+.invisivel {
+  display: none;
+}
+#titulos-caderno {
+  display: flex;
+  justify-content: space-between;
+}
+.selecionado {
+  background-color: rgb(177, 177, 177);
+}
+.sem-selecao {
+  border: solid 0.1rem rgb(90, 89, 89);
+  background-color: rgb(110, 110, 110);
+}
+#fundo{
+  width:100%;
 }

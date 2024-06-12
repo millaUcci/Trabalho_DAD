@@ -10,7 +10,7 @@
   </head>
   <body>
     <header>
-      <img src="/assets/home.png" alt="icone de home" id="home" />
+      <!-- <img src="/assets/home.png" alt="icone de home" id="home" /> -->
       <img src="/assets/config.png" alt="" id="config" />
     </header>
     <div id="div-principal">
@@ -50,6 +50,7 @@
         src="/assets/seta-left.png"
         alt="seta para fechar o modal"
         id="fechar-modal"
+        class="fechar-modal"
       />
       <h1 id="titulo-modal"></h1>
       <div id="div-exercicios"></div>
@@ -61,18 +62,21 @@
         src="/assets/seta-left.png"
         alt="seta para fechar o modal"
         id="fechar-modal-config"
+        class="fechar-modal"
       />
       <h1>Configurações</h1>
       <div id="div-config">
         <div id="ultimo-save"></div>
         <div id="div-botoes-modal">
           <button
+            id="btn-recomecar"
             class="btn-modal"
             title="Você perdera o seu progresso e irá começar do primeiro capitulo do primeiro exercício"
           >
             Recomeçar
           </button>
           <button
+            id="btn-resetar"
             class="btn-modal"
             title="Você perdera todo o seu progresso, inclusive o modo de aprendizado(história, livre)"
           >
