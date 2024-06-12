@@ -132,58 +132,58 @@ switch (exercicioAtual) {
 
     break;
   case "ca1-ex2":
-    qtBlocos = 11;
+    qtBlocos = 13;
     personalizarExercicio(
-      "Agora que a cidade foi criada precisamos criar duas tabelas, uma para guardar dados sobre os moradores da cidade e outra para guardar os dados sobre as casas dos moradores.\nAinda utilizaremos o comando CREATE porém agora utilizaremos o objeto do banco de dados TABLE, seguido dos campos da tabela e do tipo de cada campo.",
-      "Sabendo que a tabela de moradores terá os campos: id_morador, nome, sobrenome,  filhos, tipo_sanguineo e idade",
+      "Agora que a cidade foi criada precisamos criar duas tabelas, uma para guardar dados sobre os moradores da cidade e outra para guardar os dados das casas dos moradores. Utilizaremos o comando CREATE com o objeto do banco de dados TABLE, seguido dos campos da tabela e do tipo de cada campo. (Dica: Veja no caderno os tipos mais adequado para cada campo)(dica: todos os campos são obrigatórios) Obs: NN = notnull, PK = primary key",
+      "Crie a tabela Moradores com os campos: id_morador, nome, sobrenome,  filhos, tipo_sanguineo e idade",
       "Capítulo1 - ex2",
       "../assets/fundos/2.png"
     );
     criarBloco("alter", false, "");
     criarBloco("create", true, "bloco-a");
-    criarBloco("];", false, "");
     criarBloco(";", false, "");
-    criarBloco("sobrenome varchar(15),", true, "bloco-g");
-    criarBloco("filhos integer,", true, "bloco-h");
-    criarBloco("tipo_sanguineo varchar(5),", true, "bloco-i");
-    criarBloco("idade integer", true, "bloco-j");
+    criarBloco("sobrenome varchar(15) NN,", true, "bloco-h");
+    criarBloco("NN,", true, "bloco-k");
+    criarBloco("filhos integer NN,", true, "bloco-i");
+    criarBloco("tipo_sanguineo varchar(5)", true, "bloco-j");
+    criarBloco("idade integer NN", true, "bloco-l");
     criarBloco("objeto", false, "");
     criarBloco("criar", false, "");
     criarBloco("table", true, "bloco-b");
     criarBloco("moradores", true, "bloco-c");
-    criarBloco("data", false, "");
     criarBloco("data base,", false, "");
     criarBloco("(", true, "bloco-d");
-    criarBloco("id_morador integer,", true, "bloco-e");
-    criarBloco("nome varchar(15),", true, "bloco-f");
-    criarBloco("vampcity,", false, "");
-    criarBloco("[", false, "");
-    criarBloco(");", true, "bloco-k");
+    criarBloco("id_morador integer NN", true, "bloco-e");
+    criarBloco(");", true, "bloco-m");
+    criarBloco("PK,", true, "bloco-f");
     arrastarBloco();
+    criarBloco("nome varchar(15) NN,", true, "bloco-g");
     break;
     case "ca1-ex3":
-      qtBlocos = 10;
+      qtBlocos = 12;
       personalizarExercicio(
-        "Ainda usando os conhecimentos adquiridos no exercício anterior, crie a tabela de casas a partir das colunas dadas abaixo. Decida você mesmo o tipo e as verificações dos campos. (dica: todos os campos são obrigatórios, mas nem todos são únicos)",
-        "Para montar a tabela utilize essa ordem de campos (id, num_casa, id_morador, rua)",
+        "Ainda usando os conhecimentos adquiridos no exercício anterior, crie a tabela de casas a partir das colunas dadas abaixo. Decida você mesmo o tipo e as verificações dos campos. (dica: todos os campos são obrigatórios) Obs: NN = notnull, PK = primary key",
+        "Para montar a tabela utilize essa ordem de campos: id, num_casa, id_morador, rua",
         "Capítulo1 - ex3",
         "../assets/fundos/3.png"
       );
       criarBloco("create table", true, "bloco-a");
       criarBloco("id integer,", false, "");
-      criarBloco("id integer primary key,", true, "bloco-d");
+      criarBloco("id integer nn,", true, "bloco-d");
+      criarBloco("pk,",true,"bloco-e")
       criarBloco("num_casa integer,", false, "");
-      criarBloco("num_casa integer notnull,", true, "bloco-e");
+      criarBloco("num_casa integer nn,", true, "bloco-f");
       criarBloco("num_casa varchar(10),", false, "");
       criarBloco("casas", true, "bloco-b");
       criarBloco("(", true, "bloco-c");
-      criarBloco(");", true, "bloco-j");
+      criarBloco(");",true,"bloco-l")
+      criarBloco("nn", true, "bloco-k");
       criarBloco("varchar(5),", false, "");
-      criarBloco("varchar(100)", true, "bloco-i");
-      criarBloco("id_morador", true, "bloco-f");
+      criarBloco("varchar(100)", true, "bloco-j");
+      criarBloco("id_morador", true, "bloco-g");
       criarBloco("boolean,", false, "");
-      criarBloco("integer,", true, "bloco-g");
-      criarBloco("rua", true, "bloco-h");
+      criarBloco("integer nn,", true, "bloco-h");
+      criarBloco("rua", true, "bloco-i");
       arrastarBloco();
       break;
   //responsavel pelo cap2 ex1: samira
@@ -212,7 +212,7 @@ switch (exercicioAtual) {
     criarBloco("alteração",false,"")
     criarBloco("filhos;",true,"bloco-k")
     criarBloco("deletar",false,"")
-    criarBloco("notnull",true,"bloco-e")
+    criarBloco("NN",true,"bloco-e")
  
     arrastarBloco();
     break;
