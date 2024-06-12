@@ -253,25 +253,59 @@ switch (exercicioAtual) {
     arrastarBloco();
     break;
   case "ca5-ex2":
-    qtBlocos = 1;
+    qtBlocos = 15;
     personalizarExercicio(
-      "teste ca5 ex2",
-      "bjdbDWVCBDLKVKBD",
+      "Ordene as informações da tabela casas pela ordem alfabética das ruas, além disso, ordene os moradores pela sua idade, do mais velho ao mais novo.",
+      "Monte o comando abaixo",
       "Capítulo5 - ex2",
       "../assets/fundos/9.png"
     );
-    criarBloco("IOEFNVAEFN", true, "bloco-a");
+    criarBloco("SELECT", true, "bloco-a");
+    criarBloco("*", true, "bloco-b");
+    criarBloco("FROM", true, "bloco-c");
+    criarBloco("casas", true, "bloco-d");
+    criarBloco("ORDER BY", true, "bloco-e");
+    criarBloco("rua", true, "bloco-f");
+    criarBloco(";", true, "bloco-g");
+    criarBloco("SELECT", true, "bloco-h");
+    criarBloco("*", true, "bloco-i");
+    criarBloco("FROM", true, "bloco-j");
+    criarBloco("casas", true, "bloco-k");
+    criarBloco("ORDER BY", true, "bloco-l");
+    criarBloco("idade", true, "bloco-m");
+    criarBloco("DESC", true, "bloco-n");
+    criarBloco(";", true, "bloco-o");
     arrastarBloco();
     break;
   case "ca5-ex3":
     qtBlocos = 1;
     personalizarExercicio(
-      "teste ca5 ex3",
-      "bjdbDWVCBDLKVKBD",
+      "Os vampiros querem reabastecer o tanque de sangue B-, porém, os tanques são separados por faixa etária, hoje eles querem apenas o sangue de pessoas com menos de 30 anos, utilize uma query para retornar id_morador, nome, sobrenome, tipo_sanguineo e idade de alguém com essas características. ",
+      "Monte o comando abaixo",
       "Capítulo5 - ex3",
       "../assets/fundos/10.png"
     );
-    criarBloco("IOEFNVAEFN", true, "bloco-a");
+    criarBloco("(SELECT", true, "bloco-a");
+    criarBloco("id_morador, nome, sobrenome, tipo_sanguineo, idade", true, "bloco-a");
+    criarBloco("FROM", true, "bloco-a");
+    criarBloco("moradores", true, "bloco-a");
+    criarBloco("WHERE", true, "bloco-a");
+    criarBloco("idade < 30", true, "bloco-a");
+    criarBloco("AND", true, "bloco-a");
+    criarBloco("tipo_sanguineo = 'B-')", true, "bloco-a");
+    criarBloco("(", true, "bloco-a");
+    criarBloco("SELECT", true, "bloco-a");
+    criarBloco("*", true, "bloco-a");
+    criarBloco("FROM", true, "bloco-a");
+    criarBloco("casas", true, "bloco-a");
+    criarBloco("", true, "bloco-a");
+    criarBloco("(", true, "bloco-a");
+    criarBloco("WHERE", true, "bloco-a");
+    criarBloco("WHERE", true, "bloco-a");
+    criarBloco("WHERE", true, "bloco-a");
+    criarBloco("WHERE", true, "bloco-a");
+    criarBloco("WHERE", true, "bloco-a");
+    criarBloco("(select * from casas where id_morador = 2")
     arrastarBloco();
     break;
   //responsavel pelo cap5 ex4: samira
