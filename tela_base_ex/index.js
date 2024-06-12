@@ -320,6 +320,7 @@ switch (exercicioAtual) {
       "Capítulo5 - ex3",
       "../assets/fundos/10.png"
     );
+    
     criarBloco("(SELECT", true, "bloco-a");
     criarBloco("id_morador, nome, sobrenome, tipo_sanguineo, idade", true, "bloco-a");
     criarBloco("FROM", true, "bloco-a");
