@@ -344,6 +344,7 @@ switch (exercicioAtual) {
     criarBloco("(select * from casas where id_morador = 2")
     arrastarBloco();
     break;
+    
   //responsavel pelo cap5 ex4: samira
   case "ca5-ex4":
     qtBlocos = 1;
