@@ -313,7 +313,7 @@ switch (exercicioAtual) {
     arrastarBloco();
     break;
   case "ca5-ex3":
-    qtBlocos = 1;
+    qtBlocos = 17;
     personalizarExercicio(
       "Os vampiros querem reabastecer o tanque de sangue B-, porém, os tanques são separados por faixa etária, hoje eles querem apenas o sangue de pessoas com menos de 30 anos, utilize uma query para retornar id_morador, nome, sobrenome, tipo_sanguineo e idade de alguém com essas características. ",
       "Monte o comando abaixo",
@@ -321,27 +321,23 @@ switch (exercicioAtual) {
       "../assets/fundos/10.png"
     );
     
-    criarBloco("(SELECT", true, "bloco-a");
-    criarBloco("id_morador, nome, sobrenome, tipo_sanguineo, idade", true, "bloco-a");
-    criarBloco("FROM", true, "bloco-a");
-    criarBloco("moradores", true, "bloco-a");
-    criarBloco("WHERE", true, "bloco-a");
-    criarBloco("idade < 30", true, "bloco-a");
-    criarBloco("AND", true, "bloco-a");
-    criarBloco("tipo_sanguineo = 'B-')", true, "bloco-a");
-    criarBloco("(", true, "bloco-a");
-    criarBloco("SELECT", true, "bloco-a");
-    criarBloco("*", true, "bloco-a");
-    criarBloco("FROM", true, "bloco-a");
-    criarBloco("casas", true, "bloco-a");
-    criarBloco("", true, "bloco-a");
-    criarBloco("(", true, "bloco-a");
-    criarBloco("WHERE", true, "bloco-a");
-    criarBloco("WHERE", true, "bloco-a");
-    criarBloco("WHERE", true, "bloco-a");
-    criarBloco("WHERE", true, "bloco-a");
-    criarBloco("WHERE", true, "bloco-a");
-    criarBloco("(select * from casas where id_morador = 2")
+    criarBloco("select *", true, "bloco-i");
+    criarBloco("from carros", false, "");
+    criarBloco("idade < 30", true, "bloco-e");
+    criarBloco("from", true, "bloco-j");
+    criarBloco("update", false, "");
+    criarBloco("select", true, "bloco-a");
+    criarBloco("idade - 30", false, "");
+    criarBloco("where id_morador", true, "bloco-l");
+    criarBloco("id_morador, nome, sobrenome, tipo_sanguineo, idade", true, "bloco-b");
+    criarBloco("from moradores", true, "bloco-c");
+    criarBloco("= 2", true, "bloco-m");
+    criarBloco("(", true, "bloco-h");
+    criarBloco("tipo_sanguineo = 'B-';", true, "bloco-g");
+    criarBloco("where", true, "bloco-d");
+    criarBloco("and", true, "bloco-f");
+    criarBloco("aviões", false, "");
+    criarBloco("casas", true, "bloco-k");
     arrastarBloco();
     break;
   //responsavel pelo cap5 ex4: samira
