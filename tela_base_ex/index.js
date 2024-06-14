@@ -17,6 +17,7 @@ const btnSairSalvar = document.getElementById("sair-e-salvar");
 const btnSairSemSalvar = document.getElementById("sair-sem-salvar");
 const btnSairModalSaida = document.getElementById("fechar-modal-saida");
 const fundo = document.getElementById("fundo");
+const divBlocosLista = [];
 let qtBlocos = 0;
 
 //modal caderno
@@ -160,6 +161,7 @@ switch (exercicioAtual) {
     criarBloco("PK,", true, "bloco-f");
     criarBloco("nome varchar(15) NN,", true, "bloco-g");
     arrastarBloco();
+    aleatorizarBlocos();
     break;
   case "ca1-ex3":
     falaAleatoria();
@@ -188,6 +190,7 @@ switch (exercicioAtual) {
     criarBloco("integer nn,", true, "bloco-h");
     criarBloco("rua", true, "bloco-i");
     arrastarBloco();
+    aleatorizarBlocos();
     break;
   case "ca2-ex1":
     falaAleatoria();
@@ -217,6 +220,7 @@ switch (exercicioAtual) {
     criarBloco("deletar", false, "");
     criarBloco("NN", true, "bloco-e");
     arrastarBloco();
+    aleatorizarBlocos();
     break;
   case "ca3-ex1":
     falaAleatoria();
@@ -246,6 +250,7 @@ switch (exercicioAtual) {
     criarBloco("values(", true, "bloco-h");
     criarBloco("inserção morador", false, "");
     arrastarBloco();
+    aleatorizarBlocos();
     break;
   case "ca3-ex2":
     falaAleatoria();
@@ -276,6 +281,7 @@ switch (exercicioAtual) {
     criarBloco("1,'arteriae'", true, "bloco-k");
     criarBloco(");", true, "bloco-l");
     arrastarBloco();
+    aleatorizarBlocos();
     break;
   case "ca3-ex3":
     falaAleatoria();
@@ -307,6 +313,7 @@ switch (exercicioAtual) {
     criarBloco("1", true, "bloco-i");
     criarBloco("atualizar", false, "");
     arrastarBloco();
+    aleatorizarBlocos();
     break;
   case "ca4-ex1":
     falaAleatoria();
@@ -335,6 +342,7 @@ switch (exercicioAtual) {
     criarBloco("cinco", false, "");
     criarBloco("remover", false, "");
     arrastarBloco();
+    aleatorizarBlocos();
     break;
   case "ca5-ex1":
     falaAleatoria();
@@ -347,6 +355,7 @@ switch (exercicioAtual) {
     );
     criarBloco("IOEFNVAEFN", true, "bloco-a");
     arrastarBloco();
+    aleatorizarBlocos();
     break;
   case "ca5-ex2":
     falaAleatoria();
@@ -375,6 +384,7 @@ switch (exercicioAtual) {
     criarBloco("where", false, "");
     criarBloco("select *", true, "bloco-a");
     arrastarBloco();
+    aleatorizarBlocos();
     break;
   case "ca5-ex3":
     falaAleatoria();
@@ -403,6 +413,7 @@ switch (exercicioAtual) {
     criarBloco("<", true, "bloco-k");
 
     arrastarBloco();
+    aleatorizarBlocos();
     break;
 
   //responsavel pelo cap5 ex4: samira
@@ -417,6 +428,7 @@ switch (exercicioAtual) {
     );
     criarBloco("IOEFNVAEFN", true, "bloco-a");
     arrastarBloco();
+    aleatorizarBlocos();
     break;
 }
 
@@ -667,13 +679,17 @@ function criarBloco(desc, blocoSolucao, id) {
   if (blocoSolucao) {
     div.setAttribute("id", id);
   }
-  divBlocos.appendChild(div);
+  divBlocosLista.push(div);
 }
 
 function aleatorizarBlocos() {
-  divBlocosAleatoria = Array.from(divBlocos)
-  divBlocos = divBlocosAleatoria.sort()
-  alert("")
+  for (let i = divBlocosLista.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [divBlocosLista[i], divBlocosLista[j]] = [divBlocosLista[j], divBlocosLista[i]];
+  }
+  for(let k = 0; k < divBlocosLista.length; k++) {
+    divBlocos.appendChild(divBlocosLista[k])
+  }
 }
 
 function arrastarBloco() {
