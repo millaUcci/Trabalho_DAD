@@ -39,6 +39,7 @@ button{
     width: 20%;
     height: auto;
     margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 div {
@@ -72,9 +73,15 @@ button:hover {
 .grupo-botoes{
     width: fit-content;
     margin: auto;
+    display: flex;
+    gap: 10px;
 }
 
 button:active{
     background-color: rgb(53, 47, 58);
     color: rgb(174, 175, 176);
+}
+
+#certificado {
+    width: fit-content;
 }
