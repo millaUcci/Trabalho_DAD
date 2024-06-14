@@ -141,7 +141,7 @@ body {
   font-size: small;
   text-align: center;
   position: relative;
-  top: 0rem;
+  top: -1.2rem;
   right: 1.7rem;
   margin: 0rem;
   padding: 0rem;
@@ -162,12 +162,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 27rem;
+  height: 30rem;
   width: 40rem;
   position: absolute;
-  top: 3rem;
+  top: 2rem;
   right: 3rem;
   padding: 0.4rem;
+}
+#div-vampiro{
+  position: absolute;
+  top:5rem;
+  left: 9rem;
+  height: 29rem;
+  width: 15rem;
 }
 #vampiro {
   width: 40%;
@@ -175,6 +182,7 @@ body {
   bottom: 0rem;
   left: 2rem;
 }
+
 #div-digitar {
   width: 40rem;
   height: 13rem;
@@ -342,8 +350,9 @@ body {
   top: -1.5rem;
   border-radius: 0.4rem;
   padding: 0.7rem 0.5rem 0.5rem 0.5rem;
-  height: 18rem;
+  height: 20rem;
   z-index: 1;
+  overflow-y: scroll;
 }
 .invisivel {
   display: none;
