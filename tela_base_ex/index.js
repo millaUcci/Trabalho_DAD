@@ -130,6 +130,7 @@ switch (exercicioAtual) {
     criarBloco("data", false, "");
     criarBloco("data base", false, "");
     arrastarBloco();
+    aleatorizarBlocos();
 
     break;
   case "ca1-ex2":
@@ -696,6 +697,12 @@ function criarBloco(desc, blocoSolucao, id) {
     div.setAttribute("id", id);
   }
   divBlocos.appendChild(div);
+}
+
+function aleatorizarBlocos() {
+  divBlocosAleatoria = Array.from(divBlocos)
+  divBlocos = divBlocosAleatoria.sort()
+  alert("")
 }
 
 function arrastarBloco() {
