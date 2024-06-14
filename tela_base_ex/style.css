@@ -273,12 +273,12 @@ body {
   border-radius: 50%;
   width: 16rem;
   height: 6rem;
-
   position: absolute;
   top: 4rem;
   left: 20rem;
   text-align: center;
 }
+
 #div-fala:after {
   content: "";
 
@@ -294,17 +294,23 @@ body {
   bottom: -10px;
   left: 20%;
 }
+
 #fala-vampiro {
   position: relative;
-  top: 0.5rem;
+  top: 0.7rem;
   left: 0.5rem;
   width: 14.5rem;
   height: 2rem;
   text-justify: auto;
   font-family: "Inter;";
   font-weight: bold;
-  font-size: large;
   color: rgb(36, 36, 36);
+}
+.fala-menor{
+  font-size: small;
+}
+.fala-maior{
+  font-size: large;
 }
 .titulo {
   display: flex;
