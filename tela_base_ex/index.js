@@ -136,7 +136,7 @@ switch (exercicioAtual) {
     falaAleatoria();
     qtBlocos = 13;
     personalizarExercicio(
-      "Agora que a cidade foi criada precisamos criar duas tabelas, uma para guardar dados sobre os moradores da cidade e outra para guardar os dados das casas dos moradores. Utilizaremos o comando CREATE com o objeto do banco de dados TABLE, seguido dos campos da tabela e do tipo de cada campo. (Dica: Veja no caderno os tipos mais adequado para cada campo)(dica: todos os campos são obrigatórios) Obs: NN = notnull, PK = primary key",
+      "Agora que a cidade foi criada precisamos criar duas tabelas, uma para guardar dados sobre os moradores da cidade e outra para guardar os dados das casas dos moradores. Utilizaremos o comando CREATE com o objeto do banco de dados TABLE, seguido dos campos da tabela e do tipo de cada campo.(Dica: Veja no caderno os tipos mais adequado para cada campo)(Dica2: todos os campos são obrigatórios) Obs: NN = notnull, PK = primary key",
       "Crie a tabela Moradores com os campos: id_morador, nome, sobrenome,  filhos, tipo_sanguineo e idade",
       "Capítulo1 - ex2",
       "../assets/fundos/2.png"
@@ -153,7 +153,6 @@ switch (exercicioAtual) {
     criarBloco("criar", false, "");
     criarBloco("table", true, "bloco-b");
     criarBloco("moradores", true, "bloco-c");
-    criarBloco("data base,", false, "");
     criarBloco("(", true, "bloco-d");
     criarBloco("id_morador integer NN", true, "bloco-e");
     criarBloco(");", true, "bloco-m");
@@ -350,7 +349,7 @@ switch (exercicioAtual) {
     break;
   case "ca5-ex2":
     falaAleatoria();
-    qtBlocos = 10;
+    qtBlocos = 9;
     personalizarExercicio(
       "Agora aprenderemos a fazer consultas mostrando seus resultados ordenados, usaremos o comando ORDER BY ao final do SELECT para ordenar as informações de a cordo com o valor de algum campo. Agora faça uma consulta para trazer todas as informações da tabela de casas ordenada em ordem alfabética pelas ruas, além disso, consulte tambem todos os moradores ordenados pela idade, do mais velho ao mais novo.",
       "Monte o comando abaixo",
@@ -364,11 +363,10 @@ switch (exercicioAtual) {
     criarBloco("order by rua", true, "bloco-c");
     criarBloco("moradores", true, "bloco-g");
     criarBloco("from casas", true, "bloco-b");
-    criarBloco(";", true, "bloco-j");
     criarBloco("select tudo", false, "");
     criarBloco("order by idade", true, "bloco-h");
     criarBloco("asc;", true, "bloco-d");
-    criarBloco("desc", true, "bloco-i");
+    criarBloco("desc;", true, "bloco-i");
     criarBloco("em ordem", false, "");
     criarBloco("* from", true, "bloco-f");
     criarBloco(")", false, "");
@@ -379,39 +377,30 @@ switch (exercicioAtual) {
     break;
   case "ca5-ex3":
     falaAleatoria();
-    qtBlocos = 1;
+    qtBlocos = 12;
     personalizarExercicio(
-      "Os vampiros querem reabastecer o tanque de sangue B-, porém, os tanques são separados por faixa etária, hoje eles querem apenas o sangue de pessoas com menos de 30 anos, utilize uma query para retornar id_morador, nome, sobrenome, tipo_sanguineo e idade de alguém com essas características. ",
+      "Os vampiros querem reabastecer o tanque de sangue B-, porém, os tanques são separados pela idade das pessoas (ex: tanque 1 tem pessoas de 15 a 25 anos), hoje eles querem apenas o sangue de pessoas com menos de 30 anos, utilize uma consulta com o comando SELECT para retornar todos os campos da tabela moradores, porém filtrada (WHERE) pelo tipo_sanguineo e pela idade ",
       "Monte o comando abaixo",
       "Capítulo5 - ex3",
       "../assets/fundos/10.png"
     );
 
-    criarBloco("(SELECT", true, "bloco-a");
-    criarBloco(
-      "id_morador, nome, sobrenome, tipo_sanguineo, idade",
-      true,
-      "bloco-a"
-    );
-    criarBloco("FROM", true, "bloco-a");
-    criarBloco("moradores", true, "bloco-a");
-    criarBloco("WHERE", true, "bloco-a");
-    criarBloco("idade < 30", true, "bloco-a");
-    criarBloco("AND", true, "bloco-a");
-    criarBloco("tipo_sanguineo = 'B-')", true, "bloco-a");
-    criarBloco("(", true, "bloco-a");
-    criarBloco("SELECT", true, "bloco-a");
-    criarBloco("*", true, "bloco-a");
-    criarBloco("FROM", true, "bloco-a");
-    criarBloco("casas", true, "bloco-a");
-    criarBloco("", true, "bloco-a");
-    criarBloco("(", true, "bloco-a");
-    criarBloco("WHERE", true, "bloco-a");
-    criarBloco("WHERE", true, "bloco-a");
-    criarBloco("WHERE", true, "bloco-a");
-    criarBloco("WHERE", true, "bloco-a");
-    criarBloco("WHERE", true, "bloco-a");
-    criarBloco("(select * from casas where id_morador = 2");
+    criarBloco("select", true, "bloco-a");
+    criarBloco("30", true, "bloco-l");
+    criarBloco("moradores", true, "bloco-d");
+    criarBloco("30 anos", false, "");
+    criarBloco("tanque", false, "");
+    criarBloco("tipo_sanguineo", true, "bloco-f");
+    criarBloco("=", true, "bloco-g");
+    criarBloco("'B-'", true, "bloco-h");
+    criarBloco("and", true, "bloco-i");
+    criarBloco("*", true, "bloco-b");
+    criarBloco("sangue", false, "");
+    criarBloco("from", true, "bloco-c");
+    criarBloco("idade", true, "bloco-j");
+    criarBloco("where", true, "bloco-e");
+    criarBloco("<", true, "bloco-k");
+
     arrastarBloco();
     break;
 
@@ -827,7 +816,7 @@ function adicionarEventoVerificar() {
         terminal.classList.remove("errado");
         terminal.classList.add("certo");
         btnProx.classList.remove("invisivel");
-        falaVampiro("Parabéns você acertou", 2000);
+        falaVampiro("Parabéns, você acertou", 2000);
         if (!exerciciosConcluidos.includes(exercicioAtual)) {
           exerciciosConcluidos.push(exercicioAtual);
           localStorage.setItem(
@@ -859,8 +848,6 @@ btVerificar.addEventListener("click", () => {
   } else {
     window.alert("É necessário adicionar ao menos um bloco!");
   }
-
-  // window.alert(resultado.textContent);
 });
 
 adicionarEventoVerificar();
@@ -876,9 +863,15 @@ function apagar() {
 
 //função da fala aleatória do vampiro
 function falaAleatoria() {
-  falar = Math.random() < 0.4; //40% de chance
-  falar2 = Math.random() < 0.3; // 30% de chance
-  falar3 = Math.random() < 0.1; // 10% de chance
+  falar = Math.random() < 0.1; //10% de chance
+  falar2 = Math.random() < 0.1; // 10% de chance
+  falar3 = Math.random() < 0.01; // 1% de chance
+  falar4 = Math.random() < 0.01; //1% de chance
+  falar5 = Math.random() < 0.1; //10% de chance
+  falar6 = Math.random() < 0.005; //0,5%
+  falar7 = Math.random() < 0.001; //0,1%
+  falar8 = Math.random() < 0.02;
+  falar9 = Math.random() < 0.005;
   if (falar) {
     falaVampiro("Qual o seu tipo sanguineo?", 4000);
   }
@@ -886,6 +879,31 @@ function falaAleatoria() {
     falaVampiro("Sangue O- é o melhor", 4000);
   }
   if (falar3) {
-    falaVampiro("Ja jogou amor doce?", 4000);
+    falaVampiro("Você ja jogou amor doce?", 4000);
+  }
+  if (falar4) {
+    falaVampiro("Bora Bill", 4000);
+  }
+  if (falar5) {
+    fala.classList.add("fala-maior");
+    fala.classList.remove("fala-menor");
+    falaVampiro(
+      "Quando não estou caçando humanos, sou um ótimo chef de cozinha. Minha especialidade? Bife à meia-noite.",
+      5000
+    );
+    fala.classList.remove("fala-maior");
+    fala.classList.add("fala-menor");
+  }
+  if (falar6) {
+    falaVampiro("Gente, vocês estão sentindo um cheiro estranho?", 4000);
+  }
+  if (falar7) {
+    falaVampiro("Nossa, babilônico", 4000);
+  }
+  if (falar8) {
+    falaVampiro("'Eu sei o que você é', 'diga', 'VAMPIRO'", 4000);
+  }
+  if (falar9) {
+    falaVampiro("Eu tenh 17 anos a um bom tempo, um bommmm tempo", 4000);
   }
 }
