@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="/assets/exercício.png"
+      type="image/x-icon"
+    />
+    <script src="index.js" defer></script>
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <img
+        src="/assets/capitulos.png"
+        alt=""
+        id="info"
+        class="botoes-header"
+        title="Caderno de consulta"
+      />
+      <img src="/assets/config.png" alt="" id="config" class="botoes-header" />
+    </header>
+    <div id="principal">
+      <div id="div-texto">
+        <p id="desc-exercicio"></p>
+      </div>
+      <h1 id="titulo"></h1>
+      <div id="div-digitar">
+        <div id="terminal" class="default"></div>
+        <div id="div-botoes">
+          <button id="btn-limpar" class="button" onclick="apagar()">
+            <img class="botoes-terminal" src="/assets/apagar.png" alt="" />
+          </button>
+          <button id="btn-verificar" class="button">
+            <img class="botoes-terminal" src="/assets/check.png" alt="" />
+          </button>
+        </div>
+      </div>
+      <div id="div-blocos"></div>
+    </div>
+    <button id="btn-sair-exercicio" class="button botoes-exercicios">
+      <img
+        class="botoes-terminal"
+        src="/assets/sair.png"
+        alt=""
+        title="Botão para sair deste exercício"
+      />
+    </button>
+    <button id="btn-proximo-ex" class="button botoes-exercicios invisivel">
+      <img
+        class="botoes-terminal"
+        src="/assets/proximo_ex.png"
+        alt=""
+        title="Botão para ir para o próximo exercício"
+      />
+    </button>
+    <img
+      id="vampiro"
+      src="/assets/vampiro.png"
+      alt="Um vampiro"
+      title="Este é o Klaus"
+    />
+    <div id="div-vampiro" title="Este é o Klaus"></div>
+    <div id="div-fala" class="invisivel">
+      <p id="fala-vampiro" class="fala-maior">Nada a dizer</p>
+    </div>
+    <dialog id="modal-caderno" class="modal">
+      <img
+        src="/assets/seta-left.png"
+        alt="seta para fechar o modal"
+        id="fechar-modal-caderno"
+        class="fechar-modal"
+      />
+      <h1>Caderno de consulta</h1>
+      <div id="titulos-caderno">
+        <div id="conteudo-sql" class="titulo">SQL</div>
+        <div id="conteudo-create" class="titulo sem-selecao">CREATE</div>
+        <div id="conteudo-alter" class="titulo sem-selecao">ALTER</div>
+        <div id="conteudo-insert" class="titulo sem-selecao">INSERT</div>
+        <div id="conteudo-update" class="titulo sem-selecao">UPDATE</div>
+        <div id="conteudo-delete" class="titulo sem-selecao">DELETE</div>
+        <div id="conteudo-select" class="titulo sem-selecao">SELECT</div>
+      </div>
+
+      <div id="conteudo" class="conteudo">
+        <p class="destaque">Algumas definições</p>
+        Um dados: em sql ele pode ser representado como uma linha de uma tabela,
+        com seus campos (colunas) e os valores destes campos primary key (chave
+        primária): é um valor unico que identifica cada dado em uma tabela,
+        nenhuma chave primária sera igual a outra, pois ela serve como um meio
+        de identificar cada dado unicamente.
+        <p class="destaque2">Tipos de campos</p>
+        integer: campo numérico <br />
+        varchar(tamanho): campo de texto com tamanho definido <br />
+        boolean: campo com valor true (verdadeiro) ou false (falso)
+        <p class="destaque2">Verificações:</p>
+        notnull(NN): indica que o campo não pode ser nullo (vazio, sem dado)
+        <br />
+        primary key: indica que o campo receberá o valor da chave primária da
+        tabela, o valor unico que identificará o dado
+        <br />
+        <p class="destaque2">Order by:</p>
+        Order by (order por) serve para ordenar uma consulta de acordo com o
+        valor de algum campo. Ex: eu crio uma consulta que trás todos os dados
+        da tabela pessoa e eu ordeno o resultado pelo campo "nome" em ordem
+        crescente (alfabética). Obs: o order permite ordenar os campos em ordem
+        decrescente (desc) e ascendente (asc) (tanto campos varchar como os
+        campos integer)<br />
+        Ex:<br />
+        SELECT * FROM pessoas ORDER BY nome DESC <br />
+        mostra todas as pessoas da tabela pessoas, ordenadas pelo nome em ordem
+        alfabética.
+      </div>
+    </dialog>
+    <dialog id="modal-sair-exercicio" class="modal">
+      <img
+        src="/assets/seta-left.png"
+        alt="seta para fechar o modal"
+        id="fechar-modal-saida"
+        class="fechar-modal"
+      />
+      <h1>Deseja sair do exercício?</h1>
+      <div class="ultimo-save"></div>
+      <button
+        id="sair-e-salvar"
+        class="btn-modal"
+        title="Sair e salvar o progresso atual"
+      >
+        Sair e salvar
+      </button>
+      <button
+        id="sair-sem-salvar"
+        class="btn-modal"
+        title="Sair e não salvar o progresso atual (seu save sera o mostrado na tela)"
+      >
+        Sair sem salvar
+      </button>
+    </dialog>
+    <dialog id="modal-config" class="modal">
+      <img
+        src="/assets/seta-left.png"
+        alt="seta para fechar o modal"
+        id="fechar-modal-config"
+        class="fechar-modal"
+      />
+      <h1>Configurações</h1>
+      <div id="div-config">
+        <div class="ultimo-save"></div>
+        <div id="div-botoes-modal">
+          <button
+            id="btn-recomecar"
+            class="btn-modal"
+            title="Você perdera o seu save atual"
+          >
+            Recomeçar
+          </button>
+          <button
+            id="btn-resetar"
+            class="btn-modal"
+            title="Você perdera seu save atual e o historico de exercícos concluidos, inclusive o modo de aprendizado(história, livre)"
+          >
+            Resetar
+          </button>
+        </div>
+      </div>
+      <button id="btn-creditos" class="btn-modal">Ver créditos</button>
+    </dialog>
+    <img id="fundo" src="" alt="" />
+  </body>
+</html>

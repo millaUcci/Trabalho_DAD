@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Kranky&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Kranky&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Ephesis&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
+
+* {
+  user-select: none;
+}
+body {
+  background-color: rgb(22, 20, 25);
+  color: rgb(22, 20, 25);
+  text-align: center;
+}
+#div-livro {
+  margin-top: 0.8rem;
+  margin-left: auto;
+  margin-right: 0rem;
+  background-color: rgb(92, 67, 47);
+  width: 50rem;
+  height: 30rem;
+  padding: 1rem;
+  padding-bottom: 1.5rem;
+  border-radius: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#div-sombra-livro {
+  margin: auto;
+  width: 52.6rem;
+  border-radius: 0.6rem;
+  height: 33rem;
+  background-color: rgb(49, 35, 22);
+}
+.pagina {
+  border-radius: 0.2rem;
+  margin: auto;
+  width: 23rem;
+  padding: 0.7rem;
+  height: 28rem;
+  background-color: rgb(216, 219, 221);
+  display: inline-block;
+}
+.titulo {
+  font-family: "Ephesis";
+  font-weight: bold;
+  margin-top: 0.3rem;
+  margin-bottom: 0.1rem;
+  font-size: 2.5rem;
+}
+h2 {
+  font-family: "Caveat";
+  font-weight: bold;
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+  font-size: 2rem;
+}
+p {
+  width: 20rem;
+  margin-top: 0.1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-family: "Caveat";
+  text-align: start;
+  line-height: 1.6rem;
+  font-size: 1.6rem;
+  font-weight: bolder;
+}
+p::first-letter {
+  font-family: "Caveat";
+  font-weight: bold;
+  font-size: 2rem;
+}
+.button {
+  position: absolute;
+  bottom: 2rem;
+  right: 5rem;
+  font-family: "Inter";
+  font-weight: bold;
+  font-size: medium;
+  background-color: rgb(216, 219, 221);
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.3rem 0.5rem;
+  width: 8rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+button:hover {
+  background-color: rgb(174, 175, 176);
+}
+button:active {
+  background-color: rgb(53, 47, 58);
+  color: rgb(174, 175, 176);
+}
+
+#config {
+  filter: invert(100%);
+  width: 2rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+}
+#config:hover {
+  filter: invert(60%);
+}
+#config:active {
+  filter: invert(30%);
+}
+.fechar-modal {
+  width: 1.5rem;
+  position: absolute;
+  left: 1.5rem;
+  top: 1rem;
+  filter: invert(20%);
+  cursor: pointer;
+}
+#btn-creditos {
+  width: 10rem;
+  margin-top: 1rem;
+}
+.btn-modal {
+  margin-top: 0.5rem;
+  width: 6rem;
+  height: 1.5rem;
+  background-color: rgb(216, 219, 221);
+  color: rgb(53, 47, 58);
+  border-radius: 0.3rem;
+  border: solid 0.1rem rgb(22, 20, 25);
+  font-family: "Inter";
+  font-weight: bolder;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+.btn-modal:hover {
+  background-color: rgb(174, 175, 176);
+}
+.btn-modal:active {
+  background-color: rgb(53, 47, 58);
+  color: rgb(174, 175, 176);
+}
+.modal {
+  border-radius: 1rem;
+  background-color: rgb(216, 219, 221);
+  color: rgb(22, 20, 25);
+  text-align: center;
+  width: 18rem;
+  padding: 1rem 3rem 2rem;
+  border: 0.3rem solid rgb(53, 47, 58);
+}
+.modal::backdrop {
+  background-color: rgb(22, 20, 25, 0.5);
+}
+.modal > h1 {
+  font-family: "Kranky";
+}
+#ultimo-save {
+  font-family: "Inter";
+  font-weight: bold;
+  font-size: large;
+}
+#div-config {
+  margin: auto;
+  width: 15rem;
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#div-botoes-modal {
+  position: relative;
+  left: 0.5rem;
+  width: 7rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#btn-creditos {
+  width: 10rem;
+  margin-top: 1rem;
+}
+.invisivel {
+  display: none;
+}
