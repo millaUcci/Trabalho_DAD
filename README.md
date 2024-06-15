@@ -1,4 +1,7 @@
 ---
+title: "SQL vampire - trabalho de DAD"
+description: "Uma aplicação web que ensina o básico de postgreSQL"
+---
 
 # Trabalho de DAD: Introdução a Banco de Dados Relacional PostgreSQL
 
