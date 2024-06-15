@@ -404,7 +404,7 @@ switch (exercicioAtual) {
     falaAleatoria();
     qtBlocos = 12;
     personalizarExercicio(
-      "Para atender uma demanda dos vampiro você deverá ler sobre o comando WHERE em seu caderno na aba UPDATE. Os vampiros querem reabastecer o tanque de sangue B-, porém, os tanques são separados pela idade das pessoas (ex: tanque do tipo A+ tem pessoas de 15 a 25 anos), hoje eles querem apenas o sangue de pessoas com menos de 30 anos, utilize uma consulta com o comando SELECT para retornar todos os campos da tabela moradores, porém filtrada (WHERE) pelo tipo_sanguineo e pela idade.",
+      "Para atender uma demanda dos vampiros você deverá ler sobre o comando WHERE em seu caderno na aba UPDATE. Os vampiros querem reabastecer o tanque de sangue B-, porém, os tanques são separados pela idade das pessoas (ex: tanque do tipo A+ tem pessoas de 15 a 25 anos), hoje eles querem apenas o sangue de pessoas com menos de 30 anos, utilize uma consulta com o comando SELECT para retornar todos os campos da tabela moradores, porém filtrada (WHERE) pelo tipo_sanguineo e pela idade.",
       "Monte o comando abaixo para trazer moradores do tipo B- e com menos de 30 anos",
       "Capítulo5 - ex3",
       "../assets/fundos/10.png"
