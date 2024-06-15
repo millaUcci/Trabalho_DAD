@@ -321,7 +321,7 @@ switch (exercicioAtual) {
     qtBlocos = 7;
     falaVampiro("Que pena, era um rapaz tão bom, tinha um sangue doce", 5000);
     personalizarExercicio(
-      "Infelizmente o morador Nathaniel valeceu, precisaremos mudar nosso banco de dados. Vamos precisar usar o comando DELETE seguido do comando FROM para indicar a tabela da qual desejamos deletar o dado, e por fim usaremos o WHERE para indicar qual é o morador em especifico que vamos deletar. O id_morador de Nathaniel era 5.",
+      "Infelizmente o morador Nathaniel faleceu, precisaremos mudar nosso banco de dados. Vamos precisar usar o comando DELETE seguido do comando FROM para indicar a tabela da qual desejamos deletar o dado, e por fim usaremos o WHERE para indicar qual é o morador em especifico que vamos deletar. O id_morador de Nathaniel era 5.",
       "Delete o morador Nathaniel da tabela moradores",
       "Capítulo4 - ex1",
       "../assets/fundos/7.png"
@@ -349,7 +349,7 @@ switch (exercicioAtual) {
     falaAleatoria();
     qtBlocos = 7;
     personalizarExercicio(
-      "SELECT é o comando que serve para fazer consultas no banco de dados, nessas consultras podem ter filtros. O comando SELECT é seguido da indicação dos campos da tabela que seram mostrados na consulta, depois deve se usar o comando FROM para indicar a partir de qual tabela a consulta sera feita. Tente (pode usar o caderno como auxilio) fazer uma consulta que traga apenas os nomes dos moradores da tabela moradores, e outra consulta que traga todos os campos da tabela casas. (Dica: caso queria trazer todos os campos de uma tabela, use o * após o SELECT)(Dica2: separe os dois comando por pontoe vírgula)",
+      "SELECT é o comando que serve para fazer consultas no banco de dados, nessas consultras podem ter filtros. O comando SELECT é seguido da indicação dos campos da tabela que seram mostrados na consulta, depois deve se usar o comando FROM para indicar a partir de qual tabela a consulta sera feita. Tente (pode usar o caderno como auxilio) fazer uma consulta que traga apenas os nomes dos moradores da tabela moradores, e outra consulta que traga todos os campos da tabela casas. (Dica: caso queria trazer todos os campos de uma tabela, use o * após o SELECT)(Dica2: separe os dois comando por ponto e vírgula)",
       "Monte as duas consultas",
       "Capítulo5 - ex1",
       "../assets/fundos/8.png"
