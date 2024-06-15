@@ -404,7 +404,7 @@ switch (exercicioAtual) {
     falaAleatoria();
     qtBlocos = 12;
     personalizarExercicio(
-      "Para atender uma demanda dos vampiro você deverá ler sobre o comando WHERE em seu caderno na aba UPDATE. Os vampiros querem reabastecer o tanque de sangue B-, porém, os tanques são separados pela idade das pessoas (ex: tanque do tipo A+ tem pessoas de 15 a 25 anos), hoje eles querem apenas o sangue de pessoas com menos de 30 anos, utilize uma consulta com o comando SELECT para retornar todos os campos da tabela moradores, porém filtrada (WHERE) pelo tipo_sanguineo e pela idade.",
+      "Para atender uma demanda dos vampiros você deverá ler sobre o comando WHERE em seu caderno na aba UPDATE. Os vampiros querem reabastecer o tanque de sangue B-, porém, os tanques são separados pela idade das pessoas (ex: tanque do tipo A+ tem pessoas de 15 a 25 anos), hoje eles querem apenas o sangue de pessoas com menos de 30 anos, utilize uma consulta com o comando SELECT para retornar todos os campos da tabela moradores, porém filtrada (WHERE) pelo tipo_sanguineo e pela idade.",
       "Monte o comando abaixo para trazer moradores do tipo B- e com menos de 30 anos",
       "Capítulo5 - ex3",
       "../assets/fundos/10.png"
@@ -510,9 +510,9 @@ tituloSql.addEventListener("click", () => {
   primary key: indica que o campo receberá o valor da chave primária da tabela, o valor unico que identificará o dado
   <br/>
   <p class="destaque2">Order by:</p>
-  Order by (order por) serve para ordenar uma consulta de acordo com o valor de algum campo. Ex: eu crio uma consulta que trás todos os dados da tabela pessoa e eu ordeno o resultado pelo campo "nome" em ordem crescente (alfabética). Obs: o order permite ordenar os campos em ordem decrescente (desc) e ascendente (asc) (tanto campos varchar como os campos integer)<br/>
+  Order by (order por) serve para ordenar uma consulta de acordo com o valor de algum campo. Ex: eu crio uma consulta que trás todos os dados da tabela pessoa e eu ordeno o resultado pelo campo "nome" em ordem crescente (alfabética). Obs: o order permite ordenar os campos em ordem decrescente (desc) e crescente/ascendente (asc) (tanto campos varchar como os campos integer)<br/>
   Ex:<br/>
-  SELECT * FROM pessoas ORDER BY nome DESC <br/>
+  SELECT * FROM pessoas ORDER BY nome ASC <br/>
   mostra todas as pessoas da tabela pessoas, ordenadas pelo nome em ordem alfabética.
  `;
 });
@@ -973,7 +973,7 @@ function falaAleatoria() {
     fala.classList.remove("fala-menor");
     falaVampiro(
       "Quando não estou caçando humanos, sou um ótimo chef de cozinha. Minha especialidade? Bife à meia-noite.",
-      5000
+      6000
     );
     fala.classList.remove("fala-maior");
     fala.classList.add("fala-menor");
