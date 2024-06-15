@@ -165,7 +165,7 @@ switch (exercicioAtual) {
     break;
   case "ca1-ex3":
     falaAleatoria();
-    qtBlocos = 12;
+    qtBlocos = 11;
     personalizarExercicio(
       "Ainda usando os conhecimentos adquiridos no exercício anterior, crie a tabela de casas a partir das colunas dadas abaixo. Decida você mesmo o tipo e as verificações dos campos. Não se esqueça de indicar na criação que o campo id é a primary key da tabela. (dica: todos os campos são obrigatórios) Obs: NN = notnull, PK = primary key",
       "Para montar a tabela utilize essa ordem de campos: id, num_casa, id_morador, rua",
@@ -174,21 +174,20 @@ switch (exercicioAtual) {
     );
     criarBloco("create table", true, "bloco-a");
     criarBloco("id,", false, "");
-    criarBloco("id integer pk", true, "bloco-d");
-    criarBloco("nn,", true, "bloco-e");
+    criarBloco("id integer pk nn,", true, "bloco-d");
     criarBloco("num_casa,", false, "");
-    criarBloco("num_casa integer nn,", true, "bloco-f");
+    criarBloco("num_casa integer nn,", true, "bloco-e");
     criarBloco("num_casa varchar(10),", false, "");
     criarBloco("casas", true, "bloco-b");
     criarBloco("(", true, "bloco-c");
-    criarBloco(");", true, "bloco-l");
-    criarBloco("nn", true, "bloco-k");
+    criarBloco(");", true, "bloco-k");
+    criarBloco("nn", true, "bloco-j");
     criarBloco("varchar(5),", false, "");
-    criarBloco("varchar(100)", true, "bloco-j");
-    criarBloco("id_morador", true, "bloco-g");
+    criarBloco("varchar(100)", true, "bloco-i");
+    criarBloco("id_morador", true, "bloco-f");
     criarBloco("boolean,", false, "");
-    criarBloco("integer nn,", true, "bloco-h");
-    criarBloco("rua", true, "bloco-i");
+    criarBloco("integer nn,", true, "bloco-g");
+    criarBloco("rua", true, "bloco-h");
     aleatorizarBlocos();
     arrastarBloco();
     break;
@@ -321,7 +320,7 @@ switch (exercicioAtual) {
     qtBlocos = 7;
     falaVampiro("Que pena, era um rapaz tão bom, tinha um sangue doce", 5000);
     personalizarExercicio(
-      "Infelizmente o morador Nathaniel valeceu, precisaremos mudar nosso banco de dados. Vamos precisar usar o comando DELETE seguido do comando FROM para indicar a tabela da qual desejamos deletar o dado, e por fim usaremos o WHERE para indicar qual é o morador em especifico que vamos deletar. O id_morador de Nathaniel era 5.",
+      "Infelizmente o morador Nathaniel faleceu, precisaremos mudar nosso banco de dados. Vamos precisar usar o comando DELETE seguido do comando FROM para indicar a tabela da qual desejamos deletar o dado, e por fim usaremos o WHERE para indicar qual é o morador em especifico que vamos deletar. O id_morador de Nathaniel era 5.",
       "Delete o morador Nathaniel da tabela moradores",
       "Capítulo4 - ex1",
       "../assets/fundos/7.png"
@@ -349,7 +348,7 @@ switch (exercicioAtual) {
     falaAleatoria();
     qtBlocos = 7;
     personalizarExercicio(
-      "SELECT é o comando que serve para fazer consultas no banco de dados, nessas consultras podem ter filtros. O comando SELECT é seguido da indicação dos campos da tabela que seram mostrados na consulta, depois deve se usar o comando FROM para indicar a partir de qual tabela a consulta sera feita. Tente (pode usar o caderno como auxilio) fazer uma consulta que traga apenas os nomes dos moradores da tabela moradores, e outra consulta que traga todos os campos da tabela casas. (Dica: caso queria trazer todos os campos de uma tabela, use o * após o SELECT)(Dica2: separe os dois comando por pontoe vírgula)",
+      "SELECT é o comando que serve para fazer consultas no banco de dados, nessas consultras podem ter filtros. O comando SELECT é seguido da indicação dos campos da tabela que seram mostrados na consulta, depois deve se usar o comando FROM para indicar a partir de qual tabela a consulta sera feita. Tente (pode usar o caderno como auxilio) fazer uma consulta que traga apenas os nomes dos moradores da tabela moradores, e outra consulta que traga todos os campos da tabela casas. (Dica: caso queria trazer todos os campos de uma tabela, use o * após o SELECT)(Dica2: separe os dois comando por ponto e vírgula)",
       "Monte as duas consultas",
       "Capítulo5 - ex1",
       "../assets/fundos/8.png"
@@ -433,9 +432,9 @@ switch (exercicioAtual) {
   case "ca5-ex4":
     falaAleatoria();
     qtBlocos = 16;
-    falaVampiro("O meu deus você ja esta no último exercício", 5500);
+    falaVampiro("Oh, meu deus, você ja esta no último exercício", 5500);
     personalizarExercicio(
-      "Para o último exercício você deve fazer uma consulta mais complexa para que os vampiros possam fazer um relatório dos moradores e das casas. Traga o nome e o tipo sanguineo dos moradores ordenados pela idade (do mais novo ao mais velho), e depois faça um comando para trazer todas as casas do morador Dorian cujo o id_morador é igual a 1 onde a rua seja igual a arteriae. Vamos lá eu sei que você consegue",
+      "Para o último exercício você deve fazer uma consulta mais complexa para que os vampiros possam fazer um relatório dos moradores e das casas. Traga o nome e o tipo sanguineo dos moradores ordenados pela idade (do mais novo ao mais velho), e depois faça um comando para trazer todas as casas do morador Dorian cujo o id_morador é igual a 1 onde a rua seja igual a arteriae. Vamos lá, eu sei que você consegue",
       "Monte duas consultas para gerar um relatório aos vampiros.",
       "Capítulo5 - ex4",
       "../assets/fundos/10.png"
