@@ -156,9 +156,9 @@ switch (exercicioAtual) {
     criarBloco("table", true, "bloco-b");
     criarBloco("moradores", true, "bloco-c");
     criarBloco("(", true, "bloco-d");
-    criarBloco("id_morador integer NN", true, "bloco-e");
+    criarBloco("id_morador integer pk", true, "bloco-e");
     criarBloco(");", true, "bloco-m");
-    criarBloco("PK,", true, "bloco-f");
+    criarBloco("nn,", true, "bloco-f");
     criarBloco("nome varchar(15) NN,", true, "bloco-g");
     aleatorizarBlocos();
     arrastarBloco();
@@ -175,8 +175,8 @@ switch (exercicioAtual) {
     );
     criarBloco("create table", true, "bloco-a");
     criarBloco("id,", false, "");
-    criarBloco("id integer nn", true, "bloco-d");
-    criarBloco("pk,", true, "bloco-e");
+    criarBloco("id integer pk", true, "bloco-d");
+    criarBloco("nn,", true, "bloco-e");
     criarBloco("num_casa,", false, "");
     criarBloco("num_casa integer nn,", true, "bloco-f");
     criarBloco("num_casa varchar(10),", false, "");
