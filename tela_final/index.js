@@ -3,7 +3,7 @@ const certificadoButton = document.getElementById('certificado');
 const modal = document.getElementById("modal-nome")
 const nome = document.getElementById("nome")
 const btnAbrirCertificado = document.getElementById("abrir-pdf")
-const fechar = document.getElementById("")
+const fechar = document.getElementById("fechar")
 
 voltarButton.addEventListener('click', () => {
     window.location.href = '../tela_capitulos/index.html' 
@@ -25,4 +25,7 @@ btnAbrirCertificado.addEventListener("click",()=>{
     localStorage.setItem("nome",JSON.stringify(nome.value))
     nome.value = ""
 window.location.href="certificado.html"
+})
+fechar.addEventListener("click",()=>{
+    modal.close()
 })
