@@ -136,7 +136,7 @@ switch (exercicioAtual) {
     break;
   case "ca1-ex2":
     falaAleatoria();
-    qtBlocos = 13;
+    qtBlocos = 12;
     personalizarExercicio(
       "Agora que a cidade foi criada precisamos criar duas tabelas, uma para guardar dados sobre os moradores da cidade e outra para guardar os dados das casas dos moradores. Utilizaremos o comando CREATE com o objeto do banco de dados TABLE, seguido dos campos da tabela e do tipo de cada campo. Não esqueça de indicar que o campo id_morador é a chave primaria da tabela. (Dica: Veja no caderno os tipos mais adequado para cada campo)(Dica2: todos os campos são obrigatórios) Obs: NN = notnull, PK = primary key",
       "Crie a tabela Moradores com os campos: id_morador, nome, sobrenome,  filhos, tipo_sanguineo e idade",
@@ -146,20 +146,19 @@ switch (exercicioAtual) {
     criarBloco("alter", false, "");
     criarBloco("create", true, "bloco-a");
     criarBloco(";", false, "");
-    criarBloco("sobrenome varchar(15) NN,", true, "bloco-h");
-    criarBloco("NN,", true, "bloco-k");
-    criarBloco("filhos boolean NN,", true, "bloco-i");
-    criarBloco("tipo_sanguineo varchar(5)", true, "bloco-j");
-    criarBloco("idade integer NN", true, "bloco-l");
+    criarBloco("sobrenome varchar(15) NN,", true, "bloco-g");
+    criarBloco("NN,", true, "bloco-j");
+    criarBloco("filhos boolean NN,", true, "bloco-h");
+    criarBloco("tipo_sanguineo varchar(5)", true, "bloco-i");
+    criarBloco("idade integer NN", true, "bloco-k");
     criarBloco("objeto", false, "");
     criarBloco("criar", false, "");
     criarBloco("table", true, "bloco-b");
     criarBloco("moradores", true, "bloco-c");
     criarBloco("(", true, "bloco-d");
-    criarBloco("id_morador integer pk", true, "bloco-e");
-    criarBloco(");", true, "bloco-m");
-    criarBloco("nn,", true, "bloco-f");
-    criarBloco("nome varchar(15) NN,", true, "bloco-g");
+    criarBloco("id_morador integer pk nn,", true, "bloco-e");
+    criarBloco(");", true, "bloco-l");
+    criarBloco("nome varchar(15) NN,", true, "bloco-f");
     aleatorizarBlocos();
     arrastarBloco();
 
@@ -298,7 +297,7 @@ switch (exercicioAtual) {
     criarBloco("where", true, "bloco-j");
     criarBloco("update set", false, "");
     criarBloco("id_morador", true, "bloco-k");
-    criarBloco("= 1;", true, "bloco-l");
+    criarBloco("= 2;", true, "bloco-l");
     criarBloco("sobrenome", true, "bloco-d");
     criarBloco("atualizar", false, "");
     criarBloco("campo", false, "");
