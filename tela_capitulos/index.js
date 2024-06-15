@@ -244,13 +244,13 @@ function criarExercicio(id, titulo, exSalvo) {
   const exerciciosConcluidos = JSON.parse(localStorage.getItem("exConcluidos"));
   const ex = document.createElement("div");
   ex.classList.add("ex");
-  if (exSalvo) {
-    ex.classList.add("ex-salvo");
-    ex.setAttribute("title", "Exercício onde você parou anteriormente");
-  }
   if (exerciciosConcluidos.includes(id)) {
     ex.classList.add("ex-feito");
     ex.setAttribute("title", "Exercício concluido");
+  }
+  if (exSalvo) {
+    ex.classList.add("ex-salvo");
+    ex.setAttribute("title", "Exercício onde você parou anteriormente");
   }
   ex.textContent = titulo;
   divEx.appendChild(ex);

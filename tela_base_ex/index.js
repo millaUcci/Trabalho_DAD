@@ -136,7 +136,7 @@ switch (exercicioAtual) {
     falaAleatoria();
     qtBlocos = 13;
     personalizarExercicio(
-      "Agora que a cidade foi criada precisamos criar duas tabelas, uma para guardar dados sobre os moradores da cidade e outra para guardar os dados das casas dos moradores. Utilizaremos o comando CREATE com o objeto do banco de dados TABLE, seguido dos campos da tabela e do tipo de cada campo.(Dica: Veja no caderno os tipos mais adequado para cada campo)(Dica2: todos os campos são obrigatórios) Obs: NN = notnull, PK = primary key",
+      "Agora que a cidade foi criada precisamos criar duas tabelas, uma para guardar dados sobre os moradores da cidade e outra para guardar os dados das casas dos moradores. Utilizaremos o comando CREATE com o objeto do banco de dados TABLE, seguido dos campos da tabela e do tipo de cada campo. Não esqueça de indicar que o campo id_morador é a chave primaria da tabela. (Dica: Veja no caderno os tipos mais adequado para cada campo)(Dica2: todos os campos são obrigatórios) Obs: NN = notnull, PK = primary key",
       "Crie a tabela Moradores com os campos: id_morador, nome, sobrenome,  filhos, tipo_sanguineo e idade",
       "Capítulo1 - ex2",
       "../assets/fundos/2.png"
@@ -146,7 +146,7 @@ switch (exercicioAtual) {
     criarBloco(";", false, "");
     criarBloco("sobrenome varchar(15) NN,", true, "bloco-h");
     criarBloco("NN,", true, "bloco-k");
-    criarBloco("filhos integer NN,", true, "bloco-i");
+    criarBloco("filhos boolean NN,", true, "bloco-i");
     criarBloco("tipo_sanguineo varchar(5)", true, "bloco-j");
     criarBloco("idade integer NN", true, "bloco-l");
     criarBloco("objeto", false, "");
@@ -164,16 +164,16 @@ switch (exercicioAtual) {
     falaAleatoria();
     qtBlocos = 12;
     personalizarExercicio(
-      "Ainda usando os conhecimentos adquiridos no exercício anterior, crie a tabela de casas a partir das colunas dadas abaixo. Decida você mesmo o tipo e as verificações dos campos. (dica: todos os campos são obrigatórios) Obs: NN = notnull, PK = primary key",
+      "Ainda usando os conhecimentos adquiridos no exercício anterior, crie a tabela de casas a partir das colunas dadas abaixo. Decida você mesmo o tipo e as verificações dos campos. Não se esqueça de indicar na criação que o campo id é a primary key da tabela. (dica: todos os campos são obrigatórios) Obs: NN = notnull, PK = primary key",
       "Para montar a tabela utilize essa ordem de campos: id, num_casa, id_morador, rua",
       "Capítulo1 - ex3",
       "../assets/fundos/3.png"
     );
     criarBloco("create table", true, "bloco-a");
-    criarBloco("id integer,", false, "");
-    criarBloco("id integer nn,", true, "bloco-d");
+    criarBloco("id,", false, "");
+    criarBloco("id integer nn", true, "bloco-d");
     criarBloco("pk,", true, "bloco-e");
-    criarBloco("num_casa integer,", false, "");
+    criarBloco("num_casa,", false, "");
     criarBloco("num_casa integer nn,", true, "bloco-f");
     criarBloco("num_casa varchar(10),", false, "");
     criarBloco("casas", true, "bloco-b");
@@ -337,14 +337,28 @@ switch (exercicioAtual) {
     break;
   case "ca5-ex1":
     falaAleatoria();
-    qtBlocos = 1;
+    qtBlocos = 7;
     personalizarExercicio(
-      "teste ca5 ex1",
-      "bjdbDWVCBDLKVKBD",
+      "SELECT é o comando que serve para fazer consultas no banco de dados, nessas consultras podem ter filtros. O comando SELECT é seguido da indicação dos campos da tabela que seram mostrados na consulta, depois deve se usar o comando FROM para indicar a partir de qual tabela a consulta sera feita. Tente (pode usar o caderno como auxilio) fazer uma consulta que traga apenas os nomes dos moradores da tabela moradores, e outra consulta que traga todos os campos da tabela casas. (Dica: caso queria trazer todos os campos de uma tabela, use o * após o SELECT)(Dica2: separe os dois comando por pontoe vírgula)",
+      "Monte as duas consultas",
       "Capítulo5 - ex1",
       "../assets/fundos/8.png"
     );
-    criarBloco("IOEFNVAEFN", true, "bloco-a");
+    criarBloco("table", false, "");
+    criarBloco("filter", false, "");
+    criarBloco("moradores", true, "bloco-d");
+    criarBloco("nome", true, "bloco-b");
+    criarBloco(";", true, "bloco-e");
+    criarBloco("select *", true, "bloco-f");
+    criarBloco("consultar", false, "");
+    criarBloco("database", false, "");
+    criarBloco("select", true, "bloco-a");
+    criarBloco("selecionar", false, "");
+    criarBloco("from", true, "bloco-c");
+    criarBloco("todos", false, "");
+    criarBloco("from casas;", true, "bloco-g");
+    criarBloco("where", false, "");
+    criarBloco("and", false, "");
     arrastarBloco();
     break;
   case "ca5-ex2":
@@ -379,14 +393,14 @@ switch (exercicioAtual) {
     falaAleatoria();
     qtBlocos = 12;
     personalizarExercicio(
-      "Os vampiros querem reabastecer o tanque de sangue B-, porém, os tanques são separados pela idade das pessoas (ex: tanque 1 tem pessoas de 15 a 25 anos), hoje eles querem apenas o sangue de pessoas com menos de 30 anos, utilize uma consulta com o comando SELECT para retornar todos os campos da tabela moradores, porém filtrada (WHERE) pelo tipo_sanguineo e pela idade ",
-      "Monte o comando abaixo",
+      "Para atender uma demanda dos vampiroa você deverá ler sobre o comando WHERE em seu caderno na aba UPDATE. Os vampiros querem reabastecer o tanque de sangue B-, porém, os tanques são separados pela idade das pessoas (ex: tanque do tipo A+ tem pessoas de 15 a 25 anos), hoje eles querem apenas o sangue de pessoas com menos de 30 anos, utilize uma consulta com o comando SELECT para retornar todos os campos da tabela moradores, porém filtrada (WHERE) pelo tipo_sanguineo e pela idade.",
+      "Monte o comando abaixo para trazer moradores do tipo B- e com menos de 30 anos",
       "Capítulo5 - ex3",
       "../assets/fundos/10.png"
     );
 
     criarBloco("select", true, "bloco-a");
-    criarBloco("30", true, "bloco-l");
+    criarBloco("30;", true, "bloco-l");
     criarBloco("moradores", true, "bloco-d");
     criarBloco("30 anos", false, "");
     criarBloco("tanque", false, "");
@@ -396,6 +410,7 @@ switch (exercicioAtual) {
     criarBloco("and", true, "bloco-i");
     criarBloco("*", true, "bloco-b");
     criarBloco("sangue", false, "");
+    criarBloco("tanque", false, "");
     criarBloco("from", true, "bloco-c");
     criarBloco("idade", true, "bloco-j");
     criarBloco("where", true, "bloco-e");
@@ -403,18 +418,40 @@ switch (exercicioAtual) {
 
     arrastarBloco();
     break;
-
-  //responsavel pelo cap5 ex4: samira
   case "ca5-ex4":
     falaAleatoria();
-    qtBlocos = 1;
+    qtBlocos = 16;
+    falaVampiro("O meu deus você ja esta no último exercício", 5500);
     personalizarExercicio(
-      "teste ca5 ex4",
-      "bjdbDWVCBDLKVKBD",
+      "Para o último exercício você deve fazer uma consulta mais complexa para que os vampiros possam fazer um relatório dos moradores e das casas. Traga o nome e o tipo sanguineo dos moradores ordenados pela idade (do mais novo ao mais velho), e depois faça um comando para trazer todas as casas do morador Dorian cujo o id_morador é igual a 1 onde a rua seja igual a arteriae. Vamos lá eu sei que você consegue",
+      "Monte duas consultas para gerar um relatório aos vampiros.",
       "Capítulo5 - ex4",
       "../assets/fundos/10.png"
     );
-    criarBloco("IOEFNVAEFN", true, "bloco-a");
+    criarBloco("select", true, "bloco-a");
+    criarBloco("relatório", false, "");
+    criarBloco("id_morador", true, "bloco-l");
+    criarBloco("from", true, "bloco-d");
+    criarBloco("table", false, "");
+    criarBloco("ordenar", false, "");
+    criarBloco("AND", true, "bloco-n");
+    criarBloco("rua", true, "bloco-o");
+    criarBloco("moradores", true, "bloco-e");
+    criarBloco("desc", false, "");
+    criarBloco("<", false, "");
+    criarBloco("idade", true, "bloco-g");
+    criarBloco("asc;", true, "bloco-h");
+    criarBloco("consultar", false, "");
+    criarBloco("= 'arteriae';", true, "bloco-p");
+    criarBloco("select *", true, "bloco-i");
+    criarBloco("nome,", true, "bloco-b");
+    criarBloco("tipo_sanguineo", true, "bloco-c");
+    criarBloco("from casas", true, "bloco-j");
+    criarBloco("id", false, "");
+    criarBloco("where", true, "bloco-k");
+    criarBloco("order by", true, "bloco-f");
+    criarBloco("= 1", true, "bloco-m");
+
     arrastarBloco();
     break;
 }
@@ -451,18 +488,21 @@ tituloSql.addEventListener("click", () => {
   conteudo.classList.add("selecionado");
   conteudo.classList.add("conteudo-maior");
   conteudo.innerHTML = `<p class="destaque">Algumas definições</p>
-  primary key: é um valor unico que identifica cada dado em uma tabela
+  Um dados: em sql ele pode ser representado como uma linha de uma tabela, com seus campos (colunas) e os valores destes campos
+  primary key (chave primária): é um valor unico que identifica cada dado em uma tabela, nenhuma chave primária sera igual a outra, pois ela serve como um meio de identificar cada dado unicamente.
      <p class="destaque2">Tipos de campos</p>
   integer: campo numérico <br/>
   varchar(tamanho): campo de texto com tamanho definido <br/>
-  boolean: campo com valor true ou false
+  boolean: campo com valor true (verdadeiro) ou false (falso)
   <p class="destaque2">Verificações: </p>
-  notnull(NN): campo não pode ser nullo (vazio) <br/>
-  unique: o valor do campo será unico <br/>
-  primary key: o campo receberá o valor da chave primária da tabela
+  notnull(NN): indica que o campo não pode ser nullo (vazio, sem dado) <br/>
+  primary key: indica que o campo receberá o valor da chave primária da tabela, o valor unico que identificará o dado
   <br/>
   <p class="destaque2">Order by:</p>
-  Order by (order por) serve para ordenar uma consulta de acordo com o valor de algum campo. Ex: eu crio uma consulta que trás todos os dados da tabela pessoa e eu ordeno o resultado pelo campo "nome" em ordem crescente (alfabética). Obs: o order permite ordenar os campos em ordem decrescente (desc) e ascendente (asc) (tanto campos varchar como os campos integer)
+  Order by (order por) serve para ordenar uma consulta de acordo com o valor de algum campo. Ex: eu crio uma consulta que trás todos os dados da tabela pessoa e eu ordeno o resultado pelo campo "nome" em ordem crescente (alfabética). Obs: o order permite ordenar os campos em ordem decrescente (desc) e ascendente (asc) (tanto campos varchar como os campos integer)<br/>
+  Ex:<br/>
+  SELECT * FROM pessoas ORDER BY nome DESC <br/>
+  mostra todas as pessoas da tabela pessoas, ordenadas pelo nome em ordem alfabética.
  `;
 });
 tituloCreate.addEventListener("click", () => {
@@ -492,8 +532,14 @@ tituloCreate.addEventListener("click", () => {
   <p class="destaque2">Tabela: </p>
   CREATE TABLE &lt;nome da tabela>(<br/>
 	Campo1 &lt;tipoDoCampo> &lt;verificação>, <br/>
-	Campo2 &lt;tipoDoCampo> &lt;verificação>, <br/>
-	...
+	Campo2 &lt;tipoDoCampo> &lt;verificação>...
+  <p class="destaque2">Ex: </p>
+  CREATE TABLE pessoas (<br/>
+  id integer primary key notnull,<br/>
+  nome varchar(100) notnull,<br/>
+  idade integer notnull);<br/>
+  <br/>
+  Este comando esta criando a tabela pessoas, que contém os campos id: sendo um valor numérico que é a primary key da tabela, e não podendo ter um valor vazio, nome: que é um campo de texto (tamanho de 100 caracteres) que não pode ser vazio e idade: que é um campo numérico que não pode ser vazio.
 );`;
 });
 tituloAlter.addEventListener("click", () => {
@@ -518,10 +564,16 @@ tituloAlter.addEventListener("click", () => {
   conteudo.classList.remove("conteudo-maior");
   conteudo.innerHTML = `<p class="destaque">Sintaxe dos comandos de alteração:</p>
     <p class="destaque2">Adicionar coluna</p>
-    ALTER TABLE &lt;nomeDaTabela> ADD &lt;nomeDoCampoQueVaiSerCriado> &lt;tipoDoCampo>
+    ALTER TABLE &lt;nomeDaTabela> ADD &lt;nomeDoCampoQueVaiSerCriado> &lt;tipoDoCampo><br/>
+    <p class="destaque2">Ex:</p>
+    ALTER TABLE pessoas ADD data_nascimento <br/>
+    Esta adicionando um campo chamado data_nascimento na tabela pessoas
 
     <p class="destaque2">Deletar coluna</p>
-    ALTER TABLE &lt;nomeDaTabela> DROP COLUMN &lt;nomeDoCampoQueVaiSerExcluido>`;
+    ALTER TABLE &lt;nomeDaTabela> DROP COLUMN &lt;nomeDoCampoQueVaiSerExcluido>
+    <p class="destaque2">Ex:</p>
+    ALTER TABLE pessoas DROP COLUMN idade <br/>
+    Esta excluindo um campo chamado idade da tabela pessoas`;
 });
 tituloInsert.addEventListener("click", () => {
   tituloInsert.classList.add("selecionado");
@@ -551,8 +603,9 @@ Into serve para indicar quais campos receberam os valores do Values
 <p class="destaque2">Values:</p>
 Serve para indicar quais valores serão inseridos
 <p class="destaque2">Exemplo:</p>
-INSERT INTO pessoa (nome, sobrenome, idade)  <br/>
+INSERT INTO pessoas (nome, sobrenome, idade)  <br/>
 VALUES (‘Maria’,’Fernandez’,25);  <br/>
+Esta inserindo os valores: 'Maria', 'Fernandez' e 25, nos campos: nome, sobrenome e idade respectivamente na tabela pessoas.
 `;
 });
 tituloUpdate.addEventListener("click", () => {
@@ -580,7 +633,8 @@ tituloUpdate.addEventListener("click", () => {
   SET &lt;nomeDoCampo> = &lt;novoValor>...<br/>
   WHERE &lt;nomeDoCampo> = &lt;valorDoCampo><br/>
   <p class="destaque3">Where:</p>
-  O where (onde) serve para localizar um dado em específico a partir do valor da sua chave primária<br/>
+  O where (onde) serve para localizar um ou mais dados a partir do valor de um ou mais campos. <br/>Obs: o where nunca virá sozinho, ele deve vir depois de algum comando, como o SELECT, UPDATE ou DELETE. <br/>Ex: quero localizar apenas pessoas com menos de 40 anos, então posso usar o seguinte comando: (SELECT/UPDATE/DELETE) WHERE idade < 40. Para indicar mais campos use o AND.<br/>Ex: WHERE idade < 40 AND nome = 'João'<br/>
+  neste caso esta localizando os dados que tenham o campo idade menor que 40 e o campo nome igual a João
   <p class="destaque3">Set:</p>
   Indica que o valor do campo será atualizado
   <p class="destaque2">Exemplo:</p>
@@ -611,7 +665,11 @@ tituloDelete.addEventListener("click", () => {
   conteudo.classList.remove("conteudo-maior");
   conteudo.innerHTML = `<p class="destaque">Sintaxe do comando de deleção</p>
   DELETE FROM &lt;nomeDaTabela><br/>
-  WHERE &lt;nomeDoCampo> = &lt;valorDoCampo>...
+  WHERE &lt;nomeDoCampo> = &lt;valorDoCampo>... </br>
+  <p class="destaque2">Ex:</p>
+  DELETE FROM pessoas
+  WHERE nome = 'Pedro'<br/>
+  Este comando esta deletando um dado da tabela pessoas onde o valor do campo nome seja igual a Pedoro
   <p class="importante">Não se esqueça do where, se não você irá deletar tudo da tabela</p>
 `;
 });
@@ -639,12 +697,16 @@ tituloSelect.addEventListener("click", () => {
   SELECT &lt;nomeDosCamposQueIraoAparecerNaConsulta><br/>
   FROM &lt;nomeDaTabela>
   WHERE &lt;nomeDoCampo> = &lt;valorDoCampo>...<br/>
-  <p class="destaque3">Select:</p>
+  <p class="destaque2">Select:</p>
   O select (selecione) serve para fazer consultas no banco, nele você indica os campos que você deseja consultar, caso você deseje trazer todos os campos apenas coloque * (asterísco)<br/>
-  <p class="destaque3">From:</p>
+  <p class="destaque2">From:</p>
   O from (de) indica de qual tabela virá os campos que você quer consultar<br/>
-  <p class="destaque3">Obs:</p>
+  <p class="destaque2">Obs:</p>
   Neste caso o where é opcional, se você deseja consultar dados que tenham um valor específico em um campo você pode usá-lo, caso você so deseje mostrar todos os dados da tabela, não use o where;
+  <p class="destaque2">Ex:</p>
+  SELECT nome, idade FROM pessoas <br/>
+  WHERE idade <= 60
+  AND nome = 'Will'
 `;
 });
 
@@ -872,6 +934,7 @@ function falaAleatoria() {
   falar7 = Math.random() < 0.001; //0,1%
   falar8 = Math.random() < 0.02;
   falar9 = Math.random() < 0.005;
+  falar10 = Math.random() < 0.0001;
   if (falar) {
     falaVampiro("Qual o seu tipo sanguineo?", 4000);
   }
@@ -905,5 +968,8 @@ function falaAleatoria() {
   }
   if (falar9) {
     falaVampiro("Eu tenh 17 anos a um bom tempo, um bommmm tempo", 4000);
+  }
+  if (falar10) {
+    falaVampiro("Vota no IRenato e faz o vapo", 4000);
   }
 }

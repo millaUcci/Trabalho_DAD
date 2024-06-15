@@ -63,12 +63,9 @@
       alt="Um vampiro"
       title="Este é o Klaus"
     />
-    <div id="div-vampiro"       title="Este é o Klaus"></div>
+    <div id="div-vampiro" title="Este é o Klaus"></div>
     <div id="div-fala" class="invisivel">
-      <p id="fala-vampiro" class="fala-maior">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
-        corporis.
-      </p>
+      <p id="fala-vampiro" class="fala-maior">Nada a dizer</p>
     </div>
     <dialog id="modal-caderno" class="modal">
       <img
@@ -90,22 +87,32 @@
 
       <div id="conteudo" class="conteudo">
         <p class="destaque">Algumas definições</p>
-        primary key: é um valor unico que identifica cada dado em uma tabela
+        Um dados: em sql ele pode ser representado como uma linha de uma tabela,
+        com seus campos (colunas) e os valores destes campos primary key (chave
+        primária): é um valor unico que identifica cada dado em uma tabela,
+        nenhuma chave primária sera igual a outra, pois ela serve como um meio
+        de identificar cada dado unicamente.
         <p class="destaque2">Tipos de campos</p>
         integer: campo numérico <br />
         varchar(tamanho): campo de texto com tamanho definido <br />
-        boolean: campo com valor true ou false
+        boolean: campo com valor true (verdadeiro) ou false (falso)
         <p class="destaque2">Verificações:</p>
-        notnull: campo não pode ser nullo (vazio) <br />
-        unique: o valor do campo será unico <br />
-        primary key: o campo receberá o valor da chave primária da tabela
+        notnull(NN): indica que o campo não pode ser nullo (vazio, sem dado)
+        <br />
+        primary key: indica que o campo receberá o valor da chave primária da
+        tabela, o valor unico que identificará o dado
         <br />
         <p class="destaque2">Order by:</p>
         Order by (order por) serve para ordenar uma consulta de acordo com o
         valor de algum campo. Ex: eu crio uma consulta que trás todos os dados
         da tabela pessoa e eu ordeno o resultado pelo campo "nome" em ordem
         crescente (alfabética). Obs: o order permite ordenar os campos em ordem
-        decrescente e ascendente (tanto campos varchar como os campos integer)
+        decrescente (desc) e ascendente (asc) (tanto campos varchar como os
+        campos integer)<br />
+        Ex:<br />
+        SELECT * FROM pessoas ORDER BY nome DESC <br />
+        mostra todas as pessoas da tabela pessoas, ordenadas pelo nome em ordem
+        alfabética.
       </div>
     </dialog>
     <dialog id="modal-sair-exercicio" class="modal">
