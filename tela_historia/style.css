@@ -87,6 +87,7 @@ p::first-letter {
   padding: 0.3rem 0.5rem;
   width: 8rem;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 button:hover {
   background-color: rgb(174, 175, 176);
@@ -133,6 +134,7 @@ button:active {
   border: solid 0.1rem rgb(22, 20, 25);
   font-family: "Inter";
   font-weight: bolder;
+  transition: background-color 0.2s;
   cursor: pointer;
 }
 .btn-modal:hover {

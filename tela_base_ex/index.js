@@ -130,8 +130,8 @@ switch (exercicioAtual) {
     criarBloco("vampcity;", true, "bloco-c");
     criarBloco("data", false, "");
     criarBloco("data base", false, "");
-    arrastarBloco();
     aleatorizarBlocos();
+    arrastarBloco();
 
     break;
   case "ca1-ex2":
@@ -160,8 +160,9 @@ switch (exercicioAtual) {
     criarBloco(");", true, "bloco-m");
     criarBloco("PK,", true, "bloco-f");
     criarBloco("nome varchar(15) NN,", true, "bloco-g");
-    arrastarBloco();
     aleatorizarBlocos();
+    arrastarBloco();
+
     break;
   case "ca1-ex3":
     falaAleatoria();
@@ -189,8 +190,8 @@ switch (exercicioAtual) {
     criarBloco("boolean,", false, "");
     criarBloco("integer nn,", true, "bloco-h");
     criarBloco("rua", true, "bloco-i");
-    arrastarBloco();
     aleatorizarBlocos();
+    arrastarBloco();
     break;
   case "ca2-ex1":
     falaAleatoria();
@@ -219,8 +220,8 @@ switch (exercicioAtual) {
     criarBloco("filhos;", true, "bloco-k");
     criarBloco("deletar", false, "");
     criarBloco("NN", true, "bloco-e");
-    arrastarBloco();
     aleatorizarBlocos();
+    arrastarBloco();
     break;
   case "ca3-ex1":
     falaAleatoria();
@@ -249,8 +250,8 @@ switch (exercicioAtual) {
     criarBloco(");", true, "bloco-j");
     criarBloco("values(", true, "bloco-h");
     criarBloco("inserção morador", false, "");
-    arrastarBloco();
     aleatorizarBlocos();
+    arrastarBloco();
     break;
   case "ca3-ex2":
     falaAleatoria();
@@ -280,8 +281,9 @@ switch (exercicioAtual) {
     criarBloco("inserir casa", false, "");
     criarBloco("1,'arteriae'", true, "bloco-k");
     criarBloco(");", true, "bloco-l");
-    arrastarBloco();
     aleatorizarBlocos();
+    arrastarBloco();
+
     break;
   case "ca3-ex3":
     falaAleatoria();
@@ -312,8 +314,8 @@ switch (exercicioAtual) {
     criarBloco("==", false, "");
     criarBloco("1", true, "bloco-i");
     criarBloco("atualizar", false, "");
-    arrastarBloco();
     aleatorizarBlocos();
+    arrastarBloco();
     break;
   case "ca4-ex1":
     falaAleatoria();
@@ -341,8 +343,8 @@ switch (exercicioAtual) {
     criarBloco("=", true, "bloco-g");
     criarBloco("cinco", false, "");
     criarBloco("remover", false, "");
-    arrastarBloco();
     aleatorizarBlocos();
+    arrastarBloco();
     break;
   case "ca5-ex1":
     falaAleatoria();
@@ -368,8 +370,8 @@ switch (exercicioAtual) {
     criarBloco("from casas;", true, "bloco-g");
     criarBloco("where", false, "");
     criarBloco("and", false, "");
-    arrastarBloco();
     aleatorizarBlocos();
+    arrastarBloco();
     break;
   case "ca5-ex2":
     falaAleatoria();
@@ -397,14 +399,14 @@ switch (exercicioAtual) {
     criarBloco("create", false, "");
     criarBloco("where", false, "");
     criarBloco("select *", true, "bloco-a");
-    arrastarBloco();
     aleatorizarBlocos();
+    arrastarBloco();
     break;
   case "ca5-ex3":
     falaAleatoria();
     qtBlocos = 12;
     personalizarExercicio(
-      "Para atender uma demanda dos vampiroa você deverá ler sobre o comando WHERE em seu caderno na aba UPDATE. Os vampiros querem reabastecer o tanque de sangue B-, porém, os tanques são separados pela idade das pessoas (ex: tanque do tipo A+ tem pessoas de 15 a 25 anos), hoje eles querem apenas o sangue de pessoas com menos de 30 anos, utilize uma consulta com o comando SELECT para retornar todos os campos da tabela moradores, porém filtrada (WHERE) pelo tipo_sanguineo e pela idade.",
+      "Para atender uma demanda dos vampiro você deverá ler sobre o comando WHERE em seu caderno na aba UPDATE. Os vampiros querem reabastecer o tanque de sangue B-, porém, os tanques são separados pela idade das pessoas (ex: tanque do tipo A+ tem pessoas de 15 a 25 anos), hoje eles querem apenas o sangue de pessoas com menos de 30 anos, utilize uma consulta com o comando SELECT para retornar todos os campos da tabela moradores, porém filtrada (WHERE) pelo tipo_sanguineo e pela idade.",
       "Monte o comando abaixo para trazer moradores do tipo B- e com menos de 30 anos",
       "Capítulo5 - ex3",
       "../assets/fundos/10.png"
@@ -426,9 +428,8 @@ switch (exercicioAtual) {
     criarBloco("idade", true, "bloco-j");
     criarBloco("where", true, "bloco-e");
     criarBloco("<", true, "bloco-k");
-
-    arrastarBloco();
     aleatorizarBlocos();
+    arrastarBloco();
     break;
   case "ca5-ex4":
     falaAleatoria();
@@ -463,9 +464,8 @@ switch (exercicioAtual) {
     criarBloco("where", true, "bloco-k");
     criarBloco("order by", true, "bloco-f");
     criarBloco("= 1", true, "bloco-m");
-
-    arrastarBloco();
     aleatorizarBlocos();
+    arrastarBloco();
     break;
 }
 

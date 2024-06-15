@@ -53,6 +53,7 @@ body{
   margin-left: 0.3rem;
   width: 5rem;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 button:hover {
   background-color: rgb(174, 175, 176);
@@ -69,6 +70,7 @@ button:active {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.2s;
 }
 #btn-sair-exercicio {
   right: 2rem;
@@ -124,6 +126,7 @@ body {
   margin: 0.2rem;
   display: inline-block;
   font-weight: bold;
+  transition: background-color 0.2s;
 }
 .bloco:hover {
   background-color: rgb(174, 175, 176);
@@ -257,6 +260,7 @@ body {
   font-family: "Inter";
   font-weight: bolder;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 .btn-modal:hover{
  background-color:  rgb(174, 175, 176);

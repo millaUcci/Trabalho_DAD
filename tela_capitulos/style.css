@@ -13,21 +13,7 @@ body{
 header{
     margin-bottom: 3rem;
 }
-/* #home{
-    filter: invert(100%);
-    width: 2rem;
-    margin: .5rem;
-    cursor: pointer;
-    position: absolute;
-    top: .5rem;
-    left: .5rem;
-}
-#home:hover{
-    filter:invert(60%)
-}
-#home:active{
-    filter: invert(30%);
-} */
+
 #config{
     filter: invert(100%);
     width: 2rem;
@@ -58,6 +44,7 @@ header{
     justify-content:center;
     z-index: 1;
     cursor: pointer;
+    transition: background-color 0.2s;
 }
 .capitulo-menor{
     font-family: 'Kranky';
@@ -198,6 +185,7 @@ background-color: rgb(22, 20, 25,.5);
     font-family: "Inter";
     font-weight: bolder;
     cursor: pointer;
+    transition: background-color 0.2s;
 }
 .btn-modal:hover{
    background-color:  rgb(174, 175, 176);
