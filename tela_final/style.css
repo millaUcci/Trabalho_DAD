@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Kranky&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Kranky&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    user-select: none;
+}
+
+body{
+    background-color: rgb(27, 25, 30);
+    color: rgb(216, 219, 221);
+    text-align: center;
+}
+
+button{
+    font-family: 'Inter';
+    font-weight: bold;
+    font-size: medium;
+    background-color: rgb(216, 219, 221);
+    border: none;
+    border-radius: .4rem;
+    padding: .3rem .5rem;
+    display: block;
+    margin: auto;
+    margin-top: .8rem;
+    width: 8rem;
+    cursor: pointer;
+}
+
+.container {
+    margin-top: 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#haha {
+    width: 20%;
+    height: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+div {
+    text-align: center;
+}
+
+h1{
+    width: 60rem;
+    font-size: 45px;
+    font-family: 'Kranky';
+    font-weight:normal;
+    margin: auto;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: rgb(216, 219, 221);
+    color: rgb(53, 47, 58);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgb(174, 175, 176);
+}
+
+.grupo-botoes{
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    gap: 10px;
+}
+
+button:active{
+    background-color: rgb(53, 47, 58);
+    color: rgb(174, 175, 176);
+}
+
+#certificado {
+    width: fit-content;
+}
