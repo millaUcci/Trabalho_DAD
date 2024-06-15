@@ -74,10 +74,17 @@ p::first-letter {
   font-weight: bold;
   font-size: 2rem;
 }
-.button {
-  position: absolute;
+#btn-voltar-pagina {
+  bottom: 2rem;
+  left: 5rem;
+}
+#btn-comecar,
+#btn-proximo {
   bottom: 2rem;
   right: 5rem;
+}
+.button {
+  position: absolute;
   font-family: "Inter";
   font-weight: bold;
   font-size: medium;
