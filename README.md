@@ -1,8 +1,3 @@
----
-title: "SQL vampire - trabalho de DAD"
-description: "Uma aplicação web que ensina o básico de postgreSQL"
----
-
 # Trabalho de DAD: Introdução a Banco de Dados Relacional PostgreSQL
 
 Este é um projeto desenvolvido como parte do curso de Desenvolvimento de Aplicações Dinâmicas com o objetivo de ensinar conceitos básicos sobre bancos de dados relacionais em PostgreSQL para os outros alunos.
