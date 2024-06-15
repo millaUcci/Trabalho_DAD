@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificado de Curso Básico de SQL</title>
+    <link rel="stylesheet" type="text/css" href="certificado.css">
+    <link rel="shortcut icon" href="../assets/pdf.png" type="image/x-icon">
+</head>
+<body>
+    <div id="content" class="certificado">
+        <div class="header">
+            <img src="../assets/morcego branco.png" alt="Logo">
+            <h1>Certificado de Conclusão</h1>
+        </div>
+        <div class="content">
+            <p>Este certificado é concedido a</p>
+            <h2 id="nome-aluno"></h2>
+            <p>por ter concluído com êxito o</p>
+            <h3>Curso Básico de SQL vampire</h3>
+        </div>
+        <div class="footer">
+            <div class="signature">
+                <p>Assinatura da equipe SQLvampire</p>
+            </div>
+            <div class="date">
+                <p id="data-conclusao"></p>
+            </div>
+        </div>
+    </div>
+    <button onclick="generatePDF()">Baixar certificado</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="certificado.js"></script>
+</body>
+</html>
