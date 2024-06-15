@@ -16,12 +16,18 @@
     <header>
       <img
         src="/assets/capitulos.png"
-        alt=""
+        alt="Caderno de consulta"
         id="info"
         class="botoes-header"
         title="Caderno de consulta"
       />
-      <img src="/assets/config.png" alt="" id="config" class="botoes-header" />
+      <img
+        src="/assets/config.png"
+        alt="Configurações"
+        title="Configurações"
+        id="config"
+        class="botoes-header"
+      />
     </header>
     <div id="principal">
       <div id="div-texto">
@@ -29,19 +35,32 @@
       </div>
       <h1 id="titulo"></h1>
       <div id="div-digitar">
-        <div id="terminal" class="default"></div>
+        <div id="terminal" class="default" title="Monte os comandos aqui"></div>
         <div id="div-botoes">
-          <button id="btn-limpar" class="button" onclick="apagar()">
+          <button
+            id="btn-limpar"
+            class="button"
+            title="Apagar o último bloco inserido"
+            onclick="apagar()"
+          >
             <img class="botoes-terminal" src="/assets/apagar.png" alt="" />
           </button>
-          <button id="btn-verificar" class="button">
+          <button
+            id="btn-verificar"
+            class="button"
+            title="Verificar se o comando esta correto"
+          >
             <img class="botoes-terminal" src="/assets/check.png" alt="" />
           </button>
         </div>
       </div>
       <div id="div-blocos"></div>
     </div>
-    <button id="btn-sair-exercicio" class="button botoes-exercicios">
+    <button
+      id="btn-sair-exercicio"
+      class="button botoes-exercicios"
+      title="Sair do exercício"
+    >
       <img
         class="botoes-terminal"
         src="/assets/sair.png"
@@ -49,13 +68,12 @@
         title="Botão para sair deste exercício"
       />
     </button>
-    <button id="btn-proximo-ex" class="button botoes-exercicios invisivel">
-      <img
-        class="botoes-terminal"
-        src="/assets/proximo_ex.png"
-        alt=""
-        title="Botão para ir para o próximo exercício"
-      />
+    <button
+      id="btn-proximo-ex"
+      class="button botoes-exercicios invisivel"
+      title="Próximo capítulo"
+    >
+      <img class="botoes-terminal" src="/assets/proximo_ex.png" alt="" />
     </button>
     <img
       id="vampiro"
