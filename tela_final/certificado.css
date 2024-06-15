@@ -1,0 +1,82 @@
+body {
+    font-family: 'Times New Roman', serif;
+    background-color: #111;
+    color: #eee;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.certificado {
+    width: 800px;
+    height: 450px;
+    border: 10px solid #880000;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    background-color: #222;
+    text-align: center;
+    position: relative;
+}
+
+.certificado .header img {
+    width: 15%;
+}
+
+.certificado .header h1 {
+    font-size: 36px;
+    color: #bb0000;
+    margin: 20px 0;
+}
+
+.certificado .content p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.certificado .content h2 {
+    font-size: 32px;
+    color: #fff;
+    margin: 20px 0;
+    text-decoration: underline;
+}
+
+.certificado .content h3 {
+    font-size: 28px;
+    color: #bb0000;
+    margin: 20px 0;
+}
+
+.certificado .footer {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 20px;
+    width: 90%;
+}
+
+.certificado .footer .signature {
+    text-align: left;
+}
+
+.certificado .footer .date {
+    text-align: right;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
