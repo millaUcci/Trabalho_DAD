@@ -7,11 +7,10 @@
 }
 
 body{
-    background-color: rgb(27, 25, 30);
+    background-color: rgb(22, 20, 25);
     color: rgb(216, 219, 221);
     text-align: center;
 }
-
 button{
     font-family: 'Inter';
     font-weight: bold;
@@ -19,16 +18,17 @@ button{
     background-color: rgb(216, 219, 221);
     border: none;
     border-radius: .4rem;
-    padding: .3rem .5rem;
+    padding: .5rem .7rem;
+    padding-bottom: 1.7rem;
     display: block;
     margin: auto;
-    margin-top: .8rem;
-    width: 8rem;
+    width: 11rem;
     cursor: pointer;
+    transition: background-color 0.2s;
+    height: 2rem;
 }
-
 .container {
-    margin-top: 80px;
+    margin-top:2rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -38,8 +38,8 @@ button{
 #haha {
     width: 20%;
     height: auto;
-    margin-bottom: 30px;
-    margin-top: 30px;
+    margin-bottom: .5rem;
+    margin-top: .5rem;
 }
 
 div {
@@ -47,23 +47,12 @@ div {
 }
 
 h1{
-    width: 60rem;
-    font-size: 45px;
+    width: 50rem;
+    font-size: 3rem;
     font-family: 'Kranky';
     font-weight:normal;
     margin: auto;
-}
-
-button {
-    margin-top: 10px;
-    padding: 10px 15px;
-    background-color: rgb(216, 219, 221);
-    color: rgb(53, 47, 58);
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    margin-top: 1rem;
 }
 
 button:hover {
@@ -74,14 +63,13 @@ button:hover {
     width: fit-content;
     margin: auto;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     gap: 10px;
+    margin-top: 0;
 }
 
 button:active{
     background-color: rgb(53, 47, 58);
     color: rgb(174, 175, 176);
-}
-
-#certificado {
-    width: fit-content;
 }
