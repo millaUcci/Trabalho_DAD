@@ -73,3 +73,61 @@ button:active{
     background-color: rgb(53, 47, 58);
     color: rgb(174, 175, 176);
 }
+.modal{
+    border-radius: 1rem;
+    background-color: rgb(216, 219, 221);
+    color: rgb(22, 20, 25);
+    text-align: center;
+    width: 18rem;
+    height: 12rem;
+    padding: 1rem 3rem 2rem;
+    border: .3rem solid  rgb(53, 47, 58);
+}
+.modal::backdrop{
+background-color: rgb(22, 20, 25,.5);
+}
+.modal > #div-flex > h2{
+    width: 85%;
+    font-family: 'Kranky';
+}
+#div-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    border-radius: .2rem;
+    border: solid .1rem rgb(22, 20, 25);
+    font-family: 'Inter';
+}
+.btn-modal{
+    margin-top:.7rem;
+    width: 7rem;
+    height: 1.5rem;
+    background-color: rgb(216, 219, 221);
+    color: rgb(53, 47, 58);
+    border-radius: .3rem;
+    border: solid .1rem  rgb(22, 20, 25);
+    font-family: "Inter";
+    font-weight: bolder;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.btn-modal:hover{
+   background-color:  rgb(174, 175, 176);
+}
+.btn-modal:active{
+    background-color: rgb(53, 47, 58);
+    color: rgb(174, 175, 176);
+}
+.fechar-modal {
+    width: 1.5rem;
+    position: absolute;
+    left: 1.5rem;
+    top: 1rem;
+    filter: invert(20%);
+}
+.invisivel{
+    display: none;
+}
