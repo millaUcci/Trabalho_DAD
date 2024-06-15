@@ -510,9 +510,9 @@ tituloSql.addEventListener("click", () => {
   primary key: indica que o campo receberá o valor da chave primária da tabela, o valor unico que identificará o dado
   <br/>
   <p class="destaque2">Order by:</p>
-  Order by (order por) serve para ordenar uma consulta de acordo com o valor de algum campo. Ex: eu crio uma consulta que trás todos os dados da tabela pessoa e eu ordeno o resultado pelo campo "nome" em ordem crescente (alfabética). Obs: o order permite ordenar os campos em ordem decrescente (desc) e ascendente (asc) (tanto campos varchar como os campos integer)<br/>
+  Order by (order por) serve para ordenar uma consulta de acordo com o valor de algum campo. Ex: eu crio uma consulta que trás todos os dados da tabela pessoa e eu ordeno o resultado pelo campo "nome" em ordem crescente (alfabética). Obs: o order permite ordenar os campos em ordem decrescente (desc) e crescente/ascendente (asc) (tanto campos varchar como os campos integer)<br/>
   Ex:<br/>
-  SELECT * FROM pessoas ORDER BY nome DESC <br/>
+  SELECT * FROM pessoas ORDER BY nome ASC <br/>
   mostra todas as pessoas da tabela pessoas, ordenadas pelo nome em ordem alfabética.
  `;
 });
@@ -973,7 +973,7 @@ function falaAleatoria() {
     fala.classList.remove("fala-menor");
     falaVampiro(
       "Quando não estou caçando humanos, sou um ótimo chef de cozinha. Minha especialidade? Bife à meia-noite.",
-      5000
+      6000
     );
     fala.classList.remove("fala-maior");
     fala.classList.add("fala-menor");
