@@ -28,12 +28,18 @@ proximo.addEventListener("click", () => {
   localStorage.setItem("pagina", JSON.stringify(paginaAtualTemp));
   window.location.reload();
 });
+
 const voltar = document.getElementById("btn-voltar-pagina");
-if(paginaAtual!=1){
-    voltar.classList.remove("invisivel")
+const modo =JSON.parse(localStorage.getItem("modo"))
+if(paginaAtual>1){
+    if( modo == "historia" || modo =="livre" && paginaAtual>=5){
+      console.log("entrou")
+      voltar.classList.remove("invisivel")
+    }
 }else{
     voltar.classList.add("invisivel")
 }
+
 voltar.addEventListener("click", () => {
   let paginaAtualTemp = parseInt(paginaAtual) - 1;
 
