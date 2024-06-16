@@ -57,6 +57,7 @@ const todosOsExercicios = [
 config.addEventListener("click", () => {
   modalConfig.showModal();
   btnCreditos.addEventListener("click", () => {
+    localStorage.setItem("save", JSON.stringify(exercicioAtual));
     window.location.href = "../tela_creditos/index.html";
   });
   btnRecomecar.addEventListener("click", () => {
@@ -745,10 +746,13 @@ function criarBloco(desc, blocoSolucao, id) {
 function aleatorizarBlocos() {
   for (let i = divBlocosLista.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [divBlocosLista[i], divBlocosLista[j]] = [divBlocosLista[j], divBlocosLista[i]];
+    [divBlocosLista[i], divBlocosLista[j]] = [
+      divBlocosLista[j],
+      divBlocosLista[i],
+    ];
   }
-  for(let k = 0; k < divBlocosLista.length; k++) {
-    divBlocos.appendChild(divBlocosLista[k])
+  for (let k = 0; k < divBlocosLista.length; k++) {
+    divBlocos.appendChild(divBlocosLista[k]);
   }
 }
 
