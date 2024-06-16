@@ -15,5 +15,4 @@ livre.addEventListener('click',()=>{
     localStorage.setItem("exConcluidos",JSON.stringify([]))
     localStorage.setItem("pagina",JSON.stringify("4"))
     window.location.href = "./tela_historia/index.html"
-
 })
