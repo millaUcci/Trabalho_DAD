@@ -16,9 +16,12 @@ O projeto consiste em uma aplicação web gameficada que ensina, de maneira inte
 
 ## Funcionalidades
 
-1. *Depois*: colocamos
+1. Arrastar blocos para formar comandos
+2. Consultar um caderno com esplicações sobre conceitos e sintaxes
+3. Salvar exercíco onde parou
+4. Gerar um cerficado de SQL básico
 
-## Como Executar
+## Como Executar (via git clone)
 
 1. Clone o repositório para o seu computador:
 
@@ -34,6 +37,10 @@ O projeto consiste em uma aplicação web gameficada que ensina, de maneira inte
 
 3. Abra o arquivo index.html em um navegador web.
 
+## Como executar (via git pages)
+Acesse o nosso projeto pelo link do git pages
+- [SQL vampire](https://millaUcci.github.io/Trabalho_DAD)
+
 
 ## Autores
 
@@ -48,5 +55,3 @@ O projeto consiste em uma aplicação web gameficada que ensina, de maneira inte
 Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
-
-
