@@ -86,13 +86,13 @@ capituloUm.addEventListener("click", () => {
     btnContinuar.classList.add("invisivel");
   }
   if (modo == "livre") {
-    btnIniciar.classList.remove("invisivel")
+    btnIniciar.classList.remove("invisivel");
     btnIniciar.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify("ca1-ex1"));
       window.location.href = "../tela_base_ex/index.html";
     });
-  }else{
-    btnIniciar.classList.add("invisivel")
+  } else {
+    btnIniciar.classList.add("invisivel");
   }
 
   modalCapitulo.showModal();
@@ -119,15 +119,14 @@ capituloDois.addEventListener("click", () => {
     btnContinuar.classList.add("invisivel");
   }
   if (modo == "livre") {
-    btnIniciar.classList.remove("invisivel")
+    btnIniciar.classList.remove("invisivel");
     btnIniciar.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify("ca2-ex1"));
       window.location.href = "../tela_base_ex/index.html";
     });
-  }else{
-    btnIniciar.classList.add("invisivel")
+  } else {
+    btnIniciar.classList.add("invisivel");
   }
-
 
   modalCapitulo.showModal();
 });
@@ -166,15 +165,14 @@ capituloTres.addEventListener("click", () => {
     btnContinuar.classList.add("invisivel");
   }
   if (modo == "livre") {
-    btnIniciar.classList.remove("invisivel")
+    btnIniciar.classList.remove("invisivel");
     btnIniciar.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify("ca3-ex1"));
       window.location.href = "../tela_base_ex/index.html";
     });
-  }else{
-    btnIniciar.classList.add("invisivel")
+  } else {
+    btnIniciar.classList.add("invisivel");
   }
-
 
   modalCapitulo.showModal();
 });
@@ -201,13 +199,13 @@ capituloQuatro.addEventListener("click", () => {
     btnContinuar.classList.add("invisivel");
   }
   if (modo == "livre") {
-    btnIniciar.classList.remove("invisivel")
+    btnIniciar.classList.remove("invisivel");
     btnIniciar.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify("ca4-ex1"));
       window.location.href = "../tela_base_ex/index.html";
     });
-  }else{
-    btnIniciar.classList.add("invisivel")
+  } else {
+    btnIniciar.classList.add("invisivel");
   }
 
   modalCapitulo.showModal();
@@ -253,15 +251,14 @@ capituloCinco.addEventListener("click", () => {
     btnContinuar.classList.add("invisivel");
   }
   if (modo == "livre") {
-    btnIniciar.classList.remove("invisivel")
+    btnIniciar.classList.remove("invisivel");
     btnIniciar.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify("ca5-ex1"));
       window.location.href = "../tela_base_ex/index.html";
     });
-  }else{
-    btnIniciar.classList.add("invisivel")
+  } else {
+    btnIniciar.classList.add("invisivel");
   }
-
 
   modalCapitulo.showModal();
 });
