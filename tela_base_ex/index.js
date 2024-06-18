@@ -376,7 +376,7 @@ switch (exercicioAtual) {
     falaAleatoria();
     qtBlocos = 9;
     personalizarExercicio(
-      "Agora aprenderemos a fazer consultas mostrando seus resultados ordenados, usaremos o comando ORDER BY ao final do SELECT para ordenar as informações de a cordo com o valor de algum campo. Agora faça uma consulta para trazer todas as informações da tabela de casas ordenada em ordem alfabética pelas ruas, além disso, consulte tambem todos os moradores ordenados pela idade, do mais velho ao mais novo.",
+      "Agora aprenderemos a fazer consultas mostrando seus resultados ordenados, usaremos o comando ORDER BY ao final do SELECT para ordenar as informações de acordo com o valor de algum campo. Agora faça uma consulta para trazer todas as informações da tabela de casas ordenada em ordem alfabética pelas ruas, além disso, consulte tambem todos os moradores ordenados pela idade, do mais velho ao mais novo.",
       "Monte o comando abaixo",
       "Capítulo5 - ex2",
       "../assets/fundos/9.png"
