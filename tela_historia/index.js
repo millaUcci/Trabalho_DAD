@@ -14,11 +14,33 @@ const subTituloB = document.getElementById("sub-titulo-b");
 const descA = document.getElementById("desc-a");
 const descB = document.getElementById("desc-b");
 let mudanca = 0;
+document.addEventListener('DOMContentLoaded', () => {
+  const audioState = localStorage.getItem('audioState');
+
+  if (audioState === 'playing') {
+      musica.currentTime = parseFloat(localStorage.getItem('audioTime')) || 0;
+      musica.play();
+  }
+
+  musica.addEventListener('play', () => {
+      localStorage.setItem('audioState', 'playing');
+  });
+
+  musica.addEventListener('pause', () => {
+      localStorage.setItem('audioState', 'paused');
+  });
+
+  musica.addEventListener('timeupdate', () => {
+      localStorage.setItem('audioTime', musica.currentTime);
+  });
+});
 
 ultimoSave.textContent = "Ultime save: " + save;
-
+localStorage.setItem('audioState','playing');
 const comecar = document.getElementById("btn-comecar");
 comecar.addEventListener("click", () => {
+  localStorage.setItem('audioTime', musica.currentTime);
+  localStorage.setItem('audioState', musica.paused ? 'paused' : 'playing');
   window.location.href = "../tela_capitulos/index.html";
 });
 
@@ -27,6 +49,8 @@ proximo.addEventListener("click", () => {
   let paginaAtualTemp = parseInt(paginaAtual) + 1;
   localStorage.setItem("pagina", JSON.stringify(paginaAtualTemp));
   window.location.reload();
+  localStorage.setItem('audioTime', musica.currentTime);
+  localStorage.setItem('audioState', musica.paused ? 'paused' : 'playing');
 });
 
 const voltar = document.getElementById("btn-voltar-pagina");
