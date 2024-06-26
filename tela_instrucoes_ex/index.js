@@ -2,7 +2,7 @@ const exercicioAtual = JSON.parse(localStorage.getItem("exAtual"));
 const comecar = document.getElementById("btn-comecar");
 const texto = document.getElementById("instrucao");
 const som = document.getElementById("som");
-const titulo = document.getElementsByTagName("title");
+const titulo = document.getElementsByTagName("title")[0];
 let text = "";
 
 switch (exercicioAtual) {
