@@ -53,6 +53,27 @@ const todosOsExercicios = [
   "ca5-ex3",
   "ca5-ex4",
 ];
+const musica = document.getElementById("musica")
+document.addEventListener('DOMContentLoaded', () => {
+  const audioState = localStorage.getItem('audioState');
+
+  if (audioState === 'playing') {
+      musica.currentTime = parseFloat(localStorage.getItem('audioTime')) || 0;
+      musica.play();
+  }
+
+  musica.addEventListener('play', () => {
+      localStorage.setItem('audioState', 'playing');
+  });
+
+  musica.addEventListener('pause', () => {
+      localStorage.setItem('audioState', 'paused');
+  });
+
+  musica.addEventListener('timeupdate', () => {
+      localStorage.setItem('audioTime', musica.currentTime);
+  });
+});
 
 config.addEventListener("click", () => {
   modalConfig.showModal();
@@ -114,11 +135,16 @@ btnSair.addEventListener("click", () => {
 //Vendo o exercíco a
 switch (exercicioAtual) {
   case "ca1-ex1":
+    fala.classList.add("fala-maior");
+    fala.classList.remove("fala-menor");
+    falaVampiro("Você pode usar o caderno de consultas (canto superior esquerdo) sempre que precisar",6000)
+    fala.classList.remove("fala-maior");
+    fala.classList.add("fala-menor");
     falaAleatoria();
     qtBlocos = 3;
     personalizarExercicio(
-      "Para começarmos é preciso criar a cidade onde os moradores ficaram. Usaremos o comando CREATE juntamente com a indicação de qual objeto do banco de dados será criado, que neste caso será um DATABASE.",
-      "Monte abaixo o comando para criar a cidade com o nome “VampCity ",
+      "Use o comando create",
+      "Monte abaixo o comando para criar a cidade com o nome VampCity ",
       "Capítulo1 - ex1",
       "../assets/fundos/1.png"
     );
@@ -139,7 +165,7 @@ switch (exercicioAtual) {
     falaAleatoria();
     qtBlocos = 12;
     personalizarExercicio(
-      "Agora que a cidade foi criada precisamos criar duas tabelas, uma para guardar dados sobre os moradores da cidade e outra para guardar os dados das casas dos moradores. Utilizaremos o comando CREATE com o objeto do banco de dados TABLE, seguido dos campos da tabela e do tipo de cada campo. Não esqueça de indicar que o campo id_morador é a chave primaria da tabela. (Dica: Veja no caderno os tipos mais adequado para cada campo)(Dica2: todos os campos são obrigatórios) Obs: NN = notnull, PK = primary key",
+      "(Dica: Veja no caderno os tipos mais adequado para cada campo)(Dica2: todos os campos são obrigatórios) Obs: NN = notnull, PK = primary key",
       "Crie a tabela Moradores com os campos: id_morador, nome, sobrenome,  filhos, tipo_sanguineo e idade",
       "Capítulo1 - ex2",
       "../assets/fundos/2.png"
@@ -168,7 +194,7 @@ switch (exercicioAtual) {
     falaAleatoria();
     qtBlocos = 11;
     personalizarExercicio(
-      "Ainda usando os conhecimentos adquiridos no exercício anterior, crie a tabela de casas a partir das colunas dadas abaixo. Decida você mesmo o tipo e as verificações dos campos. Não se esqueça de indicar na criação que o campo id é a primary key da tabela. (dica: todos os campos são obrigatórios) Obs: NN = notnull, PK = primary key",
+      "(Dica: todos os campos são obrigatórios)(Dica: não esqueça de indicar os tipos de cada campo, consulte o caderno se preciso) Obs: NN = notnull, PK = primary key",
       "Para montar a tabela utilize essa ordem de campos: id, num_casa, id_morador, rua",
       "Capítulo1 - ex3",
       "../assets/fundos/3.png"
@@ -196,8 +222,8 @@ switch (exercicioAtual) {
     falaAleatoria();
     qtBlocos = 11;
     personalizarExercicio(
-      "Pelo visto vamos precisar alterar a estrutura da tabela de moradores, precisamos acrescentar um campo chamado “conjuge” que receberá o id do morador com quem ele é casado. Para alterar dados iremos utilizar o comando ALTER. Agora, adicione o campo “cônjuge” e exclua o campo “filhos”. (Dica: conjuge estara relacionado com id_morador, logo terá o mesmo tipo)(Dica2: para poder executar mais de um comando por vez, basta acrescentar um ponto e virgula ao final do primeiro comando, para indicar que ele foi finalizado e que o que vier depois é outro comando.)",
-      "Monte os comandos para fazer as duas alterações",
+      "Com o comando ALTER, adicione o campo “cônjuge” e exclua o campo “filhos”. (Dica: conjuge estara relacionado com id_morador, logo terá o mesmo tipo)(Dica2: para poder executar mais de um comando por vez, basta acrescentar um ponto e virgula ao final do primeiro comando, para indicar que ele foi finalizado e que o que vier depois é outro comando.)",
+      "Monte dois comandos para fazer as duas alterações",
       "Capítulo2 - ex1",
       "../assets/fundos/4.png"
     );
@@ -227,7 +253,7 @@ switch (exercicioAtual) {
     qtBlocos = 10;
     falaVampiro("Aqui esta tão vazio...", 4000);
     personalizarExercicio(
-      "Agora que as estruturas das tabelas estão prontas, você precisa inserir alguns moradores na cidade e suas casas. Nós usaremos o comando INSERT. Usando o conteúdo do caderno insira o seguinte morador: " +
+      "Adicione o seguinte morador: " +
         `
       id_morador: 1, nome: Dorian, sobrenome: Lestrad, tipo_sanguineo: A+, idade:34, conjuge: 2`,
       "Monte o comando para inserir o morador",
@@ -256,7 +282,7 @@ switch (exercicioAtual) {
     falaAleatoria();
     qtBlocos = 12;
     personalizarExercicio(
-      "Agora que criamos um morador precisamos criar uma casa para ele, utilize novamente o comando INSERT só que agora na tabela casas. Insira a casa a partir dos dados: " +
+      "Insira a casa a partir dos dados: " +
         `
         id: 1, num_casa: 110, id_morador: 1, rua: arteriae`,
       "Monte o comando para inserir a casa",
@@ -289,7 +315,7 @@ switch (exercicioAtual) {
     qtBlocos = 12;
     falaVampiro("Felicidades ao casal", 4000);
     personalizarExercicio(
-      "Pelo visto teremos que atualizar um dos moradores. Usaremos o comando UPDATE seguido da tabela no qual fazemos a atualização, e com o comando SET indicaremos os campos a serem atualizados e por fim com o comando WHERE indicaremos qual dados será atualizado. Atualize o sobrenome da moradora Carmilla para 'Lestrad' pois ela casou-se com Dorian Lestrad sendo seu id_morador igual a 1 e o id_morador de Carmilla igual a 2, não se esquece de atualizar tambem o campo conjuge, indicando que ela se casou. (Dica: o campo conjuge recebe o id_morador do conjuge do morador)(Dica2: não se esqueça do comando AND para atualizar mais de um campo)",
+      "Atualize o campo sobrenome de Carmilla (o id_morador dela é 2) para 'Lestrad' e indique no campo 'conjuge' dela, que ela se casou com Dorian (o id_morador dele é 1)(Dica: o campo conjuge recebe o id_morador do conjuge do morador)(Dica2: não se esqueça do comando AND para atualizar mais de um campo)(Dica3: não esqueça de ultilizar o WHERE para que apenas a Carmilla seja atualizada)",
       "Atualize os campos sobrenome e conjuge da moradora Carmilla",
       "Capítulo3 - ex3",
       "../assets/fundos/6.png"
@@ -321,7 +347,7 @@ switch (exercicioAtual) {
     qtBlocos = 7;
     falaVampiro("Que pena, era um rapaz tão bom, tinha um sangue doce", 5000);
     personalizarExercicio(
-      "Infelizmente o morador Nathaniel faleceu, precisaremos mudar nosso banco de dados. Vamos precisar usar o comando DELETE seguido do comando FROM para indicar a tabela da qual desejamos deletar o dado, e por fim usaremos o WHERE para indicar qual é o morador em especifico que vamos deletar. O id_morador de Nathaniel era 5.",
+      "O id_morador de Nathaniel era 5",
       "Delete o morador Nathaniel da tabela moradores",
       "Capítulo4 - ex1",
       "../assets/fundos/7.png"
@@ -349,7 +375,7 @@ switch (exercicioAtual) {
     falaAleatoria();
     qtBlocos = 7;
     personalizarExercicio(
-      "SELECT é o comando que serve para fazer consultas no banco de dados, nessas consultras podem ter filtros. O comando SELECT é seguido da indicação dos campos da tabela que seram mostrados na consulta, depois deve se usar o comando FROM para indicar a partir de qual tabela a consulta sera feita. Tente (pode usar o caderno como auxilio) fazer uma consulta que traga apenas os nomes dos moradores da tabela moradores, e outra consulta que traga todos os campos da tabela casas. (Dica: caso queria trazer todos os campos de uma tabela, use o * após o SELECT)(Dica2: separe os dois comando por ponto e vírgula)",
+      "Tente (pode usar o caderno como auxilio) fazer uma consulta que traga apenas os nomes dos moradores da tabela moradores, e outra consulta que traga todos os campos da tabela casas. (Dica: caso queria trazer todos os campos de uma tabela, use o * após o SELECT)(Dica2: separe os dois comando por ponto e vírgula)",
       "Monte as duas consultas",
       "Capítulo5 - ex1",
       "../assets/fundos/8.png"
@@ -376,7 +402,7 @@ switch (exercicioAtual) {
     falaAleatoria();
     qtBlocos = 9;
     personalizarExercicio(
-      "Agora aprenderemos a fazer consultas mostrando seus resultados ordenados, usaremos o comando ORDER BY ao final do SELECT para ordenar as informações de acordo com o valor de algum campo. Agora faça uma consulta para trazer todas as informações da tabela de casas ordenada em ordem alfabética pelas ruas, além disso, consulte tambem todos os moradores ordenados pela idade, do mais velho ao mais novo.",
+      "Agora faça uma consulta para trazer todas as informações da tabela de casas ordenada em ordem alfabética pelo nome das ruas, além disso, consulte tambem todos os moradores ordenados pela idade, do mais velho ao mais novo.(Dica: faça duas consultas separadas por ponto e virgula)",
       "Monte o comando abaixo",
       "Capítulo5 - ex2",
       "../assets/fundos/9.png"
@@ -405,7 +431,7 @@ switch (exercicioAtual) {
     falaAleatoria();
     qtBlocos = 12;
     personalizarExercicio(
-      "Para atender uma demanda dos vampiros você deverá ler sobre o comando WHERE em seu caderno na aba UPDATE. Os vampiros querem reabastecer o tanque de sangue B-, porém, os tanques são separados pela idade das pessoas (ex: tanque do tipo A+ tem pessoas de 15 a 25 anos), hoje eles querem apenas o sangue de pessoas com menos de 30 anos, utilize uma consulta com o comando SELECT para retornar todos os campos da tabela moradores, porém filtrada (WHERE) pelo tipo_sanguineo e pela idade.",
+      "A consulta deve retornar todos os campos da tabela moradores, filtrada pelo tipo_sanguineo e pela idade.",
       "Monte o comando abaixo para trazer moradores do tipo B- e com menos de 30 anos",
       "Capítulo5 - ex3",
       "../assets/fundos/10.png"
@@ -435,7 +461,7 @@ switch (exercicioAtual) {
     qtBlocos = 16;
     falaVampiro("Oh, meu deus, você ja esta no último exercício", 5500);
     personalizarExercicio(
-      "Para o último exercício você deve fazer uma consulta mais complexa para que os vampiros possam fazer um relatório dos moradores e das casas. Traga o nome e o tipo sanguineo dos moradores ordenados pela idade (do mais novo ao mais velho), e depois faça um comando para trazer todas as casas do morador Dorian cujo o id_morador é igual a 1 onde a rua seja igual a arteriae. Vamos lá, eu sei que você consegue",
+      "Para o relatório traga o nome e o tipo sanguineo dos moradores ordenados pela idade (do mais novo ao mais velho), e depois faça um comando para trazer todas as casas do morador Dorian (cujo o id_morador é igual a 1) onde a rua seja igual a arteriae. Vamos lá, eu sei que você consegue",
       "Monte duas consultas para gerar um relatório aos vampiros.",
       "Capítulo5 - ex4",
       "../assets/fundos/10.png"
@@ -757,7 +783,7 @@ function aleatorizarBlocos() {
 }
 
 function arrastarBloco() {
-  Array.from(palavras).forEach((palavra) => {
+  function adicionarEventosParaPalavra(palavra) {
     palavra.addEventListener("dragstart", () => {
       palavra.classList.add("dragging");
     });
@@ -765,7 +791,44 @@ function arrastarBloco() {
     palavra.addEventListener("dragend", () => {
       palavra.classList.remove("dragging");
     });
-  });
+
+    palavra.addEventListener("click", () => {
+      const currentlySelected = document.querySelector(".bloco.selected");
+      if (currentlySelected) {
+        currentlySelected.classList.remove("selected");
+      }
+      palavra.classList.add("selected");
+    });
+
+    palavra.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      palavra.classList.add("dragover");
+    });
+
+    palavra.addEventListener("dragleave", () => {
+      palavra.classList.remove("dragover");
+    });
+
+    palavra.addEventListener("drop", (e) => {
+      e.preventDefault();
+      palavra.classList.remove("dragover");
+      const palavraArrastada = document.querySelector(".bloco.dragging");
+      if (palavraArrastada) {
+        const indexArrastada = Array.from(terminal.children).indexOf(palavraArrastada);
+        const indexAlvo = Array.from(terminal.children).indexOf(palavra);
+        if (indexArrastada !== -1 && indexAlvo !== -1) {
+          if (indexArrastada < indexAlvo) {
+            terminal.insertBefore(palavraArrastada, palavra.nextSibling);
+          } else {
+            terminal.insertBefore(palavraArrastada, palavra);
+          }
+        }
+      }
+    });
+  }
+
+  // Adiciona os eventos para cada palavra inicial
+  Array.from(palavras).forEach(adicionarEventosParaPalavra);
 
   terminal.addEventListener("dragover", (e) => {
     e.preventDefault();
@@ -779,10 +842,18 @@ function arrastarBloco() {
   terminal.addEventListener("drop", (e) => {
     e.preventDefault();
     terminal.classList.remove("dragover");
-    const palavraArrastada = document.querySelector(".bloco.dragging"); // Alteração aqui
+    const palavraArrastada = document.querySelector(".bloco.dragging");
     if (palavraArrastada) {
       terminal.appendChild(palavraArrastada);
-      selecionadas.push(palavraArrastada); //Alterei aqui ass: duda
+      selecionadas.push(palavraArrastada);
+    }
+  });
+
+  terminal.addEventListener("click", (e) => {
+    if (e.target.classList.contains("bloco")) {
+      const palavraSelecionada = e.target;
+      divBlocos.appendChild(palavraSelecionada);
+      palavraSelecionada.classList.remove("selected");
     }
   });
 
@@ -798,12 +869,23 @@ function arrastarBloco() {
   divBlocos.addEventListener("drop", (e) => {
     e.preventDefault();
     divBlocos.classList.remove("dragover");
-    const palavraArrastada = document.querySelector(".bloco.dragging"); // Alteração aqui
+    const palavraArrastada = document.querySelector(".bloco.dragging");
     if (palavraArrastada) {
       divBlocos.appendChild(palavraArrastada);
     }
   });
+
+  divBlocos.addEventListener("click", (e) => {
+    const palavraSelecionada = document.querySelector(".bloco.selected");
+    if (palavraSelecionada) {
+      terminal.appendChild(palavraSelecionada);
+      palavraSelecionada.classList.remove("selected");
+      selecionadas.push(palavraSelecionada);
+    }
+  });
 }
+
+
 btnProx.addEventListener("click", () => {
   let ultimoExercicio = false;
   switch (exercicioAtual) {
@@ -904,6 +986,11 @@ function adicionarEventoVerificar() {
         terminal.classList.add("certo");
         btnProx.classList.remove("invisivel");
         falaVampiro("Parabéns, você acertou", 2000);
+        const blocos = document.getElementsByClassName("bloco")
+        for (let i = 0; i < blocos.length; i++) {
+          blocos[i].classList.remove("draggable")
+          blocos[i].setAttribute("draggable", "false");
+        }
         if (!exerciciosConcluidos.includes(exercicioAtual)) {
           exerciciosConcluidos.push(exercicioAtual);
           localStorage.setItem(
@@ -939,14 +1026,18 @@ btVerificar.addEventListener("click", () => {
 
 adicionarEventoVerificar();
 
-//Alterei aqui ass: duda
+//função para apagar o bloco
 function apagar() {
-  if (terminal.lastChild) {
-    blocoAntigo = terminal.lastChild;
-    terminal.removeChild(blocoAntigo);
-    divBlocos.appendChild(blocoAntigo);
+  const blocosParaMover = [];
+  
+  while (terminal.firstChild) {
+    blocosParaMover.push(terminal.firstChild);
+    terminal.removeChild(terminal.firstChild);
   }
+  
+  blocosParaMover.forEach(bloco => divBlocos.appendChild(bloco));
 }
+
 
 //função da fala aleatória do vampiro
 function falaAleatoria() {

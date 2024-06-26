@@ -24,6 +24,30 @@ const btnResetar = document.getElementById("btn-resetar");
 
 ultimoSave.textContent = "Ultime save: " + save;
 
+const musica = document.getElementById("musica")
+
+document.addEventListener('DOMContentLoaded', () => {
+  const audioState = localStorage.getItem('audioState');
+
+  if (audioState === 'playing') {
+      musica.currentTime = parseFloat(localStorage.getItem('audioTime')) || 0;
+      musica.play();
+  }
+
+  musica.addEventListener('play', () => {
+      localStorage.setItem('audioState', 'playing');
+  });
+
+  musica.addEventListener('pause', () => {
+      localStorage.setItem('audioState', 'paused');
+  });
+
+  musica.addEventListener('timeupdate', () => {
+      localStorage.setItem('audioTime', musica.currentTime);
+  });
+});
+
+
 config.addEventListener("click", () => {
   modalConfig.showModal();
   btnCreditos.addEventListener("click", () => {
@@ -80,7 +104,7 @@ capituloUm.addEventListener("click", () => {
     btnContinuar.classList.remove("invisivel");
     btnContinuar.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify(save));
-      window.location.href = "../tela_base_ex/index.html";
+      window.location.href = "../tela_instrucoes_ex/index.html";
     });
   } else {
     btnContinuar.classList.add("invisivel");
@@ -89,7 +113,7 @@ capituloUm.addEventListener("click", () => {
     btnIniciar.classList.remove("invisivel");
     btnIniciar.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify("ca1-ex1"));
-      window.location.href = "../tela_base_ex/index.html";
+      window.location.href = "../tela_instrucoes_ex/index.html";
     });
   } else {
     btnIniciar.classList.add("invisivel");
@@ -113,7 +137,7 @@ capituloDois.addEventListener("click", () => {
     btnContinuar.classList.remove("invisivel");
     btnContinuar.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify(save));
-      window.location.href = "../tela_base_ex/index.html";
+      window.location.href = "../tela_instrucoes_ex/index.html";
     });
   } else {
     btnContinuar.classList.add("invisivel");
@@ -122,7 +146,7 @@ capituloDois.addEventListener("click", () => {
     btnIniciar.classList.remove("invisivel");
     btnIniciar.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify("ca2-ex1"));
-      window.location.href = "../tela_base_ex/index.html";
+      window.location.href = "../tela_instrucoes_ex/index.html";
     });
   } else {
     btnIniciar.classList.add("invisivel");
@@ -159,7 +183,7 @@ capituloTres.addEventListener("click", () => {
     btnContinuar.classList.remove("invisivel");
     btnContinuar.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify(save));
-      window.location.href = "../tela_base_ex/index.html";
+      window.location.href = "../tela_instrucoes_ex/index.html";
     });
   } else {
     btnContinuar.classList.add("invisivel");
@@ -168,7 +192,7 @@ capituloTres.addEventListener("click", () => {
     btnIniciar.classList.remove("invisivel");
     btnIniciar.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify("ca3-ex1"));
-      window.location.href = "../tela_base_ex/index.html";
+      window.location.href = "../tela_instrucoes_ex/index.html";
     });
   } else {
     btnIniciar.classList.add("invisivel");
@@ -193,7 +217,7 @@ capituloQuatro.addEventListener("click", () => {
     btnContinuar.classList.remove("invisivel");
     btnContinuar.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify(save));
-      window.location.href = "../tela_base_ex/index.html";
+      window.location.href = "../tela_instrucoes_ex/index.html";
     });
   } else {
     btnContinuar.classList.add("invisivel");
@@ -202,7 +226,7 @@ capituloQuatro.addEventListener("click", () => {
     btnIniciar.classList.remove("invisivel");
     btnIniciar.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify("ca4-ex1"));
-      window.location.href = "../tela_base_ex/index.html";
+      window.location.href = "../tela_instrucoes_ex/index.html";
     });
   } else {
     btnIniciar.classList.add("invisivel");
@@ -245,7 +269,7 @@ capituloCinco.addEventListener("click", () => {
     btnContinuar.classList.remove("invisivel");
     btnContinuar.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify(save));
-      window.location.href = "../tela_base_ex/index.html";
+      window.location.href = "../tela_instrucoes_ex/index.html";
     });
   } else {
     btnContinuar.classList.add("invisivel");
@@ -254,7 +278,7 @@ capituloCinco.addEventListener("click", () => {
     btnIniciar.classList.remove("invisivel");
     btnIniciar.addEventListener("click", () => {
       localStorage.setItem("exAtual", JSON.stringify("ca5-ex1"));
-      window.location.href = "../tela_base_ex/index.html";
+      window.location.href = "../tela_instrucoes_ex/index.html";
     });
   } else {
     btnIniciar.classList.add("invisivel");
@@ -267,10 +291,43 @@ fecharModal.addEventListener("click", () => {
   modalCapitulo.close();
   excluirExercicios(divEx);
 });
+// Função para encontrar uma folha de estilo pelo seu nome
+function findStyleSheetBySelector(selector) {
+  // Iterar sobre todas as folhas de estilo no documento
+  for (let i = 0; i < document.styleSheets.length; i++) {
+    let styleSheet = document.styleSheets[i];
+
+    // Verificar se é uma folha de estilo válida
+    if (styleSheet.href || styleSheet.ownerNode) {
+      // Extrair o seletor da folha de estilo
+      let sheetSelector = styleSheet.href
+        ? styleSheet.href
+        : styleSheet.ownerNode.textContent;
+
+      // Verificar se o seletor da folha de estilo contém o seletor desejado
+      if (sheetSelector.includes(selector)) {
+        // Retornar a folha de estilo encontrada
+        return styleSheet;
+      }
+    }
+  }
+
+  // Se não encontrou a folha de estilo
+  console.warn(`Folha de estilo '${selector}' não encontrada.`);
+  return null;
+}
+
 function criarExercicio(id, titulo, exSalvo) {
   const exerciciosConcluidos = JSON.parse(localStorage.getItem("exConcluidos"));
   const ex = document.createElement("div");
   ex.classList.add("ex");
+  if (modo == "historia") {
+    ex.setAttribute("title", "Exercício bloqueado");
+    // ex.classList.add("ex-trancado");
+  }
+  // else{
+  //   ex.classList.add("ex-destrancado");
+  // }
   if (exerciciosConcluidos.includes(id)) {
     ex.classList.add("ex-feito");
     ex.setAttribute("title", "Exercício concluido");
