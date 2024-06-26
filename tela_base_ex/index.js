@@ -53,25 +53,25 @@ const todosOsExercicios = [
   "ca5-ex3",
   "ca5-ex4",
 ];
-const musica = document.getElementById("musica")
-document.addEventListener('DOMContentLoaded', () => {
-  const audioState = localStorage.getItem('audioState');
+const musica = document.getElementById("musica");
+document.addEventListener("DOMContentLoaded", () => {
+  const audioState = localStorage.getItem("audioState");
 
-  if (audioState === 'playing') {
-      musica.currentTime = parseFloat(localStorage.getItem('audioTime')) || 0;
-      musica.play();
+  if (audioState === "playing") {
+    musica.currentTime = parseFloat(localStorage.getItem("audioTime")) || 0;
+    musica.play();
   }
 
-  musica.addEventListener('play', () => {
-      localStorage.setItem('audioState', 'playing');
+  musica.addEventListener("play", () => {
+    localStorage.setItem("audioState", "playing");
   });
 
-  musica.addEventListener('pause', () => {
-      localStorage.setItem('audioState', 'paused');
+  musica.addEventListener("pause", () => {
+    localStorage.setItem("audioState", "paused");
   });
 
-  musica.addEventListener('timeupdate', () => {
-      localStorage.setItem('audioTime', musica.currentTime);
+  musica.addEventListener("timeupdate", () => {
+    localStorage.setItem("audioTime", musica.currentTime);
   });
 });
 
@@ -137,7 +137,10 @@ switch (exercicioAtual) {
   case "ca1-ex1":
     fala.classList.add("fala-maior");
     fala.classList.remove("fala-menor");
-    falaVampiro("Você pode usar o caderno de consultas (canto superior esquerdo) sempre que precisar",6000)
+    falaVampiro(
+      "Você pode usar o caderno de consultas (canto superior esquerdo) sempre que precisar",
+      6000
+    );
     fala.classList.remove("fala-maior");
     fala.classList.add("fala-menor");
     falaAleatoria();
@@ -814,7 +817,9 @@ function arrastarBloco() {
       palavra.classList.remove("dragover");
       const palavraArrastada = document.querySelector(".bloco.dragging");
       if (palavraArrastada) {
-        const indexArrastada = Array.from(terminal.children).indexOf(palavraArrastada);
+        const indexArrastada = Array.from(terminal.children).indexOf(
+          palavraArrastada
+        );
         const indexAlvo = Array.from(terminal.children).indexOf(palavra);
         if (indexArrastada !== -1 && indexAlvo !== -1) {
           if (indexArrastada < indexAlvo) {
@@ -885,7 +890,6 @@ function arrastarBloco() {
   });
 }
 
-
 btnProx.addEventListener("click", () => {
   let ultimoExercicio = false;
   switch (exercicioAtual) {
@@ -945,7 +949,7 @@ btnProx.addEventListener("click", () => {
       );
       window.location.href = "../tela_capitulos/index.html";
     } else {
-      window.location.reload();
+      window.location.href = "../tela_instrucoes_ex/index.html";
     }
   }
 });
@@ -986,9 +990,9 @@ function adicionarEventoVerificar() {
         terminal.classList.add("certo");
         btnProx.classList.remove("invisivel");
         falaVampiro("Parabéns, você acertou", 2000);
-        const blocos = document.getElementsByClassName("bloco")
+        const blocos = document.getElementsByClassName("bloco");
         for (let i = 0; i < blocos.length; i++) {
-          blocos[i].classList.remove("draggable")
+          blocos[i].classList.remove("draggable");
           blocos[i].setAttribute("draggable", "false");
         }
         if (!exerciciosConcluidos.includes(exercicioAtual)) {
@@ -1029,15 +1033,14 @@ adicionarEventoVerificar();
 //função para apagar o bloco
 function apagar() {
   const blocosParaMover = [];
-  
+
   while (terminal.firstChild) {
     blocosParaMover.push(terminal.firstChild);
     terminal.removeChild(terminal.firstChild);
   }
-  
-  blocosParaMover.forEach(bloco => divBlocos.appendChild(bloco));
-}
 
+  blocosParaMover.forEach((bloco) => divBlocos.appendChild(bloco));
+}
 
 //função da fala aleatória do vampiro
 function falaAleatoria() {
