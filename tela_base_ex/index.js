@@ -757,7 +757,7 @@ function aleatorizarBlocos() {
 }
 
 function arrastarBloco() {
-  Array.from(palavras).forEach((palavra) => {
+  function adicionarEventosParaPalavra(palavra) {
     palavra.addEventListener("dragstart", () => {
       palavra.classList.add("dragging");
     });
@@ -765,7 +765,44 @@ function arrastarBloco() {
     palavra.addEventListener("dragend", () => {
       palavra.classList.remove("dragging");
     });
-  });
+
+    palavra.addEventListener("click", () => {
+      const currentlySelected = document.querySelector(".bloco.selected");
+      if (currentlySelected) {
+        currentlySelected.classList.remove("selected");
+      }
+      palavra.classList.add("selected");
+    });
+
+    palavra.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      palavra.classList.add("dragover");
+    });
+
+    palavra.addEventListener("dragleave", () => {
+      palavra.classList.remove("dragover");
+    });
+
+    palavra.addEventListener("drop", (e) => {
+      e.preventDefault();
+      palavra.classList.remove("dragover");
+      const palavraArrastada = document.querySelector(".bloco.dragging");
+      if (palavraArrastada) {
+        const indexArrastada = Array.from(terminal.children).indexOf(palavraArrastada);
+        const indexAlvo = Array.from(terminal.children).indexOf(palavra);
+        if (indexArrastada !== -1 && indexAlvo !== -1) {
+          if (indexArrastada < indexAlvo) {
+            terminal.insertBefore(palavraArrastada, palavra.nextSibling);
+          } else {
+            terminal.insertBefore(palavraArrastada, palavra);
+          }
+        }
+      }
+    });
+  }
+
+  // Adiciona os eventos para cada palavra inicial
+  Array.from(palavras).forEach(adicionarEventosParaPalavra);
 
   terminal.addEventListener("dragover", (e) => {
     e.preventDefault();
@@ -779,10 +816,18 @@ function arrastarBloco() {
   terminal.addEventListener("drop", (e) => {
     e.preventDefault();
     terminal.classList.remove("dragover");
-    const palavraArrastada = document.querySelector(".bloco.dragging"); // Alteração aqui
+    const palavraArrastada = document.querySelector(".bloco.dragging");
     if (palavraArrastada) {
       terminal.appendChild(palavraArrastada);
-      selecionadas.push(palavraArrastada); //Alterei aqui ass: duda
+      selecionadas.push(palavraArrastada);
+    }
+  });
+
+  terminal.addEventListener("click", (e) => {
+    if (e.target.classList.contains("bloco")) {
+      const palavraSelecionada = e.target;
+      divBlocos.appendChild(palavraSelecionada);
+      palavraSelecionada.classList.remove("selected");
     }
   });
 
@@ -798,12 +843,23 @@ function arrastarBloco() {
   divBlocos.addEventListener("drop", (e) => {
     e.preventDefault();
     divBlocos.classList.remove("dragover");
-    const palavraArrastada = document.querySelector(".bloco.dragging"); // Alteração aqui
+    const palavraArrastada = document.querySelector(".bloco.dragging");
     if (palavraArrastada) {
       divBlocos.appendChild(palavraArrastada);
     }
   });
+
+  divBlocos.addEventListener("click", (e) => {
+    const palavraSelecionada = document.querySelector(".bloco.selected");
+    if (palavraSelecionada) {
+      terminal.appendChild(palavraSelecionada);
+      palavraSelecionada.classList.remove("selected");
+      selecionadas.push(palavraSelecionada);
+    }
+  });
 }
+
+
 btnProx.addEventListener("click", () => {
   let ultimoExercicio = false;
   switch (exercicioAtual) {
@@ -939,14 +995,18 @@ btVerificar.addEventListener("click", () => {
 
 adicionarEventoVerificar();
 
-//Alterei aqui ass: duda
+//função para apagar o bloco
 function apagar() {
-  if (terminal.lastChild) {
-    blocoAntigo = terminal.lastChild;
-    terminal.removeChild(blocoAntigo);
-    divBlocos.appendChild(blocoAntigo);
+  const blocosParaMover = [];
+  
+  while (terminal.firstChild) {
+    blocosParaMover.push(terminal.firstChild);
+    terminal.removeChild(terminal.firstChild);
   }
+  
+  blocosParaMover.forEach(bloco => divBlocos.appendChild(bloco));
 }
+
 
 //função da fala aleatória do vampiro
 function falaAleatoria() {
