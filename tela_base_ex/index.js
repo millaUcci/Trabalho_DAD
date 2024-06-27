@@ -39,6 +39,7 @@ const btnCreditos = document.getElementById("btn-creditos");
 const btnRecomecar = document.getElementById("btn-recomecar");
 const btnResetar = document.getElementById("btn-resetar");
 const config = document.getElementById("config");
+const instrucao = document.getElementById("instrucao")
 const todosOsExercicios = [
   "ca1-ex1",
   "ca1-ex2",
@@ -74,6 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("audioTime", musica.currentTime);
   });
 });
+instrucao.addEventListener("click",()=>{
+  window.location.href="../tela_instrucoes_ex/index.html"
+})
 
 config.addEventListener("click", () => {
   modalConfig.showModal();
