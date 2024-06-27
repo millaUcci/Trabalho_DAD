@@ -4,11 +4,11 @@ const home = document.getElementById("home");
 const save = JSON.parse(localStorage.getItem("save"));
 const modo = JSON.parse(localStorage.getItem("modo"));
 
-const capituloUm = document.getElementById("capitulo-um");
-const capituloDois = document.getElementById("capitulo-dois");
-const capituloTres = document.getElementById("capitulo-tres");
-const capituloQuatro = document.getElementById("capitulo-quatro");
-const capituloCinco = document.getElementById("capitulo-cinco");
+const capituloUm = document.getElementById("card1");
+const capituloDois = document.getElementById("card2");
+const capituloTres = document.getElementById("card3");
+const capituloQuatro = document.getElementById("card4");
+const capituloCinco = document.getElementById("card5");
 
 const modalCapitulo = document.getElementById("modal-exercicios");
 const btnIniciar = document.getElementById("btn-iniciar");
