@@ -1,5 +1,6 @@
 const historia = document.getElementById("botao-historia");
 const musica = document.getElementById("musica");
+const fundoMorcego = document.getElementById("background-video");
 localStorage.setItem("pagina", JSON.stringify("1"));
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -23,6 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
   musica.addEventListener("timeupdate", () => {
     localStorage.setItem("audioTime", musica.currentTime);
   });
+
+  fundoMorcego.play();
+  setInterval(() => {
+    fundoMorcego.currentTime = 0;
+    fundoMorcego.play();
+  }, 10000);
+  
 });
 const livre = document.getElementById("botao-livre");
 historia.addEventListener("click", () => {
