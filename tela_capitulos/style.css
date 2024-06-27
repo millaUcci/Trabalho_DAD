@@ -30,118 +30,63 @@ header{
     filter: invert(30%);
   }
 #div-principal{
-    text-align: center;
+    margin-top: 30rem;
+    margin:auto;
+    width: 65rem;
+    height: 25rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
+
 .capitulo{
-    display: inline-block;
-    background-color: rgb(216, 219, 221);
-    border-radius: 50%;
-    width: 4rem;
-    height: 4rem;
-    text-align: center;
     display: flex;
     align-items: center;
-    justify-content:center;
-    z-index: 1;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-.capitulo-menor{
-    font-family: 'Kranky';
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    width: 100%;
+    font-size: x-large;
+    transition: background-color 0.2s, transform 0.2s;
+    border-radius: 1rem;
     font-weight: bold;
-    width: 3.5rem;
-    height: 3.5rem;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    background-color: rgb(22, 20, 25);
-    z-index: 2;
-    cursor: pointer;
 }
+
 .capitulo:hover{
     background-color:  rgb(174, 175, 176);
 }
-.capitulo-menor:hover{
-    background-color: rgb(54, 49, 61);
-}
+
 .capitulo:active{
     background-color:rgb(174, 128, 220);
 }
-.capitulo-menor:active{
-    background-color: rgb(81, 53, 108);
-}
-.card{
-    display: inline-block;
+
+.card {
+    border-radius: 1rem;
+    font-family: 'Kranky';
+    background-color: rgb(216, 219, 221);
+    font-size:large;
+    font-weight: bold;
+    color: rgb(22, 20, 25);
     width: 15rem;
-    height: 30rem;
+    height: 10rem;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
 }
-#capitulo-um{
-    position: relative;
-    top: 6rem;
-    left: 5rem
+
+.card:hover {
+  background-color: rgb(174, 175, 176);
 }
-#capitulo-dois{
-    position: relative;
-    top: 20rem;
-    left: 5rem
+
+.card:active {
+  background-color: rgb(174, 128, 220);
 }
-#capitulo-tres{
-    position: relative;
-    top: 6rem;
-    left: 5rem
-}
-#capitulo-quatro{
-    position: relative;
-    top: 20rem;
-    left: 5rem
-}
-#capitulo-cinco{
-    position: relative;
-    top: 6rem;
-    left: 5rem
-}
-.linha{
-    position: relative;
-    z-index: 0;
-}
-#linha-um{
-    top: 5rem;
-    left: 7rem;
-    width: 7.9rem;
-    height: 13rem;
-    border-bottom: solid  rgb(216, 219, 221) .4rem;
-    border-left:solid  rgb(216, 219, 221) .4rem ;
-}
-#linha-dois{
-    width: 14rem;
-    height: 14rem;
-    top: 4rem;
-    border-bottom: solid  rgb(216, 219, 221) .4rem;
-    border-right: solid rgb(216,219,221) .4rem;
-}
-#linha-tres{
-    width: 16.5rem;
-    height: 14rem;
-    top: 4rem;
-    right: .89em;
-    border-top: solid rgb(216,219,221) .4rem;
-}
-#linha-quatro{
-    width: 16rem;
-    height: 14rem;
-    top: 4rem;
-    border-bottom: solid  rgb(216, 219, 221) .4rem;
-    border-left: solid rgb(216,219,221) .4rem;
-    border-right: solid rgb(216,219,221) .4rem;
-}
-#linha-cinco{
-    top: 4rem;
-    left: 1.51rem;
-    width: 7rem;
-    height: 14rem;
-    border-top: solid  rgb(216, 219, 221) .4rem;
-}
+
 .modal{
     border-radius: 1rem;
     background-color: rgb(216, 219, 221);
@@ -168,10 +113,6 @@ background-color: rgb(22, 20, 25,.5);
     background-color:  rgb(53, 47, 58);
     color: rgb(216, 219, 221);
 }
-/* .ex-destrancado::after{
-    content: ' 🔓'
-}
-.ex-trancado::after{content: ' 🔒'} */
 .ex-salvo{
     background-color: rgb(81, 53, 108);
 }
