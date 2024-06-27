@@ -14,6 +14,7 @@ header{
     margin-bottom: 3rem;
 }
 
+<<<<<<< HEAD
 #config{
     filter: invert(100%);
     width: 2rem;
@@ -22,10 +23,31 @@ header{
     position: absolute;
     top: .5rem;
     left: .5rem;
+=======
+body {
+  background-color: rgb(22, 20, 25);
+  color: rgb(216, 219, 221);
+>>>>>>> sam
 }
- #config:hover{
-    filter:invert(60%)
+
+header {
+  margin-bottom: 3rem;
 }
+
+#config {
+  filter: invert(100%);
+  width: 2rem;
+  margin: .5rem;
+  cursor: pointer;
+  position: absolute;
+  top: .5rem;
+  left: .5rem;
+}
+
+#config:hover {
+  filter: invert(60%);
+}
+
   #config:active{
     filter: invert(30%);
   }
@@ -79,12 +101,14 @@ header{
     user-select: none;
 }
 
+
 .card:hover {
   background-color: rgb(174, 175, 176);
 }
 
 .card:active {
   background-color: rgb(174, 128, 220);
+
 }
 
 .modal{
@@ -96,6 +120,7 @@ header{
     padding: 1rem 3rem 2rem;
     border: .3rem solid  rgb(53, 47, 58);
 }
+<<<<<<< HEAD
 .modal::backdrop{
 background-color: rgb(22, 20, 25,.5);
 }
@@ -181,4 +206,88 @@ background-color: rgb(22, 20, 25,.5);
 #btn-creditos{
     width: 10rem;
     margin-top: 1rem;
+=======
+
+.modal::backdrop {
+  background-color: rgb(22, 20, 25, .5);
+}
+
+.modal > h1 {
+  font-family: 'Kranky';
+}
+
+.invisivel {
+  display: none;
+}
+
+
+.ex {
+  padding: .5rem;
+  border-radius: .1rem;
+  margin-bottom: .5rem;
+  font-family: 'Inter';
+  background-color: rgb(53, 47, 58);
+  color: rgb(216, 219, 221);
+}
+
+.ex-salvo {
+  background-color: rgb(81, 53, 108);
+
+}
+
+.ex-salvo::after {
+  content: ' 💾';
+}
+
+.ex-feito {
+  background-color: rgb(47, 83, 84);
+}
+
+.ex-feito::after {
+  content: ' ✅';
+}
+
+.btn-modal {
+  margin-top: .5rem;
+  width: 6rem;
+  height: 1.5rem;
+  background-color: rgb(216, 219, 221);
+  color: rgb(53, 47, 58);
+  border-radius: .3rem;
+  border: solid .1rem rgb(22, 20, 25);
+  font-family: "Inter";
+  font-weight: bolder;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-modal:hover {
+  background-color: rgb(174, 175, 176);
+}
+
+.btn-modal:active {
+  background-color: rgb(53, 47, 58);
+  color: rgb(174, 175, 176);
+}
+
+.fechar-modal {
+  width: 1.5rem;
+  position: absolute;
+  left: 1.5rem;
+  top: 1rem;
+  filter: invert(100%);
+  cursor: pointer;
+}
+
+.fechar-modal:hover {
+  filter: invert(60%);
+}
+
+.fechar-modal:active {
+  filter: invert(30%);
+}
+
+#musica {
+  display: none;
+>>>>>>> sam
 }
