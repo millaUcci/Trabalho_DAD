@@ -1,91 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="/Trabalho_DAD/assets/livros.png" type="image/x-icon" />
-    <script src="index.js" defer></script>
-    <title>SQL Vampire - Capítulos</title>
-  </head>
-  <body>
-    <header>
-      <!-- <img src="/Trabalho_DAD/assets/home.png" alt="icone de home" id="home" /> -->
-      <img src="/Trabalho_DAD/assets/config.png" alt="" id="config" />
-    </header>
-    <div id="div-principal">
-      <div class="card">
-        <div id="capitulo-um" class="capitulo">
-          <div class="capitulo capitulo-menor">1</div>
-        </div>
-        <div id="linha-um" class="linha"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="/Trabalho_DAD/assets/livros.png" type="image/x-icon" />
+  <script src="index.js" defer></script>
+  <title>SQL Vampire - Capítulos</title>
+</head>
+<body>
+  <header>
+    <img src="/Trabalho_DAD/assets/config.png" alt="a" id="config" />
+  </header>
+  <div id="div-principal">
+    <div class="card" id="card1">
+      <div id="capitulo-um">
+        <div class="capitulo capitulo-menor">capitulo 1</div>
       </div>
-      <div class="card">
-        <div id="capitulo-dois" class="capitulo">
-          <div class="capitulo capitulo-menor">2</div>
-        </div>
-        <div id="linha-dois" class="linha"></div>
+      <div id="linha-um" class="linha"></div>
+    </div>
+    <div class="card" id="card2">
+      <div id="capitulo-dois">
+        <div class="capitulo capitulo-menor">capitulo 2</div>
       </div>
-      <div class="card">
-        <div id="capitulo-tres" class="capitulo">
-          <div class="capitulo capitulo-menor">3</div>
-        </div>
-        <div id="linha-tres" class="linha"></div>
+      <div id="linha-dois" class="linha"></div>
+    </div>
+    <div class="card" id="card3">
+      <div id="capitulo-tres">
+        <div class="capitulo capitulo-menor">capitulo 3</div>
       </div>
-      <div class="card">
-        <div id="capitulo-quatro" class="capitulo">
-          <div class="capitulo capitulo-menor">4</div>
-        </div>
-        <div id="linha-quatro" class="linha"></div>
+      <div id="linha-tres" class="linha"></div>
+    </div>
+    <div class="card" id="card4">
+      <div id="capitulo-quatro">
+        <div class="capitulo capitulo-menor">capitulo 4</div>
       </div>
-      <div class="card">
-        <div id="capitulo-cinco" class="capitulo">
-          <div class="capitulo capitulo-menor">5</div>
-        </div>
-        <div id="linha-cinco" class="linha"></div>
+      <div id="linha-quatro" class="linha"></div>
+    </div>
+    <div class="card" id="card5">
+      <div id="capitulo-cinco" >
+        <div class="capitulo capitulo-menor">capitulo 5</div>
+      </div>
+      <div id="linha-cinco" class="linha"></div>
+    </div>
+  </div>
+  <dialog id="modal-exercicios" class="modal">
+    <img
+      src="/Trabalho_DAD/assets/seta-left.png"
+      alt="seta para fechar o modal"
+      id="fechar-modal"
+      class="fechar-modal"
+    />
+    <h1 id="titulo-modal"></h1>
+    <div id="div-exercicios"></div>
+    <button id="btn-iniciar" class="btn-modal">Iniciar</button>
+    <button id="btn-continuar" class="btn-modal">Continuar</button>
+  </dialog>
+  <dialog id="modal-config" class="modal">
+    <img
+      src="/Trabalho_DAD/assets/seta-left.png"
+      alt="seta para fechar o modal"
+      id="fechar-modal-config"
+      class="fechar-modal"
+    />
+    <h1>Configurações</h1>
+    <div id="div-config">
+      <div id="ultimo-save"></div>
+      <div id="div-botoes-modal">
+        <button
+          id="btn-recomecar"
+          class="btn-modal"
+          title="Você perdera o seu save atual"
+        >
+          Recomeçar
+        </button>
+        <button
+          id="btn-resetar"
+          class="btn-modal"
+          title="Você perdera seu save atual e o historico de exercícos concluidos, inclusive o modo de aprendizado(história, livre)"
+        >
+          Resetar
+        </button>
       </div>
     </div>
-    <dialog id="modal-exercicios" class="modal">
-      <img
-        src="/Trabalho_DAD/assets/seta-left.png"
-        alt="seta para fechar o modal"
-        id="fechar-modal"
-        class="fechar-modal"
-      />
-      <h1 id="titulo-modal"></h1>
-      <div id="div-exercicios"></div>
-      <button id="btn-iniciar" class="btn-modal">Iniciar</button>
-      <button id="btn-continuar" class="btn-modal">Continuar</button>
-    </dialog>
-    <dialog id="modal-config" class="modal">
-      <img
-        src="/Trabalho_DAD/assets/seta-left.png"
-        alt="seta para fechar o modal"
-        id="fechar-modal-config"
-        class="fechar-modal"
-      />
-      <h1>Configurações</h1>
-      <div id="div-config">
-        <div id="ultimo-save"></div>
-        <div id="div-botoes-modal">
-          <button
-            id="btn-recomecar"
-            class="btn-modal"
-            title="Você perdera o seu save atual"
-          >
-            Recomeçar
-          </button>
-          <button
-            id="btn-resetar"
-            class="btn-modal"
-            title="Você perdera seu save atual e o historico de exercícos concluidos, inclusive o modo de aprendizado(história, livre)"
-          >
-            Resetar
-          </button>
-        </div>
-      </div>
-      <button id="btn-creditos" class="btn-modal">Ver créditos</button>
-    </dialog>
-    <audio id="musica" src="../music_theme.mp3" loop></audio>
-  </body>
+    <button id="btn-creditos" class="btn-modal">Ver créditos</button>
+  </dialog>
+  <audio id="musica" src="../music_theme.mp3" loop></audio>
+</body>
 </html>
