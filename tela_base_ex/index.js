@@ -39,7 +39,7 @@ const btnCreditos = document.getElementById("btn-creditos");
 const btnRecomecar = document.getElementById("btn-recomecar");
 const btnResetar = document.getElementById("btn-resetar");
 const config = document.getElementById("config");
-const instrucao = document.getElementById("instrucao")
+const instrucao = document.getElementById("instrucao");
 const todosOsExercicios = [
   "ca1-ex1",
   "ca1-ex2",
@@ -75,9 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("audioTime", musica.currentTime);
   });
 });
-instrucao.addEventListener("click",()=>{
-  window.location.href="../tela_instrucoes_ex/index.html"
-})
+instrucao.addEventListener("click", () => {
+  window.location.href = "../tela_instrucoes_ex/index.html";
+});
 
 config.addEventListener("click", () => {
   modalConfig.showModal();
@@ -147,13 +147,12 @@ switch (exercicioAtual) {
       "Você pode usar o caderno de consultas (canto superior esquerdo) sempre que precisar",
       5000
     );
-    setTimeout(segundaFala,5500)
-    function segundaFala(){
-     
+    setTimeout(segundaFala, 5500);
+    function segundaFala() {
       falaVampiro(
         "Você támbem pode rever as instruções do exercício (icone da folhinha)",
         5000
-      )
+      );
     }
     qtBlocos = 3;
     personalizarExercicio(
