@@ -28,16 +28,104 @@ header {
 #config:hover {
   filter: invert(60%);
 }
-
-#config:active {
-  filter: invert(30%);
+  #config:active{
+    filter: invert(30%);
+  }
+#div-principal{
+    margin-top: 30rem;
+    margin:auto;
+    width: 65rem;
+    height: 25rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-#div-principal {
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.capitulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    width: 100%;
+    font-size: x-large;
+    transition: background-color 0.2s, transform 0.2s;
+    border-radius: 1rem;
+    font-weight: bold;
+}
+
+.capitulo:hover{
+    background-color:  rgb(174, 175, 176);
+}
+
+.capitulo:active{
+    background-color:rgb(174, 128, 220);
+}
+
+.card {
+    border-radius: 1rem;
+    font-family: 'Kranky';
+    background-color: rgb(216, 219, 221);
+    font-size:large;
+    font-weight: bold;
+    color: rgb(22, 20, 25);
+    width: 15rem;
+    height: 10rem;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.card:hover {
+  background-color: rgb(174, 175, 176);
+}
+
+.card:active {
+  background-color: rgb(174, 128, 220);
+}
+
+.modal{
+    border-radius: 1rem;
+    background-color: rgb(216, 219, 221);
+    color: rgb(22, 20, 25);
+    text-align: center;
+    width: 18rem;
+    padding: 1rem 3rem 2rem;
+    border: .3rem solid  rgb(53, 47, 58);
+}
+.modal::backdrop{
+background-color: rgb(22, 20, 25,.5);
+}
+.modal > h1{
+    font-family: 'Kranky';
+}
+.invisivel{
+    display: none;
+}
+.ex{
+    padding: .5rem;
+    border-radius: .1rem;
+    margin-bottom: .5rem;
+    font-family: 'Inter';
+    background-color:  rgb(53, 47, 58);
+    color: rgb(216, 219, 221);
+}
+.ex-salvo{
+    background-color: rgb(81, 53, 108);
+}
+.ex-salvo::after{
+    content: ' 💾'
+}
+.ex-feito{
+    background-color: rgb(47, 83, 84);
+}
+.ex-feito::after{
+    content: ' ✅';
 }
 .btn-modal{
     margin-top:.5rem;
