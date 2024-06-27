@@ -1,9 +1,37 @@
 const historia = document.getElementById("botao-historia");
 const musica = document.getElementById("musica");
+const fundoMorcego = document.getElementById("background-video");
 localStorage.setItem("pagina", JSON.stringify("1"));
-localStorage.setItem("audioTime", 0);
-localStorage.setItem("audioState", "playing");
 
+document.addEventListener("DOMContentLoaded", () => {
+  localStorage.setItem("audioTime", 0);
+  localStorage.setItem("audioState", "playing");
+  const audioState = localStorage.getItem("audioState");
+
+  if (audioState === "playing") {
+    musica.currentTime = parseFloat(localStorage.getItem("audioTime")) || 0;
+    musica.play();
+  }
+
+  musica.addEventListener("play", () => {
+    localStorage.setItem("audioState", "playing");
+  });
+
+  musica.addEventListener("pause", () => {
+    localStorage.setItem("audioState", "paused");
+  });
+
+  musica.addEventListener("timeupdate", () => {
+    localStorage.setItem("audioTime", musica.currentTime);
+  });
+
+  fundoMorcego.play();
+  setInterval(() => {
+    fundoMorcego.currentTime = 0;
+    fundoMorcego.play();
+  }, 10000);
+  
+});
 const livre = document.getElementById("botao-livre");
 historia.addEventListener("click", () => {
   localStorage.setItem("modo", JSON.stringify("historia"));
