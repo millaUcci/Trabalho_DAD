@@ -147,6 +147,14 @@ switch (exercicioAtual) {
       "Você pode usar o caderno de consultas (canto superior esquerdo) sempre que precisar",
       5000
     );
+    setTimeout(segundaFala,5500)
+    function segundaFala(){
+     
+      falaVampiro(
+        "Você támbem pode rever as instruções do exercício (icone da folhinha)",
+        5000
+      )
+    }
     qtBlocos = 3;
     personalizarExercicio(
       "Use o comando create",
@@ -992,8 +1000,8 @@ function adicionarEventoVerificar() {
         terminal.classList.remove("errado");
         terminal.classList.add("certo");
         btnProx.classList.remove("invisivel");
-        fala.classList.remove("fala-maior");
-        fala.classList.add("fala-menor");
+        fala.classList.add("fala-maior");
+        fala.classList.remove("fala-menor");
         falaVampiro("Parabéns, você acertou", 2000);
         const blocos = document.getElementsByClassName("bloco");
         for (let i = 0; i < blocos.length; i++) {
@@ -1011,8 +1019,8 @@ function adicionarEventoVerificar() {
         terminal.classList.remove("certo");
         terminal.classList.add("errado");
         btnProx.classList.add("invisivel");
-        fala.classList.remove("fala-maior");
-        fala.classList.add("fala-menor");
+        fala.classList.add("fala-maior");
+        fala.classList.remove("fala-menor");
         falaVampiro("Acho que você errou alguma coisa", 2000);
         setTimeout(mudarClasse, 2500);
       }
