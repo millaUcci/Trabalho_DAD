@@ -39,6 +39,10 @@ body{
   top: 3.5rem;
   left: 0.5rem;
 }
+#instrucao {
+  top: 6.5rem;
+  left: 0.5rem;
+}
 .button {
   font-family: "Inter";
   font-weight: bold;
@@ -304,8 +308,8 @@ body {
 #fala-vampiro {
   position: relative;
   top: 0.7rem;
-  left: 0.5rem;
-  width: 14.5rem;
+  left: 0.9rem;
+  width: 14rem;
   height: 2rem;
   text-justify: auto;
   font-family: "Inter;";

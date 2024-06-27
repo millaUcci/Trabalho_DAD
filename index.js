@@ -38,8 +38,6 @@ historia.addEventListener("click", () => {
   localStorage.setItem("save", JSON.stringify("ca1-ex1"));
   localStorage.setItem("exAtual", JSON.stringify("ca1-ex1"));
   localStorage.setItem("exConcluidos", JSON.stringify([]));
-  localStorage.setItem("audioTime", musica.currentTime);
-  localStorage.setItem("audioState", musica.paused ? "paused" : "playing");
   window.location.href = "./tela_historia/index.html";
 });
 livre.addEventListener("click", () => {
@@ -48,7 +46,5 @@ livre.addEventListener("click", () => {
   localStorage.setItem("exAtual", JSON.stringify("ca1-ex1"));
   localStorage.setItem("exConcluidos", JSON.stringify([]));
   localStorage.setItem("pagina", JSON.stringify("4"));
-  localStorage.setItem("audioTime", musica.currentTime);
-  localStorage.setItem("audioState", musica.paused ? "paused" : "playing");
   window.location.href = "./tela_historia/index.html";
 });

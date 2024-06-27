@@ -39,6 +39,7 @@ const btnCreditos = document.getElementById("btn-creditos");
 const btnRecomecar = document.getElementById("btn-recomecar");
 const btnResetar = document.getElementById("btn-resetar");
 const config = document.getElementById("config");
+const instrucao = document.getElementById("instrucao")
 const todosOsExercicios = [
   "ca1-ex1",
   "ca1-ex2",
@@ -74,6 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("audioTime", musica.currentTime);
   });
 });
+instrucao.addEventListener("click",()=>{
+  window.location.href="../tela_instrucoes_ex/index.html"
+})
 
 config.addEventListener("click", () => {
   modalConfig.showModal();
@@ -106,6 +110,8 @@ ultimoSave[1].textContent = "Ultimo save: " + save;
 
 //Fala vampiro
 vampiro.addEventListener("click", () => {
+  fala.classList.add("fala-maior");
+  fala.classList.remove("fala-menor");
   falaVampiro("Não me toque", 1500);
 });
 function sumirFala() {
@@ -135,15 +141,20 @@ btnSair.addEventListener("click", () => {
 //Vendo o exercíco a
 switch (exercicioAtual) {
   case "ca1-ex1":
-    fala.classList.add("fala-maior");
-    fala.classList.remove("fala-menor");
-    falaVampiro(
-      "Você pode usar o caderno de consultas (canto superior esquerdo) sempre que precisar",
-      6000
-    );
     fala.classList.remove("fala-maior");
     fala.classList.add("fala-menor");
-    falaAleatoria();
+    falaVampiro(
+      "Você pode usar o caderno de consultas (canto superior esquerdo) sempre que precisar",
+      5000
+    );
+    setTimeout(segundaFala,5500)
+    function segundaFala(){
+     
+      falaVampiro(
+        "Você támbem pode rever as instruções do exercício (icone da folhinha)",
+        5000
+      )
+    }
     qtBlocos = 3;
     personalizarExercicio(
       "Use o comando create",
@@ -989,6 +1000,8 @@ function adicionarEventoVerificar() {
         terminal.classList.remove("errado");
         terminal.classList.add("certo");
         btnProx.classList.remove("invisivel");
+        fala.classList.add("fala-maior");
+        fala.classList.remove("fala-menor");
         falaVampiro("Parabéns, você acertou", 2000);
         const blocos = document.getElementsByClassName("bloco");
         for (let i = 0; i < blocos.length; i++) {
@@ -1006,6 +1019,8 @@ function adicionarEventoVerificar() {
         terminal.classList.remove("certo");
         terminal.classList.add("errado");
         btnProx.classList.add("invisivel");
+        fala.classList.add("fala-maior");
+        fala.classList.remove("fala-menor");
         falaVampiro("Acho que você errou alguma coisa", 2000);
         setTimeout(mudarClasse, 2500);
       }
@@ -1044,6 +1059,8 @@ function apagar() {
 
 //função da fala aleatória do vampiro
 function falaAleatoria() {
+  fala.classList.add("fala-maior");
+  fala.classList.remove("fala-menor");
   falar = Math.random() < 0.1; //10% de chance
   falar2 = Math.random() < 0.1; // 10% de chance
   falar3 = Math.random() < 0.01; // 1% de chance
