@@ -39,6 +39,10 @@ body{
   top: 3.5rem;
   left: 0.5rem;
 }
+#instrucao {
+  top: 6.5rem;
+  left: 0.5rem;
+}
 .button {
   font-family: "Inter";
   font-weight: bold;
@@ -90,7 +94,7 @@ body {
 }
 #terminal {
   width: 35rem;
-  height: 10rem;
+  height: 11rem;
   border-radius: 0.6rem;
 }
 .default {
@@ -112,7 +116,7 @@ body {
   margin: 0.4rem;
   width: 37rem;
   height: 10rem;
-  padding: 0.5rem;
+  padding: 0.3rem;
   position: relative;
   right: 2rem;
 }
@@ -133,7 +137,7 @@ body {
 }
 #div-texto {
   width: 35rem;
-  height: 5rem;
+  height: 3rem;
   border-radius: 0.6rem;
   margin: 0.4rem;
   padding: 0.5rem 1.5rem;
@@ -157,7 +161,6 @@ body {
   position: relative;
   right: 1.7rem;
   margin: 0rem;
-  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 #principal {
@@ -188,7 +191,7 @@ body {
 
 #div-digitar {
   width: 40rem;
-  height: 13rem;
+  height: 13em;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -271,6 +274,9 @@ body {
 }
 #sair-sem-salvar{
   width: fit-content;
+  background-color: rgb(185, 42, 42);
+  border: solid 0.1rem rgb(87, 18, 18);
+  color: rgb(198, 200, 201);;
 }
 #div-fala {
   background: rgb(198, 200, 201);
@@ -302,8 +308,8 @@ body {
 #fala-vampiro {
   position: relative;
   top: 0.7rem;
-  left: 0.5rem;
-  width: 14.5rem;
+  left: 0.9rem;
+  width: 14rem;
   height: 2rem;
   text-justify: auto;
   font-family: "Inter;";
