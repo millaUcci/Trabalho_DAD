@@ -106,6 +106,8 @@ ultimoSave[1].textContent = "Ultimo save: " + save;
 
 //Fala vampiro
 vampiro.addEventListener("click", () => {
+  fala.classList.add("fala-maior");
+  fala.classList.remove("fala-menor");
   falaVampiro("Não me toque", 1500);
 });
 function sumirFala() {
@@ -135,15 +137,12 @@ btnSair.addEventListener("click", () => {
 //Vendo o exercíco a
 switch (exercicioAtual) {
   case "ca1-ex1":
-    fala.classList.add("fala-maior");
-    fala.classList.remove("fala-menor");
-    falaVampiro(
-      "Você pode usar o caderno de consultas (canto superior esquerdo) sempre que precisar",
-      6000
-    );
     fala.classList.remove("fala-maior");
     fala.classList.add("fala-menor");
-    falaAleatoria();
+    falaVampiro(
+      "Você pode usar o caderno de consultas (canto superior esquerdo) sempre que precisar",
+      5000
+    );
     qtBlocos = 3;
     personalizarExercicio(
       "Use o comando create",
@@ -1044,6 +1043,8 @@ function apagar() {
 
 //função da fala aleatória do vampiro
 function falaAleatoria() {
+  fala.classList.add("fala-maior");
+  fala.classList.remove("fala-menor");
   falar = Math.random() < 0.1; //10% de chance
   falar2 = Math.random() < 0.1; // 10% de chance
   falar3 = Math.random() < 0.01; // 1% de chance
