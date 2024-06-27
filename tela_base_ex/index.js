@@ -1004,8 +1004,10 @@ function adicionarEventoVerificar() {
         falaVampiro("Parabéns, você acertou", 2000);
        const blocos = document.getElementsByClassName("bloco");
         for (let i = 0; i < blocos.length; i++) {
-          blocos[i].classList.remove("draggable");
-          blocos[i].setAttribute("draggable", "false");
+          const clone = blocos[i].cloneNode(true);
+          clone.classList.remove("draggable");
+          clone.setAttribute("draggable", "false");
+          blocos[i].parentNode.replaceChild(clone, blocos[i]);
         }
         if (!exerciciosConcluidos.includes(exercicioAtual)) {
           exerciciosConcluidos.push(exercicioAtual);
