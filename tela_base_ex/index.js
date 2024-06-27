@@ -988,6 +988,8 @@ function adicionarEventoVerificar() {
         terminal.classList.remove("errado");
         terminal.classList.add("certo");
         btnProx.classList.remove("invisivel");
+        fala.classList.remove("fala-maior");
+        fala.classList.add("fala-menor");
         falaVampiro("Parabéns, você acertou", 2000);
         const blocos = document.getElementsByClassName("bloco");
         for (let i = 0; i < blocos.length; i++) {
@@ -1005,6 +1007,8 @@ function adicionarEventoVerificar() {
         terminal.classList.remove("certo");
         terminal.classList.add("errado");
         btnProx.classList.add("invisivel");
+        fala.classList.remove("fala-maior");
+        fala.classList.add("fala-menor");
         falaVampiro("Acho que você errou alguma coisa", 2000);
         setTimeout(mudarClasse, 2500);
       }
