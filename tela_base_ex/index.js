@@ -1002,7 +1002,7 @@ function adicionarEventoVerificar() {
         fala.classList.add("fala-maior");
         fala.classList.remove("fala-menor");
         falaVampiro("Parabéns, você acertou", 2000);
-        const blocos = document.getElementsByClassName("bloco");
+       const blocos = document.getElementsByClassName("bloco");
         for (let i = 0; i < blocos.length; i++) {
           blocos[i].classList.remove("draggable");
           blocos[i].setAttribute("draggable", "false");
